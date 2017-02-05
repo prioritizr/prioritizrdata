@@ -23,7 +23,6 @@ Depends:
     raster,
     sp
 License: GPL-3
-Encoding: UTF-8
 LazyData: true
 URL: https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues

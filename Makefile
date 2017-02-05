@@ -50,6 +50,8 @@ test:
 
 check:
 	R --slave -e "devtools::check()"
+
+wbcheck:
 	R --slave -e "devtools::build_win()"
 
 build:
