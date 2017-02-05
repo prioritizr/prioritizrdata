@@ -17,6 +17,7 @@ Imports:
 Suggests:
     testthat,
     knitr,
+    rgeos
 Depends:
     R(>= 3.3.2),
     raster,
