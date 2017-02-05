@@ -8,3 +8,5 @@ NEWS.md
 ^appveyor\.yml$
 .gitkeep
 ^Makefile$
+cran-comments.md
+

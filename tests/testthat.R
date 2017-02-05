@@ -1,4 +1,4 @@
 library(testthat)
-library(prioritizr)
+library(prioritizrdata)
 test_check('prioritizrdata')
  
