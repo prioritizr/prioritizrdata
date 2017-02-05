@@ -41,16 +41,6 @@ data(tas_pu, tas_features)
 plot(tas_pu)
 plot(tas_features)
 
-# make prioritisation
-p <- problem(tas_pu, tas_features) +
-     minimum_set_objective() +
-     relative_target(0.1) +
-     rsymphony_solver()
-# make solution
-s <- solve(p)
-# plot solution
-plot(s)
-
 }
 \references{
 This data was obtained from the "Introduction to Marxan" course
