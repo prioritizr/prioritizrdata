@@ -12,6 +12,10 @@
 }}
 \usage{
 data(tas_features)
+
+tas_pu
+
+tas_features
 }
 \description{
 This scenario involves making a prioritsation to adequately conserve

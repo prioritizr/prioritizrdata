@@ -51,3 +51,10 @@ NULL
 #' @name tas_data
 NULL
 
+#' @rdname tas_data
+"tas_pu"
+
+#' @rdname tas_data
+"tas_features"
+
+
