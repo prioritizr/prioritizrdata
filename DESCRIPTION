@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.0.0.1
+Version: 0.0.0.2
 Title: Example data sets for conservation planning
 Description: The prioritizr package provides methods to generate spatially
     explicit prioritizations. This R package contains example data sets for
@@ -29,8 +29,9 @@ LazyData: true
 URL: https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
-Collate:
+RoxygenNote: 6.0.1
+Collate: 
     'internal.R'
-    'data.R'
     'package.R'
+    'salt_data.R'
+    'tas_data.R'
