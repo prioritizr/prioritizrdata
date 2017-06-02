@@ -1,0 +1,182 @@
+---
+title: "Salt Spring Island Worked Example"
+output:
+  rmarkdown::html_document:
+    toc: true
+    fig_caption: true
+fontsize: 11pt
+documentclass: article
+vignette: >
+  %\VignetteIndexEntry{saltspring}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+## Introduction
+This tutorial is intented to provide a worked example of how raster data can be incorporated into a conservation prioritisation problem with _prioritizr_. For vector shapefile data refer to the Tasmania vignette. 
+
+The data used here is a subset of a much larger dataset for the Georgia Basin obtained as part of an online Marxan-based planning tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP). For simplicity, we focus only on Salt Spring Island, British Columbia. Salt Spring Island is central to the CDFCP region, which supports a very diverse and globally unique mix of dry forest and savannah habitats now critically-threatend due to land conversion, exotic species invasion, and altered disturbance regimes. Known broadly as the Georgia Depression-Puget Lowlands, this region includes threatened Coastal Douglas-fir forest and Oak-Savannah habitats, also referred to as Garry oak ecosystems. 
+
+```{r, out.width = "400px", fig.align='center', echo=FALSE}
+knitr::include_graphics("saltspring-figure/Extent_map.jpg")
+```
+
+_Figure 1. Location of Salt Spring Island within the Coastal Douglas-fir Conservation Partnership Area_
+
+For more information on the dataset refer to the [Marxan tool portal](http://arcese.forestry.ubc.ca/marxan-tool/) and the [tool tutorial](http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf). 
+
+This tutorial will use functions from the _prioiritizr_ package. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of _prioritizr_ and the theory and mathematics behind the package. 
+
+```{r, echo=TRUE, message=FALSE}
+library(prioritizrdata)
+library(prioritizr)
+# for plotting
+library(rasterVis)
+library(viridis)
+```
+
+## Exploring the data
+
+This dataset contains two components. First, a single-band planning unit raster layer where each one hectare pixel represents a planning unit and contains its corresponding cost (BC Land Assessment 2015). Second, a raster stack containing ecological community feature data. Field and remote sensed data were used to calculate the probability of occurrence of five key ecological communities found on Salt Spring island. Each layer in the stack represents a different community type. In order these are; Old Forest, Savannah, Wetland, Shrub, and a layer representing the inverse probability of occurrence of human commensal species. For a given layer, the cell value indicates the composite probability of encountering the suite of bird species most commonly associated with that community type.
+
+First, load the data into the R environment. 
+
+```{r eval=TRUE}
+data(salt_pu) #planning units
+data(salt_features) #biodiversity feature 
+```
+
+Let's have a look at the planning unit data. Note that we log-transformed the raster to better visualize the variation in planning unit cost.
+```{r, eval = TRUE, echo=TRUE, fig.align='center'}
+salt_pu
+levelplot(salt_pu, main="Planning Units and Cost", zscaleLog = TRUE, margin = FALSE, col.regions=rev(viridis(100)))
+```
+
+Next, let's look at the feature data.
+```{r, eval = TRUE, echo=TRUE, fig.align='center'}
+salt_features
+levelplot(salt_features, main="Ecological Features", layout= c(3, 2), col.regions=rev(viridis(100)))
+```
+
+## Example Usage
+We will only cover a few of the many ways that you can parameterize a problem in this tutorial. The examples we have chosen are intended to highlight how the use of different parameters can impact the solution, or in some cases have very little impact.
+
+### Formulating the Problem
+
+In these examples we use the minimum set objective to fulfill all targets and constraints for the smallest cost. This objective is the same as the objective function used by Marxan. For simplicity we set all of the targets at the same level, 17%, to reflect the [Aichi](https://www.cbd.int/sp/targets/) biodiversity target to "safeguard" at least 17% of terrestrial ecosystems by 2020. Because properties on Salt Spring island can either be aquired in their entirety or not at all, we leave the decision framework as the default; binary decision making. This means the planning unit is either selected in the solution or not selected - no partial planning units. 
+
+To create a problem object:
+
+```{r eval=TRUE}
+p1 <- problem(salt_pu, salt_features) %>%
+  add_min_set_objective() %>%
+  add_relative_targets(0.17) %>%
+  add_binary_decisions()
+```
+
+Note that the `%>%` notation is necessary to attach the objectives and targets to the correct problem object. As binary decisions is the default, it does not explicitly need to be added to the problem, but we do add it here for clarity. 
+
+### Solving the problem
+_Prioritizr_ supports three different integer linear programming solver packages: `gurobi`, `Rsymphony`, and `lpsymphony`. There are pros and cons to each of these, but the actual impact of solver type on the planning units in the solution should be relatively minor. 
+
+First, remember that the solvers must be installed and loaded separately.
+
+```{r, echo=TRUE, message=FALSE}
+library(gurobi)
+library(Rsymphony)
+library(lpsymphony)
+```
+
+Trying out these different solvers may look something like this: 
+
+```{r eval=TRUE, message=FALSE, results='hide'}
+titles <- c() #create vector to store plot titles
+s <- stack() #create empty stack to store solutions
+
+# create new problem object with added solver 
+# limit the time spent searching for the optimal solution to 5 seconds
+if (requireNamespace("Rsymphony", quietly =T)){
+  titles <- c(titles, "Rsymphony (2s)")
+  p2 <- p1 %>% add_rsymphony_solver(time_limit = 2)
+  s <- addLayer(s, solve(p2))
+}
+
+if (requireNamespace("Rsymphony", quietly =T)){
+  titles <- c(titles, "Rsymphony (5s)")
+  p3 <- p1 %>% add_rsymphony_solver(time_limit = 5)
+  s <- addLayer(s, solve(p3))
+}
+
+if (requireNamespace("gurobi", quietly =T)){
+  titles <- c(titles, "Gurobi (5s)")
+  p4 <- p1 %>% add_gurobi_solver(gap = 0.1, presolve=2, time_limit = 5)
+  s <- addLayer(s, solve(p4))
+}
+
+if (requireNamespace("lpsymphony", quietly =T)){
+  titles <- c(titles, "lpsymphony (5s)")
+  p5 <- p1 %>% add_lpsymphony_solver(gap=0.1, time_limit = 5)
+  s <- addLayer(s, solve(p5))
+}
+```
+
+We can now have a look at the solutions:
+```{r eval=TRUE, fig.align ='center'}
+plot(s, main = titles, breaks = c(0, 0.5, 1),  col = c("grey70", "#0A5640"))
+```
+
+Looking at these plots, it is clear that the solution is not highly sensitive to solver choice. At a glance it also appears that search time settings do not largely impact the solution (2 seconds vs. 5 seconds), but a larger analysis would be necessary to test the true sensitivity for this dataset. 
+
+### Considering connectivity
+Isolated and fragmented populations are often more vulnerable to extinction. Because of this, landscape connectivity is a key focus of most conservation planning exercises. Maintaining a natural network of connected landscapes may be essential for the long-term persistence of wildlife populations and ecosystems. There are a number of ways that connectivity can be added to a conservation planning problem in _prioritizr_ using constraints and penalties.
+
+We use the`gurobi` solver in remainder of examples, as it is the quickest of the three solvers to find solutions.
+
+```{r eval=TRUE}
+#basic problem formulation
+pc <- problem(salt_pu, salt_features) %>%
+  add_min_set_objective() %>%
+  add_relative_targets(0.17) %>%
+  add_binary_decisions() %>%
+  add_gurobi_solver(gap = 0.1, presolve=2)
+```
+
+```{r eval=TRUE, message=FALSE, results='hide'}
+titles2 <- c() #create vector to store plot titles
+s2 <- stack() #create empty stack to store solutions
+
+# no connectivity requirement
+  titles2 <- c(titles2, "No Connectivity")
+  s2 <- addLayer(s2, solve(pc))
+
+#connect all planning units in solution
+  #titles2 <- c(titles2, "Connected Constraint")
+  #pc2 <- pc %>% add_connected_constraints()
+  #s2 <- addLayer(s2, solve(pc2))
+  #INFEASIBLE
+
+#require at least two neighbors for each selected planning unit
+  titles2 <- c(titles2, "Neighbor Constraints (two)")
+  pc3 <- pc %>% add_neighbor_constraints(2)
+  s2 <- addLayer(s2, solve(pc3))
+
+#require at least four neighbors for each selected planning unit
+  #titles2 <- c(titles2, "Neighbor Constraints (four)")
+  #pc4 <- pc %>% add_neighbor_constraints(4)
+  #s2 <- addLayer(s2, solve(pc4))
+  #INFEASIBLE
+
+#impose small penalty for high boundary length
+  titles2 <- c(titles2, "Boundary Penalty (Low)")
+  pc5 <- pc %>% add_boundary_penalties(50,1)
+  s2 <- addLayer(s2, solve(pc5))
+
+#impose large penalty for high boundary length
+  titles2 <- c(titles2, "Boundary Penalty (High)")
+  pc6 <- pc %>% add_boundary_penalties(500,1)
+  s2 <- addLayer(s2, solve(pc6))
+
+plot(s2, main = titles2, breaks = c(0, 0.5, 1),  col = c("grey70", "#0A5640"))
+```
+
+Users may also wish to explore the `add_connectivity_penalties` and `add_corridor_constraints`, which both require additional data on conductance and landscape resistance but may strengthen the ecological basis of adding a connectivity requirement. 

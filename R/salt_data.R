@@ -10,7 +10,7 @@ NULL
 #' \code{prioritizr}. 
 #' 
 #' @details
-#' The dataset contains the following data:
+#' The dataset contains the following items:
 #' 
 #' \describe{
 #'   \item{\code{salt_pu}}{Planning unit data. A single band raster-class object 
