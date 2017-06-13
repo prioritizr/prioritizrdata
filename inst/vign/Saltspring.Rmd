@@ -8,7 +8,6 @@ fontsize: 11pt
 documentclass: article
 vignette: >
   %\VignetteIndexEntry{saltspring}
-  %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
 
@@ -16,6 +15,7 @@ vignette: >
 This tutorial is intented to provide a worked example of how raster data can be incorporated into a conservation prioritisation problem with _prioritizr_. For vector shapefile data refer to the Tasmania vignette. 
 
 The data used here is a subset of a much larger dataset for the Georgia Basin obtained as part of an online Marxan-based planning tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP). For simplicity, we focus only on Salt Spring Island, British Columbia. Salt Spring Island is central to the CDFCP region, which supports a very diverse and globally unique mix of dry forest and savannah habitats now critically-threatend due to land conversion, exotic species invasion, and altered disturbance regimes. Known broadly as the Georgia Depression-Puget Lowlands, this region includes threatened Coastal Douglas-fir forest and Oak-Savannah habitats, also referred to as Garry oak ecosystems. 
+
 
 ```{r, out.width = "400px", fig.align='center', echo=FALSE}
 knitr::include_graphics("saltspring-figure/Extent_map.jpg")
