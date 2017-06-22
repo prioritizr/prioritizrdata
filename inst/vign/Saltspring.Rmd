@@ -139,7 +139,7 @@ pc <- problem(salt_pu, salt_features) %>%
   add_gurobi_solver(gap = 0.1, presolve=2)
 ```
 
-```{r eval=FALSE, message=FALSE, results='hide'}
+```{r eval=TRUE, message=FALSE, results='hide', fig.align='center'}
 titles2 <- c() #create vector to store plot titles
 s2 <- stack() #create empty stack to store solutions
 
