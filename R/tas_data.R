@@ -8,7 +8,7 @@ NULL
 #' acheive this goal, the scenario involves using the following data:
 #' 
 #' \describe{
-#'   \item{\code{tas_pu}}{Planning unit data. The attribute table contains
+#'   \item{\code{tas_pu}}{Planning unit data. The attribute table has
 #'     three columns containing unique identifiers ('ids'), unimproved land
 #'     values ('cost'), and their existing level of protection ('status').
 #'     Units with 50\% or more of their area contained in IUCN protected areas

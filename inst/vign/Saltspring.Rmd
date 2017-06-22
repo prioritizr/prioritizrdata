@@ -4,6 +4,7 @@ output:
   rmarkdown::html_document:
     toc: true
     fig_caption: true
+    self_contained: no
 fontsize: 11pt
 documentclass: article
 vignette: >
@@ -12,20 +13,17 @@ vignette: >
 ---
 
 ## Introduction
-This tutorial is intented to provide a worked example of how raster data can be incorporated into a conservation prioritisation problem with _prioritizr_. For vector shapefile data refer to the Tasmania vignette. 
+The intent of this tutorial is to provide a worked example of how raster data can be incorporated into a conservation prioritisation problem with _prioritizr_. For spatial shapefile input data, refer to the [Tasmania vignette](Tasmania.html). 
 
 The data used here is a subset of a much larger dataset for the Georgia Basin obtained as part of an online Marxan-based planning tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP). For simplicity, we focus only on Salt Spring Island, British Columbia. Salt Spring Island is central to the CDFCP region, which supports a very diverse and globally unique mix of dry forest and savannah habitats now critically-threatend due to land conversion, exotic species invasion, and altered disturbance regimes. Known broadly as the Georgia Depression-Puget Lowlands, this region includes threatened Coastal Douglas-fir forest and Oak-Savannah habitats, also referred to as Garry oak ecosystems. 
 
-
-```{r, out.width = "400px", fig.align='center', echo=FALSE}
-knitr::include_graphics("saltspring-figure/Extent_map.jpg")
-```
+<img src="Saltspring-figure/Extent_map.jpg" alt="Extent of Coastal Douglas-fir Conservation Partnership Tool area and location of Salt Spring Island" style="width: 600px;">
 
 _Figure 1. Location of Salt Spring Island within the Coastal Douglas-fir Conservation Partnership Area_
 
 For more information on the dataset refer to the [Marxan tool portal](http://arcese.forestry.ubc.ca/marxan-tool/) and the [tool tutorial](http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf). 
 
-This tutorial will use functions from the _prioiritizr_ package. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of _prioritizr_ and the theory and mathematics behind the package. 
+This tutorial will use functions from the _prioiritizr_ package. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of _prioritizr_ and the concepts behind the package. 
 
 ```{r, echo=TRUE, message=FALSE}
 library(prioritizrdata)
@@ -43,7 +41,7 @@ First, load the data into the R environment.
 
 ```{r eval=TRUE}
 data(salt_pu) #planning units
-data(salt_features) #biodiversity feature 
+data(salt_features) #biodiversity features 
 ```
 
 Let's have a look at the planning unit data. Note that we log-transformed the raster to better visualize the variation in planning unit cost.
@@ -141,7 +139,7 @@ pc <- problem(salt_pu, salt_features) %>%
   add_gurobi_solver(gap = 0.1, presolve=2)
 ```
 
-```{r eval=TRUE, message=FALSE, results='hide'}
+```{r eval=FALSE, message=FALSE, results='hide'}
 titles2 <- c() #create vector to store plot titles
 s2 <- stack() #create empty stack to store solutions
 

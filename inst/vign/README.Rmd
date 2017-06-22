@@ -3,8 +3,9 @@ title: "prioritizrdata"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   rmarkdown::html_document:
-    toc: true
+    toc: false
     fig_caption: true
+    self_contained: no
 fontsize: 11pt
 documentclass: article
 vignette: >
@@ -21,10 +22,19 @@ vignette: >
 
 # Conservation Planning Data Sets
 
-`prioritizrdata` contains example data sets for conservation planning.
+_Prioritizrdata_ is a supplemental package to _prioritizr_ containing example datasets for conservation planning. The datasets and tutorials in this package are intended to be used alongside _prioritizr_, a package for solving systematic conservation prioritization problems using integer linear programming (ILP) techniques. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of functions, and the vignettes built into the _prioritizrdata_ package for worked examples with the example datasets.
 
-```{r}
-plot(1)
+## Overview
+This package currently contains two datasets:
+
+* __Tasmania dataset__: This dataset was included to provide an example of vector shapefile inputs to conservation planning problems. The dataset was obtained from the ["Introduction to Marxan" course](http://marxan.net/courses) and was originally a subset of a larger spatial prioritization project performed under contract to Australia's Department of Environment and Water Resources. Contained within this dataset is one planning unit layer and one features layer with the distributions of 63 vegetation classes in Tasmania, Australia. Refer to the [Tasmania vignette](Tasmania.html) for a worked example with this dataset.
+* __Salt Spring Island dataset__: This dataset was included to provide an example of raster inputs to conservation planning problems. It was obtained as part of an online [Marxan-based planning tool](http://arcese.forestry.ubc.ca/marxan-tool) created for the Coastal Douglas-fir Conservation Partnership (CDFCP). Contained within this dataset is one planning unit raster layer and one raster stack with the distributions of five key ecological communities. Refer to the [Salt Spring Island vignette](Saltspring.html) for a worked example with this dataset.
+
+## Installation 
+To install the developmental version _prioritizrdata_, use the following _R_ code:
+
+```{r, eval = FALSE}
+if(!require(devtools))
+  install.packages("devtools")
+devtools::install_github("prioritizr/prioritizrdata")
 ```
-
-**This package is under development, please check back later.**

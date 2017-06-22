@@ -13,12 +13,10 @@ prioritization problems using integer linear programming (ILP) techniques. Users
 refer to the vignettes built into the \emph{prioritizr} package to familiarize themselves 
 with the basic usage of functions, and the vignettes built into the \emph{prioritizrdata} 
 package for worked examples with the example datasets.
+ 
+See the \href{https://github.com/prioritizr}{github repository} for more details.
 }
 \details{
-See the \href{https://github.com/prioritizr}{github repository} for more details.
-
-
-
 There are two datasets in this package: 
 
 \describe{

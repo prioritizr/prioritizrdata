@@ -7,6 +7,7 @@ Description: The prioritizr package provides methods to generate spatially
     conservation planning.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson', email='jeffrey.hanson@uqconnect.edu.au', role = c('aut')),
              person(c('Richard'), 'Schuster', email='mail@richard-schuster.com', role = c('aut')),
+             person(c('Nina'), 'Morrell', email='nina.morrell@ubc.ca', role = c('aut')),
              person(c('Matthew'), 'Strimas-Mackey', email='mstrimas@gmail.com', role = c('aut')),
              person(c('Peter'), 'Arcese', email='peter.arcese@ubc.ca', role = c('aut')),             
              person(c('Joeseph'), 'Bennett', email='joseph.bennett@carleton.ca', role = c('aut', 'cre')))
