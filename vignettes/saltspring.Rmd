@@ -20,17 +20,19 @@ knitr::opts_chunk$set(fig.align = "center", eval = !is_check)
 
 ## Introduction
 
-The intent of this tutorial is to provide a worked example of how raster data can be incorporated into a conservation prioritization problem with _prioritizr_. For spatial shapefile input data, refer to the [Tasmania vignette](https://prioritizr.github.io/prioritizrdata/tasmania.html).
+The intent of this tutorial is to provide a worked example of how raster data can be incorporated into a conservation prioritization problem with _prioritizr_. For spatial shapefile input data, refer to the [Tasmania vignette](https://prioritizr.github.io/prioritizrdata/articles/tasmania.html).
 
 The data used here is a subset of a much larger dataset for the Georgia Basin obtained as part of an online Marxan-based planning tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP). For simplicity, we focus only on Salt Spring Island, British Columbia. Salt Spring Island is central to the CDFCP region, which supports a very diverse and globally unique mix of dry forest and savanna habitats now critically threatened due to land conversion, exotic species invasion, and altered disturbance regimes. Known broadly as the Georgia Depression-Puget Lowlands, this region includes threatened Coastal Douglas-fir forest and Oak-Savannah habitats, also referred to as Garry oak ecosystems.
 
-![Extent of Coastal Douglas-fir Conservation Partnership Tool area and location of Salt Spring Island](https://cdn.rawgit.com/prioritizr/prioritizrdata/inst/assets/Extent_map.jpg)
+<img src="https://rawgit.com/prioritizr/prioritizrdata/master/inst/assets/Extent_map.jpg" alt="Extent of Coastal Douglas-fir Conservation Partnership Tool area and location of Salt Spring Island" style="width: 600px;">
+
+_Figure 1. Extent of Coastal Douglas-fir Conservation Partnership Tool area and location of Salt Spring Island_
 
 For more information on the dataset refer to the [Marxan tool portal](http://arcese.forestry.ubc.ca/marxan-tool/) and the [tool tutorial](http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf).
 
 This tutorial will use functions from the _prioiritizr_ package. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of _prioritizr_ and the concepts behind the package.
 
-```{r}
+```{r, message = FALSE}
 library(prioritizrdata)
 library(prioritizr)
 library(rasterVis)

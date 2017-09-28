@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.0.0
+Version: 0.2.0.1
 Title: Conservation planning data sets
 Description: Example conservation planning data sets for use in the prioritizr package.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',

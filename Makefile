@@ -1,15 +1,11 @@
-all: clean data docs test check
+all: clean docs test check
 
 clean:
 	rm -rf man/*
-	rm -rf data/*
 	rm -rf docs/*
 	rm -rf inst/doc/*
 
-docs: man readme site vigns
-
-data:
-	Rscript --slave inst/extdata/simulate_data.R
+docs: man readme vigns site 
 
 man:
 	R --slave -e "devtools::document()"
@@ -44,4 +40,4 @@ build:
 install:
 	R --slave -e "devtools::install_local('../prioritizr')"
 
-.PHONY: clean data docs readme site test check checkwb build  install man
+.PHONY: clean docs readme site test check checkwb build install man

@@ -1,3 +1,9 @@
+# prioritizrdata 0.2.0.1 (unreleased)
+
+- Fix links in README and vignettes
+- Remove log files accidently commited
+- Fix image size in salt vignette
+
 # prioritizrdata 0.2.0.0 (unreleased)
 
 - Created package website.
