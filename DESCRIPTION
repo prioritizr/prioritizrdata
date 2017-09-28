@@ -1,37 +1,45 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.0.0.2
-Title: Example data sets for conservation planning
-Description: The prioritizr package provides methods to generate spatially
-    explicit prioritizations. This R package contains example data sets for
-    conservation planning.
-Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson', email='jeffrey.hanson@uqconnect.edu.au', role = c('aut')),
-             person(c('Richard'), 'Schuster', email='mail@richard-schuster.com', role = c('aut')),
-             person(c('Nina'), 'Morrell', email='nina.morrell@ubc.ca', role = c('aut')),
-             person(c('Matthew'), 'Strimas-Mackey', email='mstrimas@gmail.com', role = c('aut')),
-             person(c('Peter'), 'Arcese', email='peter.arcese@ubc.ca', role = c('aut')),             
-             person(c('Joeseph'), 'Bennett', email='joseph.bennett@carleton.ca', role = c('aut', 'cre')))
+Version: 0.2.0.0
+Title: Conservation planning data sets
+Description: Example conservation planning data sets for use in the prioritizr package.
+Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
+               email='jeffrey.hanson@uqconnect.edu.au', role = c('aut')),
+             person(c('Richard'), 'Schuster',
+               email='mail@richard-schuster.com', role = c('aut', 'cre')),
+             person(c('Nina'), 'Morrell',
+               email='nina.morrell@ubc.ca', role = c('aut')),
+             person(c('Matthew'), 'Strimas-Mackey',
+               email='mstrimas@gmail.com', role = c('aut')),
+             person(c('Matthew', 'E'), 'Watts',
+               email='m.watts@uq.edu.au', role = c('aut')),
+             person(c('Peter'), 'Arcese',
+               email='peter.arcese@ubc.ca', role = c('aut')),
+             person(c('Joeseph'), 'Bennett',
+               email='joseph.bennett@carleton.ca', role = c('aut')),
+             person(c('Hugh', 'P'), 'Possingham',
+               email='hugh.possingham@tnc.org', role = c('aut')))
 Imports:
     utils,
-    methods,
-    assertthat,
+    methods
 Suggests:
     testthat,
     knitr,
-    rgeos
+    rgeos,
+    rasterVis,
+    viridis,
+    prioritizr
 Depends:
     R(>= 3.3.2),
     raster,
     sp
-Enhances:
-    prioritizr
 License: GPL-3
 LazyData: true
 URL: https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
-Collate: 
+Collate:
     'internal.R'
     'package.R'
     'salt_data.R'

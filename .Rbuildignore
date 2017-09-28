@@ -9,4 +9,8 @@ NEWS.md
 .gitkeep
 ^Makefile$
 cran-comments.md
-
+_pkgdown.yml
+check.log
+test.log
+README.Rmd
+inst/assets

@@ -59,4 +59,3 @@ NULL
 
 #' @rdname salt_data
 "salt_features" 
-#'

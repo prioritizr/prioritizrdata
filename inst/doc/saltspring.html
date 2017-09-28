@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Salt Spring Island Worked Example</title>
+
+<script src="saltspring_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="saltspring_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="saltspring_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="saltspring_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="saltspring_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="saltspring_files/navigation-1.1/tabsets.js"></script>
+<link href="saltspring_files/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="saltspring_files/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Salt Spring Island Worked Example</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#exploring-the-data">Exploring the data</a></li>
+<li><a href="#example-usage">Example Usage</a><ul>
+<li><a href="#formulating-the-problem">Formulating the Problem</a></li>
+<li><a href="#solving-the-problem">Solving the problem</a></li>
+<li><a href="#considering-connectivity">Considering connectivity</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The intent of this tutorial is to provide a worked example of how raster data can be incorporated into a conservation prioritization problem with <em>prioritizr</em>. For spatial shapefile input data, refer to the <a href="https://prioritizr.github.io/prioritizrdata/tasmania.html">Tasmania vignette</a>.</p>
+<p>The data used here is a subset of a much larger dataset for the Georgia Basin obtained as part of an online Marxan-based planning tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP). For simplicity, we focus only on Salt Spring Island, British Columbia. Salt Spring Island is central to the CDFCP region, which supports a very diverse and globally unique mix of dry forest and savanna habitats now critically threatened due to land conversion, exotic species invasion, and altered disturbance regimes. Known broadly as the Georgia Depression-Puget Lowlands, this region includes threatened Coastal Douglas-fir forest and Oak-Savannah habitats, also referred to as Garry oak ecosystems.</p>
+<div class="figure">
+<img src="inst/assets/Extent_map.jpg" alt="Extent of Coastal Douglas-fir Conservation Partnership Tool area and location of Salt Spring Island" />
+<p class="caption">Extent of Coastal Douglas-fir Conservation Partnership Tool area and location of Salt Spring Island</p>
+</div>
+<p>For more information on the dataset refer to the <a href="http://arcese.forestry.ubc.ca/marxan-tool/">Marxan tool portal</a> and the <a href="http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf">tool tutorial</a>.</p>
+<p>This tutorial will use functions from the <em>prioiritizr</em> package. Users can refer to the vignettes built into the <em>prioritizr</em> package to familiarize themselves with the basic usage of <em>prioritizr</em> and the concepts behind the package.</p>
+<pre class="r"><code>library(prioritizrdata)</code></pre>
+<pre><code>## Loading required package: raster</code></pre>
+<pre><code>## Loading required package: sp</code></pre>
+<pre class="r"><code>library(prioritizr)
+library(rasterVis)</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: latticeExtra</code></pre>
+<pre><code>## Loading required package: RColorBrewer</code></pre>
+<pre class="r"><code>library(viridis)</code></pre>
+<pre><code>## Loading required package: viridisLite</code></pre>
+</div>
+<div id="exploring-the-data" class="section level2">
+<h2>Exploring the data</h2>
+<p>This dataset contains two components. First, a single-band planning unit raster layer where each one hectare pixel represents a planning unit and contains its corresponding cost (BC Land Assessment 2015). Second, a raster stack containing ecological community feature data. Field and remote sensed data were used to calculate the probability of occurrence of five key ecological communities found on Salt Spring island. Each layer in the stack represents a different community type. In order these are; Old Forest, Savannah, Wetland, Shrub, and a layer representing the inverse probability of occurrence of human commensal species. For a given layer, the cell value indicates the composite probability of encountering the suite of bird species most commonly associated with that community type.</p>
+<p>First, load the data into the R environment.</p>
+<pre class="r"><code>data(salt_pu) # planning units
+data(salt_features) # biodiversity features</code></pre>
+<p>Let’s have a look at the planning unit data. Note that we log-transformed the raster to better visualize the variation in planning unit cost.</p>
+<pre class="r"><code>print(salt_pu)</code></pre>
+<pre><code>## class       : RasterLayer 
+## dimensions  : 270, 190, 51300  (nrow, ncol, ncell)
+## resolution  : 100, 100  (x, y)
+## extent      : 455089.9, 474089.9, 5395114, 5422114  (xmin, xmax, ymin, ymax)
+## coord. ref. : +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+## data source : in memory
+## names       : SSI_cost7 
+## values      : 2552, 1000000000  (min, max)</code></pre>
+<pre class="r"><code>levelplot(salt_pu, main = &quot;Planning Units and Cost&quot;, zscaleLog = TRUE,
+          margin = FALSE, col.regions = rev(viridis(100)))</code></pre>
+<p><img src="saltspring_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Next, let’s look at the feature data.</p>
+<pre class="r"><code>print(salt_features)</code></pre>
+<pre><code>## class       : RasterStack 
+## dimensions  : 270, 190, 51300, 5  (nrow, ncol, ncell, nlayers)
+## resolution  : 100, 100  (x, y)
+## extent      : 455089.9, 474089.9, 5395114, 5422114  (xmin, xmax, ymin, ymax)
+## coord. ref. : +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+## names       : Old_Forest,  Savannah,   Wetland,     Shrub, Human_negative 
+## min values  :  0.3595050, 0.2979212, 0.1132785, 0.4013101,      0.3703639 
+## max values  :  0.9312289, 0.6608167, 0.6434712, 0.8249719,      0.9032656</code></pre>
+<pre class="r"><code>levelplot(salt_features, main = &quot;Ecological Features&quot;, layout = c(3, 2),
+          col.regions = rev(viridis(100)))</code></pre>
+<p><img src="saltspring_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="example-usage" class="section level2">
+<h2>Example Usage</h2>
+<p>We will only cover a few of the many ways that you can parameterize a problem in this tutorial. The examples we have chosen are intended to highlight how the use of different parameters can impact the solution, or in some cases have very little impact.</p>
+<div id="formulating-the-problem" class="section level3">
+<h3>Formulating the Problem</h3>
+<p>In these examples we use the minimum set objective to fulfill all targets and constraints for the smallest cost. This objective is the same as the objective function used by Marxan. For simplicity we set all of the targets at the same level, 17%, to reflect the <a href="https://www.cbd.int/sp/targets/">Aichi</a> biodiversity target to “safeguard” at least 17% of terrestrial ecosystems by 2020. Because properties on Salt Spring island can either be aquired in their entirety or not at all, we leave the decision framework as the default; binary decision making. This means the planning unit is either selected in the solution or not selected - no partial planning units.</p>
+<p>To create a problem object:</p>
+<pre class="r"><code>p1 &lt;- problem(salt_pu, salt_features) %&gt;%
+      add_min_set_objective() %&gt;%
+      add_relative_targets(0.17) %&gt;%
+      add_binary_decisions()</code></pre>
+<p>Note that the <code>%&gt;%</code> notation is necessary to attach the objectives and targets to the correct problem object. As binary decisions is the default, it does not explicitly need to be added to the problem, but we do add it here for clarity.</p>
+</div>
+<div id="solving-the-problem" class="section level3">
+<h3>Solving the problem</h3>
+<p><em>Prioritizr</em> supports three different integer linear programming solver packages: <code>gurobi</code>, <code>Rsymphony</code>, and <code>lpsymphony</code>. There are pros and cons to each of these, but the actual impact of solver type on the planning units in the solution should be relatively minor.</p>
+<p>First, remember that the solvers must be installed. You can check if these packages are installed by running the code below.</p>
+<pre class="r"><code>library(gurobi)
+library(Rsymphony)
+library(lpsymphony)</code></pre>
+<p>Trying out these different solvers may look something like this:</p>
+<pre class="r"><code>titles &lt;- c() # create vector to store plot titles
+s &lt;- stack() # create empty stack to store solutions
+
+# create new problem object with added solver
+# limit the time spent searching for the optimal solution to 5 seconds
+if (requireNamespace(&quot;Rsymphony&quot;, quietly =T)){
+  titles &lt;- c(titles, &quot;Rsymphony (5s)&quot;)
+  p2 &lt;- p1 %&gt;%
+        add_rsymphony_solver(time_limit = 5)
+  s &lt;- addLayer(s, solve(p2))
+}
+
+if (requireNamespace(&quot;Rsymphony&quot;, quietly = T)){
+  titles &lt;- c(titles, &quot;Rsymphony (10s)&quot;)
+  p3 &lt;- p1 %&gt;%
+        add_rsymphony_solver(time_limit = 10)
+  s &lt;- addLayer(s, solve(p3))
+}
+
+if (requireNamespace(&quot;gurobi&quot;, quietly = T)){
+  titles &lt;- c(titles, &quot;Gurobi (5s)&quot;)
+  p4 &lt;- p1 %&gt;%
+        add_gurobi_solver(gap = 0.1, presolve = 2, time_limit = 5)
+  s &lt;- addLayer(s, solve(p4))
+}
+
+if (requireNamespace(&quot;lpsymphony&quot;, quietly = T)){
+  titles &lt;- c(titles, &quot;lpsymphony (10s)&quot;)
+  p5 &lt;- p1 %&gt;%
+        add_lpsymphony_solver(gap = 0.1, time_limit = 10)
+  s &lt;- addLayer(s, solve(p5))
+}</code></pre>
+<p>We can now have a look at the solutions:</p>
+<pre class="r"><code>plot(s, main = titles, breaks = c(0, 0.5, 1),  col = c(&quot;grey70&quot;, &quot;#0A5640&quot;))</code></pre>
+<p><img src="saltspring_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Looking at these plots, it is clear that the solution is not highly sensitive to solver choice. At a glance it also appears that search time settings do not largely impact the solution (2 seconds vs. 5 seconds), but a larger analysis would be necessary to test the true sensitivity for this dataset.</p>
+</div>
+<div id="considering-connectivity" class="section level3">
+<h3>Considering connectivity</h3>
+<p>Isolated and fragmented populations are often more vulnerable to extinction. Because of this, landscape connectivity is a key focus of most conservation planning exercises. Maintaining a natural network of connected landscapes may be essential for the long-term persistence of wildlife populations and ecosystems. There are a number of ways that connectivity can be added to a conservation planning problem in <em>prioritizr</em> using constraints and penalties.</p>
+<p>We use the<code>gurobi</code> solver in remainder of examples, as it is the quickest of the three solvers to find solutions.</p>
+<pre class="r"><code># basic problem formulation
+pc &lt;- problem(salt_pu, salt_features) %&gt;%
+      add_min_set_objective() %&gt;%
+      add_relative_targets(0.17) %&gt;%
+      add_binary_decisions() %&gt;%
+      add_gurobi_solver(gap = 0.1, presolve = 2)</code></pre>
+<pre class="r"><code>titles2 &lt;- c() # create vector to store plot titles
+s2 &lt;- stack() # create empty stack to store solutions
+
+# no connectivity requirement
+titles2 &lt;- c(titles2, &quot;No Connectivity&quot;)
+s2 &lt;- addLayer(s2, solve(pc))
+
+# require at least three neighbors for each selected planning unit
+titles2 &lt;- c(titles2, &quot;Neighbor Constraints (three)&quot;)
+pc3 &lt;- pc %&gt;% add_neighbor_constraints(2)
+s2 &lt;- addLayer(s2, solve(pc3))
+
+# impose small penalty for high boundary length
+titles2 &lt;- c(titles2, &quot;Boundary Penalty (Low)&quot;)
+pc5 &lt;- pc %&gt;% add_boundary_penalties(50, 1)
+s2 &lt;- addLayer(s2, solve(pc5))
+
+# impose large penalty for high boundary length
+titles2 &lt;- c(titles2, &quot;Boundary Penalty (High)&quot;)
+pc6 &lt;- pc %&gt;% add_boundary_penalties(500, 1)
+s2 &lt;- addLayer(s2, solve(pc6))
+
+# plot solutions
+plot(s2, main = titles2, breaks = c(0, 0.5, 1),  col = c(&quot;grey70&quot;, &quot;#0A5640&quot;))</code></pre>
+<p><img src="saltspring_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Users may also wish to explore the <code>add_connectivity_penalties</code> and <code>add_corridor_constraints</code>, which both require additional data on conductance and landscape resistance but may strengthen the ecological basis of adding a connectivity requirement.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

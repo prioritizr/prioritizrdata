@@ -36,5 +36,6 @@ NULL
 #' }
 #'
 #' @name prioritizrdata
+#'
 #' @docType package
 NULL

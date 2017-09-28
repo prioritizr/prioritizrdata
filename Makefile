@@ -1,63 +1,47 @@
-all: clean docs readme vigns site test check install
+all: clean data docs test check
 
 clean:
+	rm -rf man/*
+	rm -rf data/*
 	rm -rf docs/*
 	rm -rf inst/doc/*
-	rm -rf vignettes/*
 
-docs:
+docs: man readme site vigns
+
+data:
+	Rscript --slave inst/extdata/simulate_data.R
+
+man:
 	R --slave -e "devtools::document()"
 
 readme:
-	rm -rf inst/vign/readme-figure
-	rm -rf inst/vign/gh-README.Rmd
-	rm -rf inst/vign/gh-README.md
-	cd inst/vign;\
-	cp README.Rmd gh-README.Rmd;\
-	sed -i 1,14d gh-README.Rmd;\
-	sed -i -e '1i---\' gh-README.Rmd;\
-	sed -i -e '1ioutput: github_document\' gh-README.Rmd;\
-	sed -i -e '1ititle: prioritizrdata\' gh-README.Rmd;\
-	sed -i -e '1i---\' gh-README.Rmd;\
-	R --slave -e "knitr::knit('gh-README.Rmd')"
-	rm -rf inst/vign/gh-README.Rmd
-	mv -f inst/vign/gh-README.md README.md
-	sed -i 1,5d README.md
-	mv -f inst/vign/figure inst/vign/readme-figure
-	sed -i 's|figure|inst/vign/readme-figure|g' README.md
+	R --slave -e "rmarkdown::render('README.Rmd')"
 
 vigns:
-	mkdir -p vignettes
-	cp -f inst/vign/*.Rmd vignettes/
-	R --slave -e "devtools::load_all();devtools::build_vignettes()"
-	rm -rf vignettes/*
-	mkdir -p vignettes
-	cp -f inst/vign/placeholder.Rmd vignettes/syntax.Rmd
-	cp -f inst/vign/placeholder.Rmd vignettes/build.Rmd
-	cp -f inst/vign/placeholder.Rmd vignettes/modify.Rmd
-	cp -f inst/vign/placeholder.Rmd vignettes/README.Rmd
-	touch inst/doc/*
+	R --slave -e "devtools::build_vignettes()"
 
 site:
-	mkdir -p vignettes
-	cp -f inst/vign/*.Rmd vignettes
-	R --slave -e "devtools::load_all();pkgdown::build_site()"
-	rm -rf vignettes/*
-	rm -rf inst/doc/*
+	R --slave -e "pkgdown::build_site()"
 
 test:
-	R --slave -e "devtools::test()"
+	R --slave -e "devtools::test()" > test.log 2>&1
+	rm -f tests/testthat/Rplots.pdf
 
 check:
-	R --slave -e "devtools::check()"
+	echo "\n===== R CMD CHECK =====\n" > check.log 2>&1
+	R --slave -e "devtools::check()" >> check.log 2>&1
+	# echo "\n===== SPELL CHECK =====\n" >> check.log 2>&1
+	# R --slave -e "devtools::spell_check(ignore = as.character(read.table('inst/extdata/dictionary.txt')[[1]]))" >> check.log 2>&1
+	# echo "\n===== GOOD PRACTICE CHECK =====\n" >> check.log 2>&1
+	# R --slave -e "goodpractice::gp()" >> check.log 2>&1
 
-wbcheck:
+checkwb:
 	R --slave -e "devtools::build_win()"
 
 build:
 	R --slave -e "devtools::build()"
 
 install:
-	R --slave -e "devtools::install_local('../prioritizrdata')"
+	R --slave -e "devtools::install_local('../prioritizr')"
 
-.PHONY: clean install docs readme test check build 
+.PHONY: clean data docs readme site test check checkwb build  install man

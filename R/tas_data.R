@@ -7,6 +7,9 @@ NULL
 #' the main types of vegetation found in Tasmania for minimal cost. To
 #' acheive this goal, the scenario involves using the following data:
 #' 
+#' @details
+#' The dataset contains the following items:
+#'
 #' \describe{
 #'   \item{\code{tas_pu}}{Planning unit data. The attribute table has
 #'     three columns containing unique identifiers ('ids'), unimproved land
@@ -56,5 +59,3 @@ NULL
 
 #' @rdname tas_data
 "tas_features"
-
-

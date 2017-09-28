@@ -1,0 +1,121 @@
+---
+title: "Tasmania Worked Example"
+output:
+  rmarkdown::html_document:
+    toc: true
+    fig_caption: true
+    sefl_contained: no
+fontsize: 11pt
+documentclass: article
+vignette: >
+  %\VignetteIndexEntry{tasmania}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+```{r, include = FALSE}
+is_check <- ("CheckExEnv" %in% search()) || any(c("_R_CHECK_TIMINGS_",
+             "_R_CHECK_LICENSE_") %in% names(Sys.getenv()))
+knitr::opts_chunk$set(fig.align = "center", eval = !is_check)
+```
+
+## Introduction
+
+The intent of this tutorial is to provide a worked example of how spatial shapefile data can be incorporated into a conservation prioritization problem with _prioritizr_. For raster data, refer to the [Salt Spring Island vignette](saltspring.html).
+
+The dataset was obtained from the ["Introduction to Marxan" course](http://marxan.net/courses) and was originally a subset of a larger spatial prioritization project performed under contract to Australia's Department of Environment and Water Resources.
+
+This tutorial will use functions from the _prioiritizr_ package. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of _prioritizr_ and the concepts behind the package.
+
+```{r, message = FALSE}
+library(prioritizrdata)
+library(prioritizr)
+library(rasterVis)
+library(viridis)
+```
+
+## Exploring the data
+
+This dataset contains two components. First, a planning unit spatial layer, where the attribute table has three columns containing unique identifiers ('ids'), unimproved land values ('cost'), and their existing level of protection ('status'). Units with 50% or more of their area contained in IUCN protected areas are associated with a status of 2, otherwise they are associated with a value of 0. Users familiar with Marxan formatting will notice that this formatting follows Marxan input file specifications. In Marxan, planning units must be described in a table containing one row for each planning unit with a unique ID and the corresponding cost. This will become important for problem formulation with this dataset, as both the `problem` and `marxan_problem` functions can be used.
+
+The second component of this dataset is the feature data. This is a `RasterStack` class object, where each layer in the  stack represents the distribution of a different vegetation class in Tasmania, Australia. There are 62 vegetation classes in total. For a given layer, cells indicate the presence (value of 1) or absence (value of 0) of the vegetation class in an area.
+
+First, load the data into the R environment:
+
+```{r}
+data(tas_pu) # planning units
+data(tas_features) # biodiversity features
+```
+
+Let's have a look at the planning unit data.
+
+```{r}
+print(tas_pu)
+spplot(tas_pu, zcol = "cost", names.attr = "Cost",
+       main = "Planning Units and Cost",
+       col.regions = rev(viridis(100)))
+```
+
+Next, the feature data. We've only plotted the first four features as an example. Pixels value denotes the presence or absence of that feature within the study area extent.
+
+```{r}
+print(tas_features)
+levelplot(tas_features[[1:4]], main = "Ecological Features", layout = c(2,2),
+          col.regions = rev(magma(100)))
+```
+
+## Example Usage
+
+Because the Tasmania planning units are a spatial polygon layer, not a raster, there is more flexibility in the type of costs and features that can be used in problem formulation. That said, there is a trade-off with the efficiency of solving. Inputting planning units as a raster will usually produce solutions faster, but to take advantage of this you will have to coerce all of the data into the same raster grid dimensions, which is not always feasible or desirable.
+
+We will give an example of problem formulation with this dataset using the fully customizable `problem` function, and then the simpler but more limited `marxan_problem` function as a comparison.
+
+### Marxan problem formulation
+
+The files in this dataset follow the conventions used by Marxan, so problems can be formulated simply and easily with the Marxan problem function, which provides a single function wrapper for problem objects, penalties, and constraints. The problem object produced by this function will still use an exact integer linear programming solver, so in that way departs from traditional Marxan solving with simulated annealing. The `marxan_problem` approach is considerably more limited than the key _prioritizr_ problem functions, but has the same functionality as Marxan and may therefore be handy to users familiar with Marxan.
+
+All problem objects formulated with `marxan_problem` use the minimum set objective. Targets can be either relative or absolute, and planning units can be specified for masking in or out using the `locked_in` and `locked_out` arguments. To favor clumped solutions, use the `penalty` argument to impose a penalty on solutions with high boundary lengths (equivalent to the Boundary Length Modifier (BLM) used in Marxan), and the `edge_factor` argument to scale the penalty for edges that do not have neighboring planning units, such as coastline. Cost does not have to be explicitly identified with the `marxan_problem`, because if column names follow Marxan conventions, the cost column can be located by the function.
+
+For simplicity we set all of the targets at the same level, 17%, to reflect the [Aichi](https://www.cbd.int/sp/targets/) biodiversity target to "safeguard" at least 17% of terrestrial ecosystems by 2020. For example, to prioritize planning units in Tasmania that meet the 17% representation target at the least cost:
+
+```{r, message = FALSE, results = "hide"}
+p1 <- marxan_problem(x = tas_pu, features = tas_features,
+                     targets = 0.17, targets_type = "relative",
+                     penalty = 0.01, edge_factor = 0.5)
+```
+
+Note: the formulation of a Marxan problem is slightly different for Marxan input files (i.e. with a '.dat' extension). Refer to the help pages and the quick start guide for instructions on working with these files.
+
+### Problem formulation with _prioritizr_ problem functions
+
+This same problem can be formulated with the key _prioritizr_ functions. We recommend this approach for any problem more complex than the simple problem described above, and when input data do not precisely match Marxan formatting conventions. In this example, we leave the decision framework as the default; binary decision making. This means the planning unit is either selected in the solution or not selected - no partial planning units are permitted.
+
+To formulate this problem:
+
+```{r}
+p2 <- problem(tas_pu, tas_features) %>%
+      add_min_set_objective() %>%
+      add_relative_targets(0.17) %>%
+      add_binary_decisions() %>%
+      add_boundary_penalties(penalty = 0.01, edge_factor = 0.5)
+```
+
+### Solving a problem
+
+_Prioritizr_ supports three different integer linear programming solver packages: `gurobi`, `Rsymphony`, and `lpsymphony`. There are pros and cons to each of these, but the actual impact of solver type on the planning units in the solution should be relatively minor.
+
+First, remember that the solvers must be installed and loaded separately. We use the`gurobi` solver in this example, as it is the quickest of the three solvers to find solutions. Both Marxan problem objects and prioritizr problem objects are solved in the same way
+
+```{r}
+s1 <- solve(p1) # marxan problem
+s2 <- solve(p2) # prioritizr problem
+```
+
+These solutions can now be plotted.
+
+```{r}
+par(mfrow = c(1, 2))
+spplot(s1, "solution", col.regions = c('grey90', 'darkgreen'),
+       main = "marxan_problem")
+spplot(s2, "solution", col.regions = c('grey90', 'darkgreen'),
+       main = "full formulation")
+```
