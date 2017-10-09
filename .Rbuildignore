@@ -12,5 +12,8 @@ cran-comments.md
 _pkgdown.yml
 check.log
 test.log
+gp.log
+spell.log
+inst/extdata/dictionary.txt
 README.Rmd
 inst/assets

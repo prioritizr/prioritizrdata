@@ -81,7 +81,7 @@
 <p>This dataset contains two components. First, a planning unit spatial layer, where the attribute table has three columns containing unique identifiers (‘ids’), unimproved land values (‘cost’), and their existing level of protection (‘status’). Units with 50% or more of their area contained in IUCN protected areas are associated with a status of 2, otherwise they are associated with a value of 0. Users familiar with Marxan formatting will notice that this formatting follows Marxan input file specifications. In Marxan, planning units must be described in a table containing one row for each planning unit with a unique ID and the corresponding cost. This will become important for problem formulation with this dataset, as both the <code>problem</code> and <code>marxan_problem</code> functions can be used.</p>
 <p>The second component of this dataset is the feature data. This is a <code>RasterStack</code> class object, where each layer in the stack represents the distribution of a different vegetation class in Tasmania, Australia. There are 62 vegetation classes in total. For a given layer, cells indicate the presence (value of 1) or absence (value of 0) of the vegetation class in an area.</p>
 <p>First, load the data into the R environment:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(tas_pu) <span class="co"># planning units</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(tas_pu)       <span class="co"># planning units</span>
 <span class="kw">data</span>(tas_features) <span class="co"># biodiversity features</span></code></pre></div>
 <p>Let’s have a look at the planning unit data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(tas_pu)</code></pre></div>
@@ -159,7 +159,7 @@
 ## Presolved: 6324 rows, 4253 columns, 14111 nonzeros
 ## 
 ## 
-## Root relaxation: objective 4.944464e+04, 4062 iterations, 0.04 seconds
+## Root relaxation: objective 4.944464e+04, 4062 iterations, 0.05 seconds
 ## 
 ##     Nodes    |    Current Node    |     Objective Bounds      |     Work
 ##  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
@@ -178,7 +178,7 @@
 ##   GUB cover: 6
 ##   Zero half: 2
 ## 
-## Explored 0 nodes (4546 simplex iterations) in 0.30 seconds
+## Explored 0 nodes (4546 simplex iterations) in 0.36 seconds
 ## Thread count was 1 (of 4 available processors)
 ## 
 ## Solution count 4: 55821.5 57780.6 62172.9 156870 
@@ -202,7 +202,7 @@
 ## Presolved: 6324 rows, 4253 columns, 14111 nonzeros
 ## 
 ## 
-## Root relaxation: objective 4.944464e+04, 4062 iterations, 0.06 seconds
+## Root relaxation: objective 4.944464e+04, 4062 iterations, 0.05 seconds
 ## 
 ##     Nodes    |    Current Node    |     Objective Bounds      |     Work
 ##  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
@@ -221,7 +221,7 @@
 ##   GUB cover: 6
 ##   Zero half: 2
 ## 
-## Explored 0 nodes (4546 simplex iterations) in 0.38 seconds
+## Explored 0 nodes (4546 simplex iterations) in 0.35 seconds
 ## Thread count was 1 (of 4 available processors)
 ## 
 ## Solution count 4: 55821.5 57780.6 62172.9 156870 
@@ -230,11 +230,16 @@
 ## Optimal solution found (tolerance 1.00e-01)
 ## Best objective 5.582146977489e+04, best bound 5.184654859435e+04, gap 7.1208%</code></pre>
 <p>These solutions can now be plotted.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw">spplot</span>(s1, <span class="st">"solution"</span>, <span class="dt">col.regions =</span> <span class="kw">c</span>(<span class="st">'grey90'</span>, <span class="st">'darkgreen'</span>),
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reformat solution column to make legends appear nicely</span>
+s1<span class="op">$</span>solution_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">factor</span>(s1<span class="op">$</span>solution_<span class="dv">1</span>)
+s2<span class="op">$</span>solution_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">factor</span>(s1<span class="op">$</span>solution_<span class="dv">1</span>)
+
+<span class="co"># plot solutions</span>
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">spplot</span>(s1, <span class="st">"solution_1"</span>, <span class="dt">col.regions =</span> <span class="kw">c</span>(<span class="st">'grey90'</span>, <span class="st">'darkgreen'</span>),
        <span class="dt">main =</span> <span class="st">"marxan_problem"</span>)</code></pre></div>
 <p><img src="tasmania_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spplot</span>(s2, <span class="st">"solution"</span>, <span class="dt">col.regions =</span> <span class="kw">c</span>(<span class="st">'grey90'</span>, <span class="st">'darkgreen'</span>),
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spplot</span>(s2, <span class="st">"solution_1"</span>, <span class="dt">col.regions =</span> <span class="kw">c</span>(<span class="st">'grey90'</span>, <span class="st">'darkgreen'</span>),
        <span class="dt">main =</span> <span class="st">"full formulation"</span>)</code></pre></div>
 <p><img src="tasmania_files/figure-html/unnamed-chunk-9-2.png" width="672" style="display: block; margin: auto;"></p>
 </div>

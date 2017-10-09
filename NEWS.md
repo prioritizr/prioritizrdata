@@ -1,3 +1,11 @@
+# prioritizrdata 0.2.0.2 (unreleased)
+
+- Fix spelling in documentation
+- Update broken links
+- Lint R files
+- Make vignttes compatible with new version of prioritizr
+- Add prioritizr to Remotes in DESCRIPTION
+
 # prioritizrdata 0.2.0.1 (unreleased)
 
 - Fix links in README and vignettes

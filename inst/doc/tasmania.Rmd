@@ -42,7 +42,7 @@ The second component of this dataset is the feature data. This is a `RasterStack
 First, load the data into the R environment:
 
 ```{r}
-data(tas_pu) # planning units
+data(tas_pu)       # planning units
 data(tas_features) # biodiversity features
 ```
 
@@ -113,9 +113,14 @@ s2 <- solve(p2) # prioritizr problem
 These solutions can now be plotted.
 
 ```{r}
+# reformat solution column to make legends appear nicely
+s1$solution_1 <- factor(s1$solution_1)
+s2$solution_1 <- factor(s1$solution_1)
+
+# plot solutions
 par(mfrow = c(1, 2))
-spplot(s1, "solution", col.regions = c('grey90', 'darkgreen'),
+spplot(s1, "solution_1", col.regions = c('grey90', 'darkgreen'),
        main = "marxan_problem")
-spplot(s2, "solution", col.regions = c('grey90', 'darkgreen'),
+spplot(s2, "solution_1", col.regions = c('grey90', 'darkgreen'),
        main = "full formulation")
 ```

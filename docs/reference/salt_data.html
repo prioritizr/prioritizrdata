@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Saltspring Island conservation planning scenario — salt_data • prioritizrdata</title>
+<title>Salt Spring Island conservation planning data — salt_data • prioritizrdata</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -79,15 +79,16 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Saltspring Island conservation planning scenario</h1>
+    <h1>Salt Spring Island conservation planning data</h1>
     </div>
 
     
-    <p>This scenario involves making a prioritsation to adequately conserve
-key ecological communities on Saltspring Island, British Columbia. For a worked example 
-with this dataset, refer to the <code>SaltSpring</code> vignette. The 
-scenario is intended to provide an example of how Raster-class input data can be used in 
-<code>prioritizr</code>.</p>
+    <p>This data was obtained as part of an online Marxan-based planning
+tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP).
+For more information refer to Schuster <em>et al.</em> 2017. For a
+worked example  with this dataset, refer to the
+<a href = 'inst/doc/saltspring.html'>Salt Spring vignette</a>. The scenario is
+intended to provide an example of how raster planning unit data can be used #' in the <em>prioritizr</em> package.</p>
     
 
     <pre class="usage"><span class='fu'>data</span>(<span class='no'>salt_features</span>)
@@ -106,22 +107,31 @@ scenario is intended to provide an example of how Raster-class input data can be
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The dataset contains the following items:</p><dl class='dl-horizontal'>
-  <dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band raster-class object 
-  where each one hectare pixel contains the corresponding monetary cost of 
-  acquisition (BC Land Assessment 2015).</p></dd>
-  <dt><code>salt_features</code></dt><dd><p>Biodiversity feature data. The probability of occurrence 
-  of five key ecological communities found on Salt Spring island. Each layer in the stack 
-  represents a different community type. In order these are; Old Forest, Savannah, 
-  Wetland, Shrub, and a layer representing the inverse probability of occurrence of 
-  human commensal species. For a given layer, the cell value indicates the composite probability of 
-  encountering the suite of bird species most commonly associated with that community type.</p></dd>
+    <dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band
+    <code>RasterLayer-class</code> object where each one hectare pixel
+    contains the monetary cost of acquiring the area (BC Land Assessment
+    2015).</p></dd>
+    <dt><code>salt_features</code></dt><dd><p>Biodiversity feature data. The probability of
+    occurrence commensal of five key ecological communities found on Salt
+    Spring island. Each layer in the <code>RasterStack-class</code>
+    object represents a different community type. These classes
+    are old forest (1), savanna (2), wetland (3), shrub (4), and a
+    layer representing the inverse probability of occurrence of human
+    commensal species (5). For a given layer, the values indicate the
+    composite probability of encountering the suite of bird species most
+    commonly associated with that community type.</p></dd>
 </dl>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This data was obtained as part of an online Marxan-based planning 
-tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP). For more information refer 
-to <a href = 'http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>Schuster et al. 2017</a>.</p>
+    <p>BC Assessment (2015) Property Information Services. Available at
+<a href = 'http://www.bcassessment.ca'>http://www.bcassessment.ca</a> [Date Accessed 2016/06/13].</p>
+<p>Morrell N, Schuster R, Crombie M, and Arcese P (2017) <em>A Prioritization
+Tool for the Conservation of Coastal Douglas-fir Forest and Savannah
+Habitats of the Georgia Basin.</em> The Nature Trust of British Colombia, Coastal
+Douglas Fir Conservation Partnership, and the Department of Forest and
+Conservation Sciences, University of British Colombia. Available at
+<a href = 'http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf</a> [Date Accessed 2017/10/09].</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

@@ -70,7 +70,7 @@ We will only cover a few of the many ways that you can parameterize a problem in
 
 ### Formulating the Problem
 
-In these examples we use the minimum set objective to fulfill all targets and constraints for the smallest cost. This objective is the same as the objective function used by Marxan. For simplicity we set all of the targets at the same level, 17%, to reflect the [Aichi](https://www.cbd.int/sp/targets/) biodiversity target to "safeguard" at least 17% of terrestrial ecosystems by 2020. Because properties on Salt Spring island can either be aquired in their entirety or not at all, we leave the decision framework as the default; binary decision making. This means the planning unit is either selected in the solution or not selected - no partial planning units.
+In these examples we use the minimum set objective to fulfill all targets and constraints for the smallest cost. This objective is the same as the objective function used by Marxan. For simplicity, we will set biodiversity targets at 17% to reflect the [Aichi Biodiversity Target 11](https://www.cbd.int/sp/targets/). Because properties on Salt Spring island can either be acquired in their entirety or not at all, we leave the decision framework as the default; binary decision making. This means the planning unit is either selected in the solution or not selected - no partial planning units.
 
 To create a problem object:
 
