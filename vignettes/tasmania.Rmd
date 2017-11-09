@@ -51,8 +51,7 @@ Let's have a look at the planning unit data.
 ```{r}
 print(tas_pu)
 spplot(tas_pu, zcol = "cost", names.attr = "Cost",
-       main = "Planning Units and Cost",
-       col.regions = rev(viridis(100)))
+       main = "Planning Units and Cost", col.regions = rev(viridis(100)))
 ```
 
 Next, the feature data. We've only plotted the first four features as an example. Pixels value denotes the presence or absence of that feature within the study area extent.
@@ -78,12 +77,12 @@ All problem objects formulated with `marxan_problem` use the minimum set objecti
 For simplicity we set all of the targets at the same level, 17%, to reflect the [Aichi](https://www.cbd.int/sp/targets/) biodiversity target to "safeguard" at least 17% of terrestrial ecosystems by 2020. For example, to prioritize planning units in Tasmania that meet the 17% representation target at the least cost:
 
 ```{r, message = FALSE, results = "hide"}
-p1 <- marxan_problem(x = tas_pu, features = tas_features,
-                     targets = 0.17, targets_type = "relative",
-                     penalty = 0.01, edge_factor = 0.5)
+p1 <- marxan_problem(tas_pu, tas_features, targets = 0.17,
+                     targets_type = "relative", penalty = 0.0005,
+                     edge_factor = 0.5, cost_column = "cost")
 ```
 
-Note: the formulation of a Marxan problem is slightly different for Marxan input files (i.e. with a '.dat' extension). Refer to the help pages and the quick start guide for instructions on working with these files.
+Note: the formulation of a Marxan problem is slightly different for Marxan input files (i.e. with a ".dat" extension). Refer to the help pages and the quick start guide for instructions on working with these files.
 
 ### Problem formulation with _prioritizr_ problem functions
 
@@ -92,11 +91,11 @@ This same problem can be formulated with the key _prioritizr_ functions. We reco
 To formulate this problem:
 
 ```{r}
-p2 <- problem(tas_pu, tas_features) %>%
+p2 <- problem(tas_pu, tas_features, cost_column = "cost") %>%
       add_min_set_objective() %>%
       add_relative_targets(0.17) %>%
       add_binary_decisions() %>%
-      add_boundary_penalties(penalty = 0.01, edge_factor = 0.5)
+      add_boundary_penalties(penalty = 0.0005, edge_factor = 0.5)
 ```
 
 ### Solving a problem
@@ -115,7 +114,7 @@ These solutions can now be plotted.
 ```{r}
 # reformat solution column to make legends appear nicely
 s1$solution_1 <- factor(s1$solution_1)
-s2$solution_1 <- factor(s1$solution_1)
+s2$solution_1 <- factor(s2$solution_1)
 
 # plot solutions
 par(mfrow = c(1, 2))

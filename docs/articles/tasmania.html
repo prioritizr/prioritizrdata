@@ -94,8 +94,7 @@
 ## min values  :    1, 0.192488262910798,      0,         0,          0 
 ## max values  : 1130,  61.9272727272727,      2,         1,          0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spplot</span>(tas_pu, <span class="dt">zcol =</span> <span class="st">"cost"</span>, <span class="dt">names.attr =</span> <span class="st">"Cost"</span>,
-       <span class="dt">main =</span> <span class="st">"Planning Units and Cost"</span>,
-       <span class="dt">col.regions =</span> <span class="kw">rev</span>(<span class="kw">viridis</span>(<span class="dv">100</span>)))</code></pre></div>
+       <span class="dt">main =</span> <span class="st">"Planning Units and Cost"</span>, <span class="dt">col.regions =</span> <span class="kw">rev</span>(<span class="kw">viridis</span>(<span class="dv">100</span>)))</code></pre></div>
 <p><img src="tasmania_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></p>
 <p>Next, the feature data. We’ve only plotted the first four features as an example. Pixels value denotes the presence or absence of that feature within the study area extent.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(tas_features)</code></pre></div>
@@ -122,21 +121,21 @@
 <p>The files in this dataset follow the conventions used by Marxan, so problems can be formulated simply and easily with the Marxan problem function, which provides a single function wrapper for problem objects, penalties, and constraints. The problem object produced by this function will still use an exact integer linear programming solver, so in that way departs from traditional Marxan solving with simulated annealing. The <code>marxan_problem</code> approach is considerably more limited than the key <em>prioritizr</em> problem functions, but has the same functionality as Marxan and may therefore be handy to users familiar with Marxan.</p>
 <p>All problem objects formulated with <code>marxan_problem</code> use the minimum set objective. Targets can be either relative or absolute, and planning units can be specified for masking in or out using the <code>locked_in</code> and <code>locked_out</code> arguments. To favor clumped solutions, use the <code>penalty</code> argument to impose a penalty on solutions with high boundary lengths (equivalent to the Boundary Length Modifier (BLM) used in Marxan), and the <code>edge_factor</code> argument to scale the penalty for edges that do not have neighboring planning units, such as coastline. Cost does not have to be explicitly identified with the <code>marxan_problem</code>, because if column names follow Marxan conventions, the cost column can be located by the function.</p>
 <p>For simplicity we set all of the targets at the same level, 17%, to reflect the <a href="https://www.cbd.int/sp/targets/">Aichi</a> biodiversity target to “safeguard” at least 17% of terrestrial ecosystems by 2020. For example, to prioritize planning units in Tasmania that meet the 17% representation target at the least cost:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p1 &lt;-<span class="st"> </span><span class="kw">marxan_problem</span>(<span class="dt">x =</span> tas_pu, <span class="dt">features =</span> tas_features,
-                     <span class="dt">targets =</span> <span class="fl">0.17</span>, <span class="dt">targets_type =</span> <span class="st">"relative"</span>,
-                     <span class="dt">penalty =</span> <span class="fl">0.01</span>, <span class="dt">edge_factor =</span> <span class="fl">0.5</span>)</code></pre></div>
-<p>Note: the formulation of a Marxan problem is slightly different for Marxan input files (i.e. with a ‘.dat’ extension). Refer to the help pages and the quick start guide for instructions on working with these files.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p1 &lt;-<span class="st"> </span><span class="kw">marxan_problem</span>(tas_pu, tas_features, <span class="dt">targets =</span> <span class="fl">0.17</span>,
+                     <span class="dt">targets_type =</span> <span class="st">"relative"</span>, <span class="dt">penalty =</span> <span class="fl">0.0005</span>,
+                     <span class="dt">edge_factor =</span> <span class="fl">0.5</span>, <span class="dt">cost_column =</span> <span class="st">"cost"</span>)</code></pre></div>
+<p>Note: the formulation of a Marxan problem is slightly different for Marxan input files (i.e. with a “.dat” extension). Refer to the help pages and the quick start guide for instructions on working with these files.</p>
 </div>
 <div id="problem-formulation-with-prioritizr-problem-functions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#problem-formulation-with-prioritizr-problem-functions" class="anchor"></a>Problem formulation with <em>prioritizr</em> problem functions</h3>
 <p>This same problem can be formulated with the key <em>prioritizr</em> functions. We recommend this approach for any problem more complex than the simple problem described above, and when input data do not precisely match Marxan formatting conventions. In this example, we leave the decision framework as the default; binary decision making. This means the planning unit is either selected in the solution or not selected - no partial planning units are permitted.</p>
 <p>To formulate this problem:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p2 &lt;-<span class="st"> </span><span class="kw">problem</span>(tas_pu, tas_features) <span class="op">%&gt;%</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p2 &lt;-<span class="st"> </span><span class="kw">problem</span>(tas_pu, tas_features, <span class="dt">cost_column =</span> <span class="st">"cost"</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">add_min_set_objective</span>() <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">add_relative_targets</span>(<span class="fl">0.17</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">add_binary_decisions</span>() <span class="op">%&gt;%</span>
-<span class="st">      </span><span class="kw">add_boundary_penalties</span>(<span class="dt">penalty =</span> <span class="fl">0.01</span>, <span class="dt">edge_factor =</span> <span class="fl">0.5</span>)</code></pre></div>
+<span class="st">      </span><span class="kw">add_boundary_penalties</span>(<span class="dt">penalty =</span> <span class="fl">0.0005</span>, <span class="dt">edge_factor =</span> <span class="fl">0.5</span>)</code></pre></div>
 </div>
 <div id="solving-a-problem" class="section level3">
 <h3 class="hasAnchor">
@@ -148,91 +147,89 @@
 ## Variable types: 0 continuous, 4278 integer (4278 binary)
 ## Coefficient statistics:
 ##   Matrix range     [1e-02, 1e+00]
-##   Objective range  [1e+00, 1e+03]
+##   Objective range  [5e-02, 1e+02]
 ##   Bounds range     [1e+00, 1e+00]
 ##   RHS range        [3e-03, 3e+00]
-## Found heuristic solution: objective 156870
+## Found heuristic solution: objective 29458.8
+## Found heuristic solution: objective 5983.59
 ## Presolve removed 34 rows and 25 columns
-## Presolve time: 0.03s
-## Presolved: 6324 rows, 4253 columns, 14111 nonzeros
+## Presolve time: 0.06s
+## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
+## Found heuristic solution: objective 6762.4322957
 ## Variable types: 0 continuous, 4253 integer (4253 binary)
-## Presolved: 6324 rows, 4253 columns, 14111 nonzeros
+## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
 ## 
 ## 
-## Root relaxation: objective 4.944464e+04, 4062 iterations, 0.05 seconds
+## Root relaxation: objective 2.510246e+03, 1109 iterations, 0.09 seconds
 ## 
 ##     Nodes    |    Current Node    |     Objective Bounds      |     Work
 ##  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 ## 
-##      0     0 49444.6375    0  250 156870.160 49444.6375  68.5%     -    0s
-## H    0     0                    62172.919616 49444.6375  20.5%     -    0s
-## H    0     0                    57780.571410 49444.6375  14.4%     -    0s
-## H    0     0                    55821.469775 49444.6375  11.4%     -    0s
-##      0     0 51846.5486    0  376 55821.4698 51846.5486  7.12%     -    0s
+##      0     0 2510.24636    0  216 5983.58653 2510.24636  58.0%     -    0s
+## H    0     0                    3060.1023375 2510.24636  18.0%     -    0s
+## H    0     0                    2904.6014034 2510.24636  13.6%     -    0s
+##      0     0 2640.37794    0  262 2904.60140 2640.37794  9.10%     -    0s
 ## 
 ## Cutting planes:
-##   Gomory: 6
-##   Cover: 16
-##   MIR: 18
-##   StrongCG: 5
-##   GUB cover: 6
-##   Zero half: 2
+##   Gomory: 9
+##   Cover: 13
+##   MIR: 15
+##   StrongCG: 11
+##   GUB cover: 2
 ## 
-## Explored 0 nodes (4546 simplex iterations) in 0.36 seconds
+## Explored 1 nodes (1631 simplex iterations) in 0.60 seconds
 ## Thread count was 1 (of 4 available processors)
 ## 
-## Solution count 4: 55821.5 57780.6 62172.9 156870 
-## Pool objective bound 51846.5
+## Solution count 5: 2904.6 3060.1 5983.59 ... 29243.7
 ## 
 ## Optimal solution found (tolerance 1.00e-01)
-## Best objective 5.582146977489e+04, best bound 5.184654859435e+04, gap 7.1208%</code></pre>
+## Best objective 2.904601403405e+03, best bound 2.640377942458e+03, gap 9.0967%</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s2 &lt;-<span class="st"> </span><span class="kw">solve</span>(p2) <span class="co"># prioritizr problem</span></code></pre></div>
 <pre><code>## Optimize a model with 6358 rows, 4278 columns and 14152 nonzeros
 ## Variable types: 0 continuous, 4278 integer (4278 binary)
 ## Coefficient statistics:
 ##   Matrix range     [1e-02, 1e+00]
-##   Objective range  [1e+00, 1e+03]
+##   Objective range  [5e-02, 1e+02]
 ##   Bounds range     [1e+00, 1e+00]
 ##   RHS range        [3e-03, 3e+00]
-## Found heuristic solution: objective 156870
+## Found heuristic solution: objective 29458.8
+## Found heuristic solution: objective 5983.59
 ## Presolve removed 34 rows and 25 columns
-## Presolve time: 0.03s
-## Presolved: 6324 rows, 4253 columns, 14111 nonzeros
+## Presolve time: 0.04s
+## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
+## Found heuristic solution: objective 6762.4322957
 ## Variable types: 0 continuous, 4253 integer (4253 binary)
-## Presolved: 6324 rows, 4253 columns, 14111 nonzeros
+## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
 ## 
 ## 
-## Root relaxation: objective 4.944464e+04, 4062 iterations, 0.05 seconds
+## Root relaxation: objective 2.510246e+03, 1109 iterations, 0.07 seconds
 ## 
 ##     Nodes    |    Current Node    |     Objective Bounds      |     Work
 ##  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 ## 
-##      0     0 49444.6375    0  250 156870.160 49444.6375  68.5%     -    0s
-## H    0     0                    62172.919616 49444.6375  20.5%     -    0s
-## H    0     0                    57780.571410 49444.6375  14.4%     -    0s
-## H    0     0                    55821.469775 49444.6375  11.4%     -    0s
-##      0     0 51846.5486    0  376 55821.4698 51846.5486  7.12%     -    0s
+##      0     0 2510.24636    0  216 5983.58653 2510.24636  58.0%     -    0s
+## H    0     0                    3060.1023375 2510.24636  18.0%     -    0s
+## H    0     0                    2904.6014034 2510.24636  13.6%     -    0s
+##      0     0 2640.37794    0  262 2904.60140 2640.37794  9.10%     -    0s
 ## 
 ## Cutting planes:
-##   Gomory: 6
-##   Cover: 16
-##   MIR: 18
-##   StrongCG: 5
-##   GUB cover: 6
-##   Zero half: 2
+##   Gomory: 9
+##   Cover: 13
+##   MIR: 15
+##   StrongCG: 11
+##   GUB cover: 2
 ## 
-## Explored 0 nodes (4546 simplex iterations) in 0.35 seconds
+## Explored 1 nodes (1631 simplex iterations) in 0.40 seconds
 ## Thread count was 1 (of 4 available processors)
 ## 
-## Solution count 4: 55821.5 57780.6 62172.9 156870 
-## Pool objective bound 51846.5
+## Solution count 5: 2904.6 3060.1 5983.59 ... 29243.7
 ## 
 ## Optimal solution found (tolerance 1.00e-01)
-## Best objective 5.582146977489e+04, best bound 5.184654859435e+04, gap 7.1208%</code></pre>
+## Best objective 2.904601403405e+03, best bound 2.640377942458e+03, gap 9.0967%</code></pre>
 <p>These solutions can now be plotted.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reformat solution column to make legends appear nicely</span>
 s1<span class="op">$</span>solution_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">factor</span>(s1<span class="op">$</span>solution_<span class="dv">1</span>)
-s2<span class="op">$</span>solution_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">factor</span>(s1<span class="op">$</span>solution_<span class="dv">1</span>)
+s2<span class="op">$</span>solution_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">factor</span>(s2<span class="op">$</span>solution_<span class="dv">1</span>)
 
 <span class="co"># plot solutions</span>
 <span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))

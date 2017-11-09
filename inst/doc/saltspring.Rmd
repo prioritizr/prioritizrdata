@@ -33,8 +33,8 @@ For more information on the dataset refer to the [Marxan tool portal](http://arc
 This tutorial will use functions from the _prioiritizr_ package. Users can refer to the vignettes built into the _prioritizr_ package to familiarize themselves with the basic usage of _prioritizr_ and the concepts behind the package.
 
 ```{r, message = FALSE}
-library(prioritizrdata)
 library(prioritizr)
+library(prioritizrdata)
 library(rasterVis)
 library(viridis)
 ```
