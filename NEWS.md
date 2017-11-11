@@ -1,3 +1,7 @@
+# prioritizrdata 0.2.1 (released)
+
+- Release candidate for CRAN.
+
 # prioritizrdata 0.2.0.3 (unreleased)
 
 - Fix broken links.
