@@ -11,7 +11,11 @@ Comments for submission to CRAN
 * Windows Server 2008 (x64), R 3.4.0 (win-builder)
 
 ## R CMD check results
-There were no ERRORs, WARNINGs or NOTEs.
+There were no ERRORs, WARNINGs.
+
+1 NOTE
+  checking CRAN incoming feasibility ... NOTE
+  New submission.
 
 ## Downstream dependencies
 This package is not present on CRAN and therefore has no packages depending on it.
