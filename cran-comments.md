@@ -1,7 +1,7 @@
 Comments for submission to CRAN
 ===============================
 
-# Test environments
+## Test environments
 * [Ubuntu 14.04, R 3.3.2 (travis-ci)](https://travis-ci.org/prioritizr/prioritizrdata/builds)
 * [Ubuntu 14.04, R 3.4.0 (travis-ci)](https://travis-ci.org/prioritizr/prioritizrdata/builds)
 * [Mac OSX 10.9.5, R 3.3.2 (travis-ci](https://travis-ci.org/prioritizr/prioritizrdata/builds)
@@ -10,5 +10,8 @@ Comments for submission to CRAN
 * Windows Server 2008 (x64), R 3.3.2 (win-builder)
 * Windows Server 2008 (x64), R 3.4.0 (win-builder)
 
-# Downstream dependencies
+## R CMD check results
+There were no ERRORs, WARNINGs or NOTEs.
+
+## Downstream dependencies
 This package is not present on CRAN and therefore has no packages depending on it.
