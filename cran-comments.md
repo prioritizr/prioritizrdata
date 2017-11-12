@@ -1,6 +1,13 @@
 Comments for submission to CRAN
 ===============================
 
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Single Quoted software names in Title and Description fields
+
+* Converted the DESCRIPTION title to title case.
+
 ## Test environments
 * [Ubuntu 14.04, R 3.3.2 (travis-ci)](https://travis-ci.org/prioritizr/prioritizrdata/builds)
 * [Ubuntu 14.04, R 3.4.0 (travis-ci)](https://travis-ci.org/prioritizr/prioritizrdata/builds)
