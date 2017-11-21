@@ -28,10 +28,10 @@ env:
     - _R_CHECK_FORCE_SUGGESTS_=FALSE
 
 apt_packages:
-  - r-cran-sp
-  - r-cran-rgeos
+  - libgdal-dev
   - libgeos-dev
   - libgeos-c1
+  - libproj-dev
   - curl
   - qpdf 
   
