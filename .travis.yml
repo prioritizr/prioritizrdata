@@ -20,8 +20,8 @@ os:
 
 matrix:
   exclude:
-  - os: osx
-  - r: devel
+    - os: osx
+    - r: devel
 
 env:
   global:
