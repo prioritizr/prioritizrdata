@@ -38,6 +38,7 @@ apt_packages:
 before_install: 
   - echo "TRAVIS_OS_NAME = $TRAVIS_OS_NAME"
   - echo "options(repos = c(CRAN='http://cran.rstudio.com'))" > ~/.Rprofile
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then Rscript -e "install.packages(c('devtools'))"; fi;
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install Caskroom/cask/xquartz; fi;
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install ghostscript; fi;
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then Rscript -e "setRepositories(ind=1:2);install.packages(c('rgdal','rgeos'))"; fi;
