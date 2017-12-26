@@ -29,4 +29,4 @@ devtools::install_github("prioritizr/prioritizrdata")
 Citation
 --------
 
-    Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2017). prioritizrdata: Conservation planning data sets. R package version 0.2.0.3. https://github.com/prioritizr/prioritizrdata.
+    Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2017). prioritizrdata: Conservation planning data sets. R package version 0.2.1.1. https://github.com/prioritizr/prioritizrdata.

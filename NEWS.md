@@ -1,3 +1,7 @@
+# prioritizrdata 0.2.1.1 (unreleased)
+
+- Depends on R version 3.4.0 (avoids "patchlevel 0" NOTE/WARNING in checks)
+
 # prioritizrdata 0.2.1 (released)
 
 - Release candidate for CRAN.

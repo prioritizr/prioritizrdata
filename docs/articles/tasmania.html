@@ -153,48 +153,6 @@
 ## Found heuristic solution: objective 29458.8
 ## Found heuristic solution: objective 5983.59
 ## Presolve removed 34 rows and 25 columns
-## Presolve time: 0.06s
-## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
-## Found heuristic solution: objective 6762.4322957
-## Variable types: 0 continuous, 4253 integer (4253 binary)
-## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
-## 
-## 
-## Root relaxation: objective 2.510246e+03, 1109 iterations, 0.09 seconds
-## 
-##     Nodes    |    Current Node    |     Objective Bounds      |     Work
-##  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-## 
-##      0     0 2510.24636    0  216 5983.58653 2510.24636  58.0%     -    0s
-## H    0     0                    3060.1023375 2510.24636  18.0%     -    0s
-## H    0     0                    2904.6014034 2510.24636  13.6%     -    0s
-##      0     0 2640.37794    0  262 2904.60140 2640.37794  9.10%     -    0s
-## 
-## Cutting planes:
-##   Gomory: 9
-##   Cover: 13
-##   MIR: 15
-##   StrongCG: 11
-##   GUB cover: 2
-## 
-## Explored 1 nodes (1631 simplex iterations) in 0.60 seconds
-## Thread count was 1 (of 4 available processors)
-## 
-## Solution count 5: 2904.6 3060.1 5983.59 ... 29243.7
-## 
-## Optimal solution found (tolerance 1.00e-01)
-## Best objective 2.904601403405e+03, best bound 2.640377942458e+03, gap 9.0967%</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s2 &lt;-<span class="st"> </span><span class="kw">solve</span>(p2) <span class="co"># prioritizr problem</span></code></pre></div>
-<pre><code>## Optimize a model with 6358 rows, 4278 columns and 14152 nonzeros
-## Variable types: 0 continuous, 4278 integer (4278 binary)
-## Coefficient statistics:
-##   Matrix range     [1e-02, 1e+00]
-##   Objective range  [5e-02, 1e+02]
-##   Bounds range     [1e+00, 1e+00]
-##   RHS range        [3e-03, 3e+00]
-## Found heuristic solution: objective 29458.8
-## Found heuristic solution: objective 5983.59
-## Presolve removed 34 rows and 25 columns
 ## Presolve time: 0.04s
 ## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
 ## Found heuristic solution: objective 6762.4322957
@@ -219,7 +177,49 @@
 ##   StrongCG: 11
 ##   GUB cover: 2
 ## 
-## Explored 1 nodes (1631 simplex iterations) in 0.40 seconds
+## Explored 1 nodes (1631 simplex iterations) in 0.42 seconds
+## Thread count was 1 (of 4 available processors)
+## 
+## Solution count 5: 2904.6 3060.1 5983.59 ... 29243.7
+## 
+## Optimal solution found (tolerance 1.00e-01)
+## Best objective 2.904601403405e+03, best bound 2.640377942458e+03, gap 9.0967%</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s2 &lt;-<span class="st"> </span><span class="kw">solve</span>(p2) <span class="co"># prioritizr problem</span></code></pre></div>
+<pre><code>## Optimize a model with 6358 rows, 4278 columns and 14152 nonzeros
+## Variable types: 0 continuous, 4278 integer (4278 binary)
+## Coefficient statistics:
+##   Matrix range     [1e-02, 1e+00]
+##   Objective range  [5e-02, 1e+02]
+##   Bounds range     [1e+00, 1e+00]
+##   RHS range        [3e-03, 3e+00]
+## Found heuristic solution: objective 29458.8
+## Found heuristic solution: objective 5983.59
+## Presolve removed 34 rows and 25 columns
+## Presolve time: 0.03s
+## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
+## Found heuristic solution: objective 6762.4322957
+## Variable types: 0 continuous, 4253 integer (4253 binary)
+## Presolved: 6324 rows, 4253 columns, 14110 nonzeros
+## 
+## 
+## Root relaxation: objective 2.510246e+03, 1109 iterations, 0.06 seconds
+## 
+##     Nodes    |    Current Node    |     Objective Bounds      |     Work
+##  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+## 
+##      0     0 2510.24636    0  216 5983.58653 2510.24636  58.0%     -    0s
+## H    0     0                    3060.1023375 2510.24636  18.0%     -    0s
+## H    0     0                    2904.6014034 2510.24636  13.6%     -    0s
+##      0     0 2640.37794    0  262 2904.60140 2640.37794  9.10%     -    0s
+## 
+## Cutting planes:
+##   Gomory: 9
+##   Cover: 13
+##   MIR: 15
+##   StrongCG: 11
+##   GUB cover: 2
+## 
+## Explored 1 nodes (1631 simplex iterations) in 0.38 seconds
 ## Thread count was 1 (of 4 available processors)
 ## 
 ## Solution count 5: 2904.6 3060.1 5983.59 ... 29243.7

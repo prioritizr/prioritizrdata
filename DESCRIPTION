@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.1
+Version: 0.2.1.1
 Title: Conservation Planning Data Sets
 Description: Conservation planning data sets and tutorials for learning how to use the 'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
@@ -30,7 +30,7 @@ Suggests:
     viridis,
     prioritizr
 Depends:
-    R(>= 3.3.2),
+    R(>= 3.4.0),
     raster,
     sp
 License: GPL-3

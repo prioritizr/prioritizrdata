@@ -168,6 +168,9 @@ s &lt;-<span class="st"> </span><span class="kw">stack</span>() <span class="co"
 <span class="st">        </span><span class="kw">add_lpsymphony_solver</span>(<span class="dt">gap =</span> <span class="fl">0.1</span>, <span class="dt">time_limit =</span> <span class="dv">10</span>)
   s &lt;-<span class="st"> </span><span class="kw">addLayer</span>(s, <span class="kw">solve</span>(p5))
 }</code></pre></div>
+<pre><code>## Warning in add_lpsymphony_solver(., gap = 0.1, time_limit = 10): The
+## solution may be incorrect due to a bug in lpsymphony. Please verify that it
+## is correct, or use a different solver to generate solutions.</code></pre>
 <p>We can now have a look at the solutions:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(s, <span class="dt">main =</span> titles, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>),  <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">"grey70"</span>, <span class="st">"#0A5640"</span>))</code></pre></div>
 <p><img src="saltspring_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"></p>
