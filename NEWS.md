@@ -1,32 +1,36 @@
-# prioritizrdata 0.2.1.1 (unreleased)
+# prioritizrdata 0.2.1.2
 
-- Depends on R version 3.4.0 (avoids "patchlevel 0" NOTE/WARNING in checks)
+- Assorted documentation improvements.
+
+# prioritizrdata 0.2.1.1
+
+- Depends on R version 3.4.0 (avoids "patchlevel 0" NOTE/WARNING in checks).
 
 # prioritizrdata 0.2.1 (released)
 
 - Release candidate for CRAN.
 
-# prioritizrdata 0.2.0.3 (unreleased)
+# prioritizrdata 0.2.0.3
 
 - Fix broken links.
 - Tutorials now compatible with _prioritizr_ version 3.0.1.
 - Remove Remotes since _prioritizr_ is now on CRAN.
 
-# prioritizrdata 0.2.0.2 (unreleased)
+# prioritizrdata 0.2.0.2
 
 - Fix spelling in documentation.
 - Update broken links.
 - Lint R files.
-- Make vignttes compatible with new version of prioritizr.
-- Add prioritizr to Remotes in DESCRIPTION.
+- Make vignettes compatible with new version of _prioritizr_.
+- Add _prioritizr_ to Remotes in DESCRIPTION.
 
-# prioritizrdata 0.2.0.1 (unreleased)
+# prioritizrdata 0.2.0.1
 
 - Fix links in README and vignettes.
-- Remove log files accidently commited.
+- Remove log files accidentally committed.
 - Fix image size in salt vignette.
 
-# prioritizrdata 0.2.0.0 (unreleased)
+# prioritizrdata 0.2.0.0
 
 - Created package website.
 - Add _viridis_, _rasterVis_, and _prioritizr_packages to Suggests because they
@@ -47,6 +51,6 @@
   or using the shell command `make readme`. Note that the figures for
   `README.md` can be found in the directory `man/figures`.
 
-# prioritizrdata 0.1.1.0 (unreleased)
+# prioritizrdata 0.1.1.0
 
 - Initial package version.

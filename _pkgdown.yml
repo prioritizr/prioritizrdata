@@ -1,3 +1,4 @@
+url: http://prioritizr.github.io/prioritizrdata
 
 authors:
   Jeffrey O Hanson:
@@ -13,4 +14,16 @@ authors:
 
 template:
   params:
-    bootswatch: cerulean
+    bootswatch: flatly
+
+reference:
+  - title: Summary
+    desc: Summary of the package
+    contents:
+      - prioritizrdata
+
+  - title: Data
+    desc: Data sets distributed with the package
+    contents:
+      - tas_data
+      - salt_data

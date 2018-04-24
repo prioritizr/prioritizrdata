@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://prioritizr.github.io/prioritizrdata/index.html</loc>
+  </url>
+  <url>
+    <loc>http://prioritizr.github.io/prioritizrdata/reference/prioritizrdata.html</loc>
+  </url>
+  <url>
+    <loc>http://prioritizr.github.io/prioritizrdata/reference/salt_data.html</loc>
+  </url>
+  <url>
+    <loc>http://prioritizr.github.io/prioritizrdata/reference/tas_data.html</loc>
+  </url>
+  <url>
+    <loc>http://prioritizr.github.io/prioritizrdata/articles/saltspring.html</loc>
+  </url>
+  <url>
+    <loc>http://prioritizr.github.io/prioritizrdata/articles/tasmania.html</loc>
+  </url>
+</urlset>

@@ -11,18 +11,32 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+<meta property="og:title" content="Salt Spring Island conservation planning data — salt_data" />
+
+<meta property="og:description" content="This data was obtained as part of an online Marxan-based planning
+tool created for the Coastal Douglas-fir Conservation Partnership
+(CDFCP; Schuster et al. 2017). For a worked example  with this
+dataset, refer to the Salt Spring vignette. The
+scenario is intended to provide an example of how raster planning unit data
+can be used in the prioritizr package." />
+<meta name="twitter:card" content="summary" />
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -31,6 +45,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -46,18 +62,40 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">prioritizrdata</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">prioritizrdata</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.1.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../articles/index.html">Articles</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/saltspring.html">Salt Spring Island Example</a>
+    </li>
+    <li>
+      <a href="../articles/tasmania.html">Tasmania Example</a>
+    </li>
+  </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -69,6 +107,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -76,21 +115,24 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Salt Spring Island conservation planning data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/prioritizr/prioritizrdata/blob/master/R/salt_data.R'><code>R/salt_data.R</code></a></small>
+    <div class="hidden name"><code>salt_data.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
-    <p>This data was obtained as part of an online Marxan-based planning
-tool created for the Coastal Douglas-fir Conservation Partnership (CDFCP).
-For more information refer to Schuster <em>et al.</em> 2017. For a
-worked example  with this dataset, refer to the
-<a href = 'saltspring.html'>Salt Spring vignette</a>. The scenario is
-intended to provide an example of how raster planning unit data can be used
-in the <em>prioritizr</em> package.</p>
+    <p>This data was obtained as part of an online <em>Marxan</em>-based planning
+tool created for the Coastal Douglas-fir Conservation Partnership
+(CDFCP; Schuster <em>et al.</em> 2017). For a worked example  with this
+dataset, refer to the <a href='saltspring.html'>Salt Spring vignette</a>. The
+scenario is intended to provide an example of how raster planning unit data
+can be used in the <span class="pkg">prioritizr</span> package.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>data</span>(<span class='no'>salt_features</span>)
 
@@ -107,7 +149,8 @@ in the <em>prioritizr</em> package.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The dataset contains the following items:</p><dl class='dl-horizontal'>
+    <p>The data set contains the following items:</p>
+<dl class='dl-horizontal'>
     <dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band
     <code>RasterLayer-class</code> object where each one hectare pixel
     contains the monetary cost of acquiring the area (BC Land Assessment
@@ -126,13 +169,13 @@ in the <em>prioritizr</em> package.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>BC Assessment (2015) Property Information Services. Available at
-<a href = 'http://www.bcassessment.ca'>http://www.bcassessment.ca</a> [Date Accessed 2016/06/13].</p>
+<a href='http://www.bcassessment.ca'>http://www.bcassessment.ca</a> [Date Accessed 2016/06/13].</p>
 <p>Morrell N, Schuster R, Crombie M, and Arcese P (2017) <em>A Prioritization
 Tool for the Conservation of Coastal Douglas-fir Forest and Savannah
 Habitats of the Georgia Basin.</em> The Nature Trust of British Colombia, Coastal
 Douglas Fir Conservation Partnership, and the Department of Forest and
 Conservation Sciences, University of British Colombia. Available at
-<a href = 'http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf</a> [Date Accessed 2017/10/09].</p>
+<a href='http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf</a> [Date Accessed 2017/10/09].</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -140,7 +183,7 @@ Conservation Sciences, University of British Colombia. Available at
 <span class='fu'>data</span>(<span class='no'>salt_pu</span>, <span class='no'>salt_features</span>)
 
 <span class='co'># plot data</span>
-<span class='fu'>plot</span>(<span class='no'>salt_pu</span>)</div><img src='salt_data-2.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>plot</span>(<span class='no'>salt_features</span>)</div><img src='salt_data-4.png' alt='' width='540' height='400' /><div class='input'>
+<span class='fu'>plot</span>(<span class='no'>salt_pu</span>)</div><div class='img'><img src='salt_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span>(<span class='no'>salt_features</span>)</div><div class='img'><img src='salt_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -165,11 +208,14 @@ Conservation Sciences, University of British Colombia. Available at
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
