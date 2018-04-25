@@ -1,3 +1,8 @@
+# prioritizrdata 0.2.1.3
+
+- The _prioritizr_ package has been removed from Suggests.
+- The vignettes have been moved to the _prioritizr_ package.
+
 # prioritizrdata 0.2.1.2
 
 - Assorted documentation improvements.

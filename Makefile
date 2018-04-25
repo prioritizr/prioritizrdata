@@ -5,16 +5,13 @@ clean:
 	rm -rf docs/*
 	rm -rf inst/doc/*
 
-docs: readme man vigns site
+docs: readme man site
 
 man:
 	R --slave -e "devtools::document()"
 
 readme:
 	R --slave -e "rmarkdown::render('README.Rmd')"
-
-vigns:
-	R --slave -e "devtools::build_vignettes()"
 
 site:
 	R --slave -e "pkgdown::build_site(run_dont_run = TRUE, lazy = TRUE)"

@@ -1,6 +1,3 @@
-#' @include internal.R
-NULL
-
 #' Salt Spring Island conservation planning data
 #'
 #' This data was obtained as part of an online \emph{Marxan}-based planning
