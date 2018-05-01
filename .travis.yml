@@ -34,7 +34,7 @@ apt_packages:
   - libproj-dev
   - curl
   - qpdf 
-  
+
 before_install: 
   - echo "TRAVIS_OS_NAME = $TRAVIS_OS_NAME"
   - echo "options(repos = c(CRAN='http://cran.rstudio.com'))" > ~/.Rprofile
