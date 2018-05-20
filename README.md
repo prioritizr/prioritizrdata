@@ -3,7 +3,7 @@
 Conservation Planning Data Sets
 ===============================
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![Travis Build Status](https://img.shields.io/travis/prioritizr/prioritizrdata/master.svg?label=Mac%20OSX%20%26%20Linux)](https://travis-ci.org/prioritizr/prioritizrdata) [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/jeffreyhanson/prioritizrdata/master.svg?label=Windows)](https://ci.appveyor.com/project/jeffreyhanson/prioritizrdata) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
+[![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![Travis Build Status](https://img.shields.io/travis/prioritizr/prioritizrdata/master.svg?label=Mac%20OSX%20%26%20Linux)](https://travis-ci.org/prioritizr/prioritizrdata) [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/jeffreyhanson/prioritizrdata/master.svg?label=Windows)](https://ci.appveyor.com/project/jeffreyhanson/prioritizrdata) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains example datasets for conservation planning. It is intended to be used alongside the [*prioritizr R* package](https://github.com/prioritizr/prioritizr)---a package for building and solving systematic conservation prioritization problems using integer linear programming (ILP) techniques---and provides little functionality itself.
 
