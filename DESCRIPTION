@@ -33,7 +33,8 @@ Depends:
     sp
 License: GPL-3
 LazyData: true
-URL: https://github.com/prioritizr/prioritizrdata
+URL: https://prioritizr.github.io/prioritizrdata,
+    https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
