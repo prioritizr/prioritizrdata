@@ -1,3 +1,7 @@
+# prioritizrdata 0.2.1.4
+
+- Update _prioritizr_ urls with https://prioritizr.net.
+
 # prioritizrdata 0.2.1.3
 
 - The _prioritizr_ package has been removed from Suggests.
