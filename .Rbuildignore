@@ -14,6 +14,5 @@ check.log
 test.log
 gp.log
 spell.log
-inst/extdata/dictionary.txt
+^inst$
 README.Rmd
-inst/assets
