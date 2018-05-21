@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.1.4
+Version: 0.2.1.5
 Title: Conservation Planning Data Sets
 Description: Conservation planning data sets and tutorials for learning how to use the 'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
@@ -36,7 +36,6 @@ LazyData: true
 URL: https://prioritizr.github.io/prioritizrdata,
     https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
-VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 Collate:
     'package.R'

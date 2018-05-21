@@ -1,3 +1,9 @@
+# prioritizrdata 0.2.1.5
+
+- Remove VignetteBuilder from DESCRIPTION since all the vignettes have been
+  moved to _prioritizr_.
+- Update link to http://www.bcassessment.ca.
+
 # prioritizrdata 0.2.1.4
 
 - Update _prioritizr_ urls with https://prioritizr.net.

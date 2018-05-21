@@ -45,7 +45,7 @@
 #'
 #' @references
 #' BC Assessment (2015) Property Information Services. Available at
-#' \url{http://www.bcassessment.ca} [Date Accessed 2016/06/13].
+#' \url{https://www.bcassessment.ca} [Date Accessed 2016/06/13].
 #'
 #' Morrell N, Schuster R, Crombie M, and Arcese P (2017) \emph{A Prioritization
 #' Tool for the Conservation of Coastal Douglas-fir Forest and Savannah
