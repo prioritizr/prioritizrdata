@@ -1,3 +1,7 @@
+# prioritizrdata 0.2.1.6
+
+- Update package Description field in DESCRIPTION.
+
 # prioritizrdata 0.2.1.5
 
 - Remove VignetteBuilder from DESCRIPTION since all the vignettes have been

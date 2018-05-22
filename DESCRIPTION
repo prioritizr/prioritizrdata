@@ -1,8 +1,8 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.1.5
+Version: 0.2.1.6
 Title: Conservation Planning Data Sets
-Description: Conservation planning data sets and tutorials for learning how to use the 'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
+Description: Conservation planning data sets for learning how to use the 'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
                email='jeffrey.hanson@uqconnect.edu.au', role = c('aut')),
              person(c('Richard'), 'Schuster',
