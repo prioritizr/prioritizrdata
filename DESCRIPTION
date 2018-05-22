@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.1.6
+Version: 0.2.1.7
 Title: Conservation Planning Data Sets
 Description: Conservation planning data sets for learning how to use the 'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
@@ -19,9 +19,6 @@ Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
                email='joseph.bennett@carleton.ca', role = c('aut')),
              person(c('Hugh', 'P'), 'Possingham',
                email='hugh.possingham@tnc.org', role = c('aut')))
-Imports:
-    utils,
-    methods
 Suggests:
     testthat,
     roxygen2,
