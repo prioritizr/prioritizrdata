@@ -1,3 +1,7 @@
+# prioritizrdata 0.2.2 (released)
+
+- Release candidate for CRAN.
+
 # prioritizrdata 0.2.1.7
 
 - Remove unneeded Imports.
