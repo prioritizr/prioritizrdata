@@ -37,4 +37,4 @@ Citation
 
 Please using the following citation to cite the '*prioritizrdata R* package in publications:
 
-Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2018). prioritizrdata: Conservation Planning Data Sets. R package version 0.2.1.4. <https://github.com/prioritizr/prioritizrdata>.
+Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2019). prioritizrdata: Conservation Planning Data Sets. R package version 0.2.3. <https://github.com/prioritizr/prioritizrdata>.

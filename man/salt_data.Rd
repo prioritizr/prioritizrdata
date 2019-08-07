@@ -5,8 +5,6 @@
 \alias{salt_data}
 \alias{salt_features}
 \alias{salt_pu}
-\alias{salt_pu}
-\alias{salt_features}
 \title{Salt Spring Island conservation planning data}
 \format{\describe{
   \item{salt_features}{\code{\link[raster]{RasterStack-class}} object}

@@ -1,3 +1,11 @@
+# prioritizrdata 0.2.3 (released)
+
+- Release candidate for CRAN.
+
+# prioritizrdata 0.2.2.1
+
+- Fix spelling of coauthor first name.
+
 # prioritizrdata 0.2.2 (released)
 
 - Release candidate for CRAN.

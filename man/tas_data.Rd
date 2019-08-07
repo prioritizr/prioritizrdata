@@ -5,8 +5,6 @@
 \alias{tas_data}
 \alias{tas_features}
 \alias{tas_pu}
-\alias{tas_pu}
-\alias{tas_features}
 \title{Tasmanian conservation planning data}
 \format{\describe{
   \item{tas_features}{\code{\link[raster]{RasterStack-class}} object}
