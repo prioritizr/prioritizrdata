@@ -33,8 +33,8 @@
 #' @usage data(tas_pu)
 #'
 #' @format \describe{
-#'   \item{tas_features}{\code{\link[raster]{RasterStack-class}} object}
-#'   \item{tas_pu}{\code{\link[sp]{SpatialPolygonsDataFrame}} object.}
+#'   \item{tas_features}{[raster::RasterStack-class] object}
+#'   \item{tas_pu}{[sp::SpatialPolygonsDataFrame()] object.}
 #' }
 #'
 #' @keywords datasets

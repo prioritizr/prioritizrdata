@@ -8,8 +8,8 @@
 \title{Tasmania data}
 \format{
 \describe{
-\item{tas_features}{\code{\link[raster]{RasterStack-class}} object}
-\item{tas_pu}{\code{\link[sp]{SpatialPolygonsDataFrame}} object.}
+\item{tas_features}{\link[raster:Raster-classes]{raster::RasterStack} object}
+\item{tas_pu}{\code{\link[sp:SpatialPolygons]{sp::SpatialPolygonsDataFrame()}} object.}
 }
 }
 \usage{

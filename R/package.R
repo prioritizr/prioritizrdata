@@ -5,7 +5,7 @@ NULL
 #' \pkg{prioritizrdata}: Conservation Planning Data Sets
 #'
 #' The \pkg{prioritizrdata} package is a supplemental package that contains
-#' example datasets for conservation planning. It is intended to be used 
+#' example datasets for conservation planning. It is intended to be used
 #' alongside the
 #' \href{https://github.com/prioritizr/prioritizr}{\pkg{prioritizr} package}---a
 #' package for building and solving systematic conservation prioritization
@@ -16,7 +16,7 @@ NULL
 #'
 #' \describe{
 #'
-#' \item{\code{\link{tas_data}}}{This data set was obtained from the
+#' \item{[tas_data]}{This data set was obtained from the
 #'   ["Introduction to *Marxan*" course](http://marxan.net/courses)
 #'   and was originally part of a larger spatial prioritization performed under
 #'   contract to Australia's Department of Environment and Water Resources.
@@ -25,7 +25,7 @@ NULL
 #'   Refer to the Tasmania vignette in the \pkg{prioritizr} package for a
 #'   worked example with this dataset.}
 #'
-#' \item{\code{\link{salt_data}}}{This dataset is from an
+#' \item{[salt_data]}{This dataset is from an
 #'   online [*Marxan*-based planning tool](http://arcese.forestry.ubc.ca/marxan-tool)
 #'   created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
 #'   contains raster-based planning unit data and the data for the spatial

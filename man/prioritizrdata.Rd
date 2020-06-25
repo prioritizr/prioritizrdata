@@ -18,7 +18,7 @@ This package contains the following datasets:
 
 \describe{
 
-\item{\code{\link{tas_data}}}{This data set was obtained from the
+\item{\link{tas_data}}{This data set was obtained from the
 \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
 and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources.
@@ -27,7 +27,7 @@ spatial distribution of 62 vegetation classes in Tasmania, Australia.
 Refer to the Tasmania vignette in the \pkg{prioritizr} package for a
 worked example with this dataset.}
 
-\item{\code{\link{salt_data}}}{This dataset is from an
+\item{\link{salt_data}}{This dataset is from an
 online \href{http://arcese.forestry.ubc.ca/marxan-tool}{\emph{Marxan}-based planning tool}
 created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
 contains raster-based planning unit data and the data for the spatial
