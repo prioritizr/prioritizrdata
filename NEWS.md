@@ -1,3 +1,9 @@
+# prioritizrdata 0.2.3.1
+
+- Assorted documentation improvements (e.g. fixing typos and broken URLs).
+- Fix "Non-file package-anchored link(s) in documentation object" warnings
+  in R-devel checks.
+
 # prioritizrdata 0.2.3 (released)
 
 - Release candidate for CRAN.

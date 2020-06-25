@@ -5,17 +5,17 @@
 \alias{tas_data}
 \alias{tas_features}
 \alias{tas_pu}
-\title{Tasmanian conservation planning data}
-\format{\describe{
-  \item{tas_features}{\code{\link[raster]{RasterStack-class}} object}
-  \item{tas_pu}{\code{\link[sp]{SpatialPolygonsDataFrame}} object.}
-}}
+\title{Tasmania data}
+\format{
+\describe{
+\item{tas_features}{\code{\link[raster]{RasterStack-class}} object}
+\item{tas_pu}{\code{\link[sp]{SpatialPolygonsDataFrame}} object.}
+}
+}
 \usage{
 data(tas_features)
 
-tas_pu
-
-tas_features
+data(tas_pu)
 }
 \description{
 This data set was obtained from the
@@ -29,18 +29,18 @@ The data set contains the following items:
 
 \describe{
 
-  \item{\code{tas_pu}}{Planning unit data. The attribute table has
-    three columns containing unique identifiers ("id"), unimproved land
-    values ("cost"), and their existing level of protection ("status").
-    Units with 50 \% or more of their area contained in protected areas
-    are associated with a status of 2, otherwise they are associated with a
-    value of 0.}
+\item{\code{tas_pu}}{Planning unit data. The attribute table has
+three columns containing unique identifiers ("id"), unimproved land
+values ("cost"), and their existing level of protection ("status").
+Units with 50 \\% or more of their area contained in protected areas
+are associated with a status of 2, otherwise they are associated with a
+value of 0.}
 
-  \item{\code{tas_features}}{The distribution of 62 vegetation
-    classes in Tasmania, Australia. Each layer in the  stack
-    represents a different vegetation class. For a given layer,
-    cells indicate the presence (value of 1) or absence (value of 0)
-    of the vegetation class in an area.}
+\item{\code{tas_features}}{The distribution of 62 vegetation
+classes in Tasmania, Australia. Each layer in the  stack
+represents a different vegetation class. For a given layer,
+cells indicate the presence (value of 1) or absence (value of 0)
+of the vegetation class in an area.}
 }
 }
 \examples{

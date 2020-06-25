@@ -3,11 +3,10 @@
 \docType{package}
 \name{prioritizrdata}
 \alias{prioritizrdata}
-\alias{prioritizrdata-package}
 \title{\pkg{prioritizrdata}: Conservation Planning Data Sets}
 \description{
 The \pkg{prioritizrdata} package is a supplemental package that contains
-example datasets for conservation planning. It is intended to be used 
+example datasets for conservation planning. It is intended to be used
 alongside the
 \href{https://github.com/prioritizr/prioritizr}{\pkg{prioritizr} package}---a
 package for building and solving systematic conservation prioritization
@@ -20,21 +19,21 @@ This package contains the following datasets:
 \describe{
 
 \item{\code{\link{tas_data}}}{This data set was obtained from the
-  \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
-  and was originally part of a larger spatial prioritization performed under
-  contract to Australia's Department of Environment and Water Resources.
-  This data set contains vector-based planning unit data and data for the
-  spatial distribution of 62 vegetation classes in Tasmania, Australia.
-  Refer to the Tasmania vignette in the \pkg{prioritizr} package for a
-  worked example with this dataset.}
+\href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
+and was originally part of a larger spatial prioritization performed under
+contract to Australia's Department of Environment and Water Resources.
+This data set contains vector-based planning unit data and data for the
+spatial distribution of 62 vegetation classes in Tasmania, Australia.
+Refer to the Tasmania vignette in the \pkg{prioritizr} package for a
+worked example with this dataset.}
 
 \item{\code{\link{salt_data}}}{This dataset is from an
-  online \href{http://arcese.forestry.ubc.ca/marxan-tool}{\emph{Marxan}-based planning tool}
-  created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
-  contains raster-based planning unit data and the data for the spatial
-  distributions of five key ecological communities in the area. Refer to
-  the Salt Spring Island vignette in the \pkg{prioritizr} package for a
-  worked example with this dataset}
+online \href{http://arcese.forestry.ubc.ca/marxan-tool}{\emph{Marxan}-based planning tool}
+created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
+contains raster-based planning unit data and the data for the spatial
+distributions of five key ecological communities in the area. Refer to
+the Salt Spring Island vignette in the \pkg{prioritizr} package for a
+worked example with this dataset}
 
 }
 }

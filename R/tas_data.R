@@ -1,4 +1,4 @@
-#' Tasmanian conservation planning data
+#' Tasmania data
 #'
 #' This data set was obtained from the
 #' \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
@@ -56,9 +56,3 @@
 #'
 #' @name tas_data
 NULL
-
-#' @rdname tas_data
-"tas_pu"
-
-#' @rdname tas_data
-"tas_features"
