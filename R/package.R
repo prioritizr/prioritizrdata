@@ -17,7 +17,7 @@ NULL
 #' \describe{
 #'
 #' \item{\code{\link{tas_data}}}{This data set was obtained from the
-#'   \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
+#'   ["Introduction to *Marxan*" course](http://marxan.net/courses)
 #'   and was originally part of a larger spatial prioritization performed under
 #'   contract to Australia's Department of Environment and Water Resources.
 #'   This data set contains vector-based planning unit data and data for the
@@ -26,7 +26,7 @@ NULL
 #'   worked example with this dataset.}
 #'
 #' \item{\code{\link{salt_data}}}{This dataset is from an
-#'   online \href{http://arcese.forestry.ubc.ca/marxan-tool}{\emph{Marxan}-based planning tool}
+#'   online [*Marxan*-based planning tool](http://arcese.forestry.ubc.ca/marxan-tool)
 #'   created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
 #'   contains raster-based planning unit data and the data for the spatial
 #'   distributions of five key ecological communities in the area. Refer to

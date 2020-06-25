@@ -1,9 +1,9 @@
 #' Salt Spring Island data
 #'
-#' This data was obtained as part of an online \emph{Marxan}-based planning
+#' This data was obtained as part of an online *Marxan*-based planning
 #' tool created for the Coastal Douglas-fir Conservation Partnership
-#' (CDFCP; Schuster \emph{et al.} 2017). For a worked example  with this
-#' dataset, refer to the \href{saltspring.html}{Salt Spring vignette}. The
+#' (CDFCP; Schuster *et al.* 2017). For a worked example  with this
+#' dataset, refer to the [Salt Spring vignette](saltspring.html). The
 #' scenario is intended to provide an example of how raster planning unit data
 #' can be used in the \pkg{prioritizr} package.
 #'
@@ -12,12 +12,12 @@
 #'
 #' \describe{
 #'
-#'   \item{\code{salt_pu}}{Planning unit data. A single band
+#'   \item{`salt_pu`}{Planning unit data. A single band
 #'     \code{\link{RasterLayer-class}} object where each one hectare pixel
 #'     contains the monetary cost of acquiring the area (BC Land Assessment
 #'     2015).}
 #'
-#'   \item{\code{salt_features}}{Biodiversity feature data. The probability of
+#'   \item{`salt_features`}{Biodiversity feature data. The probability of
 #'     occurrence commensal of five key ecological communities found on Salt
 #'     Spring island. Each layer in the \code{\link{RasterStack-class}}
 #'     object represents a different community type. These classes
@@ -45,14 +45,14 @@
 #'
 #' @references
 #' BC Assessment (2015) Property Information Services. Available at
-#' \url{https://www.bcassessment.ca} (Date Accessed 2016/06/13).
+#' <https://www.bcassessment.ca> (Date Accessed 2016/06/13).
 #'
-#' Morrell N, Schuster R, Crombie M, and Arcese P (2017) \emph{A Prioritization
+#' Morrell N, Schuster R, Crombie M, and Arcese P (2017) *A Prioritization
 #' Tool for the Conservation of Coastal Douglas-fir Forest and Savannah
-#' Habitats of the Georgia Basin.} The Nature Trust of British Colombia, Coastal
+#' Habitats of the Georgia Basin.* The Nature Trust of British Colombia, Coastal
 #' Douglas Fir Conservation Partnership, and the Department of Forest and
 #' Conservation Sciences, University of British Colombia. Available at
-#' \url{http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf} (Date Accessed 2017/10/09).
+#' <http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf> (Date Accessed 2017/10/09).
 #'
 #' @examples
 #' # load data

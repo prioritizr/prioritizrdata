@@ -1,23 +1,23 @@
 #' Tasmania data
 #'
 #' This data set was obtained from the
-#' \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
+#' ["Introduction to *Marxan*" course](http://marxan.net/courses)
 #' and was originally part of a larger spatial prioritization performed under
 #' contract to Australia's Department of Environment and Water Resources
-#' (Klein \emph{et al.} 2007).
+#' (Klein *et al.* 2007).
 #'
 #' @details The data set contains the following items:
 #'
 #' \describe{
 #'
-#'   \item{\code{tas_pu}}{Planning unit data. The attribute table has
+#'   \item{`tas_pu`}{Planning unit data. The attribute table has
 #'     three columns containing unique identifiers ("id"), unimproved land
 #'     values ("cost"), and their existing level of protection ("status").
 #'     Units with 50 \% or more of their area contained in protected areas
 #'     are associated with a status of 2, otherwise they are associated with a
 #'     value of 0.}
 #'
-#'   \item{\code{tas_features}}{The distribution of 62 vegetation
+#'   \item{`tas_features`}{The distribution of 62 vegetation
 #'     classes in Tasmania, Australia. Each layer in the  stack
 #'     represents a different vegetation class. For a given layer,
 #'     cells indicate the presence (value of 1) or absence (value of 0)
@@ -40,10 +40,10 @@
 #' @keywords datasets
 #'
 #' @references
-#' Klein C, Carwardine J, Wilson K, Watts M, and Possingham H (2007) \emph{Spatial
+#' Klein C, Carwardine J, Wilson K, Watts M, and Possingham H (2007) *Spatial
 #' Prioritization Approaches for the Conservation of Biodiversity in
 #' Australia: Considering Conservation Costs, Ecological & Evolutionary
-#' Processes, and Large-Intact Areas.} Report to the Department of
+#' Processes, and Large-Intact Areas.* Report to the Department of
 #' Environment; Water Resources.
 #'
 #' @examples
