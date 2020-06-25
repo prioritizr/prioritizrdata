@@ -34,7 +34,7 @@
 #' @usage data(tas_pu)
 #'
 #' @format \describe{
-#'   \item{tas_features}{[raster::RasterStack-class] object}
+#'   \item{tas_features}{[RasterStack-class] object}
 #'   \item{tas_pu}{[sp::SpatialPolygonsDataFrame()] object.}
 #' }
 #'

@@ -35,8 +35,8 @@
 #' @usage data(salt_pu)
 #'
 #' @format \describe{
-#'   \item{salt_features}{[raster::RasterStack-class] object}
-#'   \item{salt_pu}{[raster::RasterLayer-class] object.}
+#'   \item{salt_features}{[RasterStack-class] object}
+#'   \item{salt_pu}{[RasterLayer-class] object.}
 #' }
 #'
 #' @keywords datasets

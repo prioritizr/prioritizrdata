@@ -8,8 +8,8 @@
 \title{Salt Spring Island data}
 \format{
 \describe{
-\item{salt_features}{\link[raster:Raster-classes]{raster::RasterStack} object}
-\item{salt_pu}{\link[raster:Raster-classes]{raster::RasterLayer} object.}
+\item{salt_features}{\linkS4class{RasterStack} object}
+\item{salt_pu}{\linkS4class{RasterLayer} object.}
 }
 }
 \usage{
