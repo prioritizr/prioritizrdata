@@ -20,10 +20,8 @@ data(salt_pu)
 \description{
 This data was obtained as part of an online \emph{Marxan}-based planning
 tool created for the Coastal Douglas-fir Conservation Partnership
-(CDFCP; Schuster \emph{et al.} 2017). For a worked example  with this
-dataset, refer to the \href{saltspring.html}{Salt Spring vignette}. The
-scenario is intended to provide an example of how raster planning unit data
-can be used in the \pkg{prioritizr} package.
+(CDFCP; Schuster \emph{et al.} 2017). For a worked example with this
+dataset, refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html}{Salt Spring vignette in the \pkg{prioritizr} package}.
 }
 \details{
 The data set contains the following items:
@@ -35,12 +33,12 @@ The data set contains the following items:
 contains the monetary cost of acquiring the area (BC Land Assessment
 2015).}
 
-\item{\code{salt_features}}{Biodiversity feature data. The probability of
-occurrence commensal of five key ecological communities found on Salt
-Spring island. Each layer in the \linkS4class{RasterStack}
-object represents a different community type. These classes
-are old forest (1), savanna (2), wetland (3), shrub (4), and a
-layer representing the inverse probability of occurrence of human
+\item{\code{salt_features}}{Biodiversity feature data. A multi-band
+\linkS4class{RasterStack} object containing the the probability of
+occurrence for five key ecological communities found on Salt
+Spring island. Each layer represents a different community type.
+These classes are old forest (1), savanna (2), wetland (3), shrub (4),
+and a layer representing the inverse probability of occurrence of human
 commensal species (5). For a given layer, the values indicate the
 composite probability of encountering the suite of bird species most
 commonly associated with that community type.}

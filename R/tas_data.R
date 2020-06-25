@@ -4,7 +4,8 @@
 #' ["Introduction to *Marxan*" course](http://marxan.net/courses)
 #' and was originally part of a larger spatial prioritization performed under
 #' contract to Australia's Department of Environment and Water Resources
-#' (Klein *et al.* 2007).
+#' (Klein *et al.* 2007). For a worked example with this
+#' dataset, refer to the [Tasmania vignette in the \pkg{prioritizr} package](https://cran.r-project.org/web/packages/prioritizr/vignettes/tasmania.html).
 #'
 #' @details The data set contains the following items:
 #'

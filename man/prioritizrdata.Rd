@@ -3,7 +3,7 @@
 \docType{package}
 \name{prioritizrdata}
 \alias{prioritizrdata}
-\title{\pkg{prioritizrdata}: Conservation Planning Data Sets}
+\title{prioritizrdata: Conservation Planning Data Sets}
 \description{
 The \pkg{prioritizrdata} package is a supplemental package that contains
 example datasets for conservation planning. It is intended to be used
@@ -24,7 +24,7 @@ and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources.
 This data set contains vector-based planning unit data and data for the
 spatial distribution of 62 vegetation classes in Tasmania, Australia.
-Refer to the Tasmania vignette in the \pkg{prioritizr} package for a
+Refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/tasmania.html}{Tasmania vignette in the \pkg{prioritizr} package} for a
 worked example with this dataset.}
 
 \item{\link{salt_data}}{This dataset is from an
@@ -32,8 +32,8 @@ online \href{http://arcese.forestry.ubc.ca/marxan-tool}{\emph{Marxan}-based plan
 created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
 contains raster-based planning unit data and the data for the spatial
 distributions of five key ecological communities in the area. Refer to
-the Salt Spring Island vignette in the \pkg{prioritizr} package for a
-worked example with this dataset}
+the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html}{Salt Spring Island vignette in the \pkg{prioritizr} package} for a
+worked example with this dataset.}
 
 }
 }

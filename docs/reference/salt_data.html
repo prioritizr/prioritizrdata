@@ -6,23 +6,31 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Salt Spring Island conservation planning data — salt_data • prioritizrdata</title>
+<title>Salt Spring Island data — salt_data • prioritizrdata</title>
+
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +38,13 @@
 
 
 
-<meta property="og:title" content="Salt Spring Island conservation planning data — salt_data" />
 
+<meta property="og:title" content="Salt Spring Island data — salt_data" />
 <meta property="og:description" content="This data was obtained as part of an online Marxan-based planning
 tool created for the Coastal Douglas-fir Conservation Partnership
-(CDFCP; Schuster et al. 2017). For a worked example  with this
-dataset, refer to the Salt Spring vignette. The
-scenario is intended to provide an example of how raster planning unit data
-can be used in the prioritizr package." />
-<meta name="twitter:card" content="summary" />
+(CDFCP; Schuster et al. 2017). For a worked example with this
+dataset, refer to the Salt Spring vignette in the prioritizr package." />
+
 
 
 
@@ -52,9 +58,10 @@ can be used in the prioritizr package." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,7 +75,7 @@ can be used in the prioritizr package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prioritizrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3.1</span>
       </span>
     </div>
 
@@ -76,7 +83,7 @@ can be used in the prioritizr package." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -87,11 +94,10 @@ can be used in the prioritizr package." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/prioritizr/prioritizrdata">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/prioritizr/prioritizrdata/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -102,108 +108,103 @@ can be used in the prioritizr package." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Salt Spring Island conservation planning data</h1>
+    <h1>Salt Spring Island data</h1>
     <small class="dont-index">Source: <a href='https://github.com/prioritizr/prioritizrdata/blob/master/R/salt_data.R'><code>R/salt_data.R</code></a></small>
     <div class="hidden name"><code>salt_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>This data was obtained as part of an online <em>Marxan</em>-based planning
 tool created for the Coastal Douglas-fir Conservation Partnership
-(CDFCP; Schuster <em>et al.</em> 2017). For a worked example  with this
-dataset, refer to the <a href='saltspring.html'>Salt Spring vignette</a>. The
-scenario is intended to provide an example of how raster planning unit data
-can be used in the <span class="pkg">prioritizr</span> package.</p>
-    
+(CDFCP; Schuster <em>et al.</em> 2017). For a worked example with this
+dataset, refer to the <a href='https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html'>Salt Spring vignette in the <span class="pkg">prioritizr</span> package</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>salt_features</span>)
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_features</span>)
 
-<span class='no'>salt_pu</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_pu</span>)</pre>
 
-<span class='no'>salt_features</span></pre>
-        
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <dl class='dl-horizontal'>
-  <dt>salt_features</dt><dd><p><code><a href='https://www.rdocumentation.org/packages/raster/topics/Raster-classes'>RasterStack-class</a></code> object</p></dd>
-  <dt>salt_pu</dt><dd><p><code><a href='https://www.rdocumentation.org/packages/raster/topics/Raster-classes'>RasterLayer-class</a></code> object.</p></dd>
-</dl>
     
+<dl'>
+<dt>salt_features</dt><dd><p>raster::RasterStack object</p></dd>
+<dt>salt_pu</dt><dd><p>raster::RasterLayer object.</p></dd>
+
+</dl>
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The data set contains the following items:</p>
-<dl class='dl-horizontal'>
-    <dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band
-    <code>RasterLayer-class</code> object where each one hectare pixel
-    contains the monetary cost of acquiring the area (BC Land Assessment
-    2015).</p></dd>
-    <dt><code>salt_features</code></dt><dd><p>Biodiversity feature data. The probability of
-    occurrence commensal of five key ecological communities found on Salt
-    Spring island. Each layer in the <code>RasterStack-class</code>
-    object represents a different community type. These classes
-    are old forest (1), savanna (2), wetland (3), shrub (4), and a
-    layer representing the inverse probability of occurrence of human
-    commensal species (5). For a given layer, the values indicate the
-    composite probability of encountering the suite of bird species most
-    commonly associated with that community type.</p></dd>
+<dl'>
+
+<dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band
+RasterLayer object where each one hectare pixel
+contains the monetary cost of acquiring the area (BC Land Assessment
+2015).</p></dd>
+
+<dt><code>salt_features</code></dt><dd><p>Biodiversity feature data. A multi-band
+RasterStack object containing the the probability of
+occurrence for five key ecological communities found on Salt
+Spring island. Each layer represents a different community type.
+These classes are old forest (1), savanna (2), wetland (3), shrub (4),
+and a layer representing the inverse probability of occurrence of human
+commensal species (5). For a given layer, the values indicate the
+composite probability of encountering the suite of bird species most
+commonly associated with that community type.</p></dd>
+
 </dl>
-    
+
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>BC Assessment (2015) Property Information Services. Available at
-<a href='https://www.bcassessment.ca'>https://www.bcassessment.ca</a> [Date Accessed 2016/06/13].</p>
+<a href='https://www.bcassessment.ca'>https://www.bcassessment.ca</a> (Date Accessed 2016/06/13).</p>
 <p>Morrell N, Schuster R, Crombie M, and Arcese P (2017) <em>A Prioritization
 Tool for the Conservation of Coastal Douglas-fir Forest and Savannah
 Habitats of the Georgia Basin.</em> The Nature Trust of British Colombia, Coastal
 Douglas Fir Conservation Partnership, and the Department of Forest and
 Conservation Sciences, University of British Colombia. Available at
-<a href='http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf</a> [Date Accessed 2017/10/09].</p>
-    
+<a href='http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf</a> (Date Accessed 2017/10/09).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># load data</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>salt_pu</span>, <span class='no'>salt_features</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_pu</span>, <span class='no'>salt_features</span>)
 
 <span class='co'># plot data</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>salt_pu</span>)</div><div class='img'><img src='salt_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>salt_features</span>)</div><div class='img'><img src='salt_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>salt_pu</span>)</div><div class='img'><img src='salt_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>salt_features</span>)</div><div class='img'><img src='salt_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://jeffrey-hanson.com'>Jeffrey O Hanson</a>, <a href='http://www.richard-schuster.com/'>Richard Schuster</a>, Nina Morrell, <a href='http://strimas.com'>Matthew Strimas-Mackey</a>, Matthew E Watts, <a href='http://arcese.forestry.ubc.ca'>Peter Arcese</a>, Joseph Bennett, Hugh P Possingham.</p>
+  <p>Developed by <a href='https://jeffrey-hanson.com'>Jeffrey O Hanson</a>, <a href='http://www.richard-schuster.com'>Richard Schuster</a>, Nina Morrell, <a href='http://strimas.com'>Matthew Strimas-Mackey</a>, Matthew E Watts, <a href='https://arcese.forestry.ubc.ca'>Peter Arcese</a>, <a href='https://josephrbennett.wordpress.com'>Joseph Bennett</a>, <a href='http://www.possinghamlab.org'>Hugh P Possingham</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

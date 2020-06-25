@@ -2,10 +2,8 @@
 #'
 #' This data was obtained as part of an online *Marxan*-based planning
 #' tool created for the Coastal Douglas-fir Conservation Partnership
-#' (CDFCP; Schuster *et al.* 2017). For a worked example  with this
-#' dataset, refer to the [Salt Spring vignette](saltspring.html). The
-#' scenario is intended to provide an example of how raster planning unit data
-#' can be used in the \pkg{prioritizr} package.
+#' (CDFCP; Schuster *et al.* 2017). For a worked example with this
+#' dataset, refer to the [Salt Spring vignette in the \pkg{prioritizr} package](https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html).
 #'
 #' @details
 #' The data set contains the following items:
@@ -17,12 +15,12 @@
 #'     contains the monetary cost of acquiring the area (BC Land Assessment
 #'     2015).}
 #'
-#'   \item{`salt_features`}{Biodiversity feature data. The probability of
-#'     occurrence commensal of five key ecological communities found on Salt
-#'     Spring island. Each layer in the [RasterStack-class]
-#'     object represents a different community type. These classes
-#'     are old forest (1), savanna (2), wetland (3), shrub (4), and a
-#'     layer representing the inverse probability of occurrence of human
+#'   \item{`salt_features`}{Biodiversity feature data. A multi-band
+#'     [RasterStack-class] object containing the the probability of
+#'     occurrence for five key ecological communities found on Salt
+#'     Spring island. Each layer represents a different community type.
+#'     These classes are old forest (1), savanna (2), wetland (3), shrub (4),
+#'     and a layer representing the inverse probability of occurrence of human
 #'     commensal species (5). For a given layer, the values indicate the
 #'     composite probability of encountering the suite of bird species most
 #'     commonly associated with that community type.}
