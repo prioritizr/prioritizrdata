@@ -8,8 +8,8 @@
 \title{Salt Spring Island data}
 \format{
 \describe{
-\item{salt_features}{\link[raster:stack]{raster::stack} object}
-\item{salt_pu}{\link[raster:raster]{raster::raster} object.}
+\item{salt_features}{\code{\linkS4class{RasterStack}} object.}
+\item{salt_pu}{\code{\linkS4class{RasterLayer}} object.}
 }
 }
 \usage{
@@ -29,12 +29,12 @@ The data set contains the following items:
 \describe{
 
 \item{\code{salt_pu}}{Planning unit data. A single band
-\link[raster:raster]{raster::raster} object where each one hectare pixel
+\code{\linkS4class{RasterLayer}} object where each one hectare pixel
 contains the monetary cost of acquiring the area (BC Land Assessment
 2015).}
 
 \item{\code{salt_features}}{Biodiversity feature data. A multi-band
-\link[raster:stack]{raster::stack} object containing the the probability of
+\code{\linkS4class{RasterStack}} object object containing the the probability of
 occurrence for five key ecological communities found on Salt
 Spring island. Each layer represents a different community type.
 These classes are old forest (1), savanna (2), wetland (3), shrub (4),

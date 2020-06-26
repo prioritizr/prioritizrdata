@@ -11,12 +11,12 @@
 #' \describe{
 #'
 #'   \item{`salt_pu`}{Planning unit data. A single band
-#'     [raster::raster] object where each one hectare pixel
+#'     [`RasterLayer-class`] object where each one hectare pixel
 #'     contains the monetary cost of acquiring the area (BC Land Assessment
 #'     2015).}
 #'
 #'   \item{`salt_features`}{Biodiversity feature data. A multi-band
-#'     [raster::stack] object containing the the probability of
+#'     [`RasterStack-class`] object object containing the the probability of
 #'     occurrence for five key ecological communities found on Salt
 #'     Spring island. Each layer represents a different community type.
 #'     These classes are old forest (1), savanna (2), wetland (3), shrub (4),
@@ -35,8 +35,8 @@
 #' @usage data(salt_pu)
 #'
 #' @format \describe{
-#'   \item{salt_features}{[raster::stack] object}
-#'   \item{salt_pu}{[raster::raster] object.}
+#'   \item{salt_features}{[`RasterStack-class`] object.}
+#'   \item{salt_pu}{[`RasterLayer-class`] object.}
 #' }
 #'
 #' @keywords datasets
