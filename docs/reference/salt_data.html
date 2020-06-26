@@ -135,8 +135,8 @@ dataset, refer to the <a href='https://cran.r-project.org/web/packages/prioritiz
 
     
 <dl'>
-<dt>salt_features</dt><dd><p>RasterStack object</p></dd>
-<dt>salt_pu</dt><dd><p>RasterLayer object.</p></dd>
+<dt>salt_features</dt><dd><p><a href='https://rdrr.io/pkg/raster/man/stack.html'>raster::stack</a> object</p></dd>
+<dt>salt_pu</dt><dd><p><a href='https://rdrr.io/pkg/raster/man/raster.html'>raster::raster</a> object.</p></dd>
 
 </dl>
 
@@ -146,12 +146,12 @@ dataset, refer to the <a href='https://cran.r-project.org/web/packages/prioritiz
 <dl'>
 
 <dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band
-RasterLayer object where each one hectare pixel
+<a href='https://rdrr.io/pkg/raster/man/raster.html'>raster::raster</a> object where each one hectare pixel
 contains the monetary cost of acquiring the area (BC Land Assessment
 2015).</p></dd>
 
 <dt><code>salt_features</code></dt><dd><p>Biodiversity feature data. A multi-band
-RasterStack object containing the the probability of
+<a href='https://rdrr.io/pkg/raster/man/stack.html'>raster::stack</a> object containing the the probability of
 occurrence for five key ecological communities found on Salt
 Spring island. Each layer represents a different community type.
 These classes are old forest (1), savanna (2), wetland (3), shrub (4),
