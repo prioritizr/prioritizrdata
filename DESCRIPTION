@@ -1,24 +1,32 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.3
-Title: Conservation Planning Data Sets
-Description: Conservation planning data sets for learning how to use the 'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
-Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
-               email='jeffrey.hanson@uqconnect.edu.au', role = c('aut')),
-             person(c('Richard'), 'Schuster',
-               email='mail@richard-schuster.com', role = c('aut', 'cre')),
-             person(c('Nina'), 'Morrell',
-               email='nina.morrell@ubc.ca', role = c('aut')),
-             person(c('Matthew'), 'Strimas-Mackey',
-               email='mstrimas@gmail.com', role = c('aut')),
-             person(c('Matthew', 'E'), 'Watts',
-               email='m.watts@uq.edu.au', role = c('aut')),
-             person(c('Peter'), 'Arcese',
-               email='peter.arcese@ubc.ca', role = c('aut')),
-             person(c('Joseph'), 'Bennett',
-               email='joseph.bennett@carleton.ca', role = c('aut')),
-             person(c('Hugh', 'P'), 'Possingham',
-               email='hugh.possingham@tnc.org', role = c('aut')))
+Version: 0.2.3.1
+Title: Conservation Planning Datasets
+Description: Conservation planning datasets for learning how to use the
+    'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
+Authors@R:
+    c(person(c('Jeffrey', 'O'), 'Hanson',
+        email='jeffrey.hanson@uqconnect.edu.au', role = c('aut'),
+        comment = c(ORCID = '0000-0002-4716-6134')),
+      person(c('Richard'), 'Schuster',
+        email='richard.schuster@glel.carleton.ca', role = c('aut', 'cre'),
+        comment = c(ORCID = '0000-0003-3191-7869')),
+      person(c('Nina'), 'Morrell',
+        email='nina.morrell@ubc.ca', role = c('aut')),
+      person(c('Matthew'), 'Strimas-Mackey',
+        email='mstrimas@gmail.com', role = c('aut'),
+        comment = c(ORCID = '0000-0001-8929-7776')),
+      person(c('Matthew', 'E'), 'Watts',
+        email='m.watts@uq.edu.au', role = c('aut')),
+      person(c('Peter'), 'Arcese',
+        email='peter.arcese@ubc.ca', role = c('aut'),
+        comment = c(ORCID = '0000-0002-8097-482X')),
+      person(c('Joseph'), 'Bennett',
+        email='joseph.bennett@carleton.ca', role = c('aut'),
+        comment = c(ORCID = '0000-0002-3901-9513')),
+      person(c('Hugh', 'P'), 'Possingham',
+        email='hugh.possingham@tnc.org', role = c('aut'),
+        comment = c(ORCID = '0000-0001-7755-996X')))
 Suggests:
     testthat,
     roxygen2,
@@ -29,12 +37,14 @@ Depends:
     raster,
     sp
 License: GPL-3
+Encoding: UTF-8
 LazyData: true
 URL: https://prioritizr.github.io/prioritizrdata,
     https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0.9000
 Collate:
     'package.R'
     'salt_data.R'
     'tas_data.R'
+Roxygen: list(markdown = TRUE)

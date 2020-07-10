@@ -2,15 +2,17 @@ url: http://prioritizr.github.io/prioritizrdata
 
 authors:
   Jeffrey O Hanson:
-    href: http://jeffrey-hanson.com
+    href: https://jeffrey-hanson.com
   Richard Schuster:
-    href: http://www.richard-schuster.com/
+    href: http://www.richard-schuster.com
   Matthew Strimas-Mackey:
     href: http://strimas.com
   Peter Arcese:
-    href: http://arcese.forestry.ubc.ca
-  Joeseph Bennett:
-    href: https://josephrbennett.wordpress.com/
+    href: https://arcese.forestry.ubc.ca
+  Joseph Bennett:
+    href: https://josephrbennett.wordpress.com
+  Hugh P Possingham:
+    href: http://www.possinghamlab.org
 
 template:
   params:
