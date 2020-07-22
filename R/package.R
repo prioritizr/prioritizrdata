@@ -2,7 +2,7 @@
 #' @import sp
 NULL
 
-#' prioritizrdata: Conservation Planning Data Sets
+#' prioritizrdata: Conservation Planning Datasets
 #'
 #' The \pkg{prioritizrdata} package is a supplemental package that contains
 #' example datasets for conservation planning. It is intended to be used
@@ -16,11 +16,11 @@ NULL
 #'
 #' \describe{
 #'
-#' \item{[tas_data]}{This data set was obtained from the
+#' \item{[tas_data]}{This dataset was obtained from the
 #'   ["Introduction to *Marxan*" course](http://marxan.net/courses)
 #'   and was originally part of a larger spatial prioritization performed under
 #'   contract to Australia's Department of Environment and Water Resources.
-#'   This data set contains vector-based planning unit data and data for the
+#'   This dataset contains vector-based planning unit data and data for the
 #'   spatial distribution of 62 vegetation classes in Tasmania, Australia.
 #'   Refer to the [Tasmania vignette in the \pkg{prioritizr} package](https://cran.r-project.org/web/packages/prioritizr/vignettes/tasmania.html) for a
 #'   worked example with this dataset.}

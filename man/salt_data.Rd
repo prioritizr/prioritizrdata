@@ -24,13 +24,14 @@ tool created for the Coastal Douglas-fir Conservation Partnership
 dataset, refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html}{Salt Spring vignette in the \pkg{prioritizr} package}.
 }
 \details{
-The data set contains the following items:
+The dataset contains the following items:
 
 \describe{
 
 \item{\code{salt_pu}}{Planning unit data. A single band
 \code{\linkS4class{RasterLayer}} object where each one hectare pixel
-contains the monetary cost of acquiring the area (BC Land Assessment
+describes the monetary cost of acquiring the area
+(i.e. a pixel value of 1 = $100,000 CAD; BC Land Assessment
 2015).}
 
 \item{\code{salt_features}}{Biodiversity feature data. A multi-band

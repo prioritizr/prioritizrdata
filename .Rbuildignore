@@ -16,3 +16,5 @@ gp.log
 spell.log
 ^inst$
 README.Rmd
+WORDLIST
+^extdata*$

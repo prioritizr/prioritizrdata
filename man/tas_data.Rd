@@ -18,7 +18,7 @@ data(tas_features)
 data(tas_pu)
 }
 \description{
-This data set was obtained from the
+This dataset was obtained from the
 \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
 and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources
@@ -26,7 +26,7 @@ contract to Australia's Department of Environment and Water Resources
 dataset, refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/tasmania.html}{Tasmania vignette in the \pkg{prioritizr} package}.
 }
 \details{
-The data set contains the following items:
+The dataset contains the following items:
 
 \describe{
 

@@ -6,13 +6,14 @@
 #' dataset, refer to the [Salt Spring vignette in the \pkg{prioritizr} package](https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html).
 #'
 #' @details
-#' The data set contains the following items:
+#' The dataset contains the following items:
 #'
 #' \describe{
 #'
 #'   \item{`salt_pu`}{Planning unit data. A single band
 #'     [`RasterLayer-class`] object where each one hectare pixel
-#'     contains the monetary cost of acquiring the area (BC Land Assessment
+#'     describes the monetary cost of acquiring the area
+#'     (i.e. a pixel value of 1 = $100,000 CAD; BC Land Assessment
 #'     2015).}
 #'
 #'   \item{`salt_features`}{Biodiversity feature data. A multi-band
