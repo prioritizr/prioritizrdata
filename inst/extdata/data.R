@@ -16,6 +16,10 @@ tas_pu <- spTransform(tas_pu, sp::CRS("+init=epsg:32755"))
 tas_features <- projectRaster(tas_features, method = "ngb",
                               crs = tas_pu@proj4string)
 
+## force logical data types for locked columns in tas_pu
+tas_pu$locked_in <- as.logical(tas_pu$locked_in)
+tas_pu$locked_out <- as.logical(tas_pu$locked_out)
+
 ## project Salt Spring Island data
 salt_pu <- salt_pu * 1e-5
 salt_data <- stack(salt_pu, salt_features)

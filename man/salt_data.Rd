@@ -49,6 +49,10 @@ commonly associated with that community type.}
 # load data
 data(salt_pu, salt_features)
 
+# preview data
+print(salt_pu)
+print(salt_features)
+
 # plot data
 plot(salt_pu)
 plot(salt_features)

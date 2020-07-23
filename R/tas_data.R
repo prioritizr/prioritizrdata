@@ -12,14 +12,17 @@
 #' \describe{
 #'
 #'   \item{`tas_pu`}{Planning unit data. The attribute table has
-#'     three columns containing unique identifiers ("id"), unimproved land
-#'     values ("cost"), and their existing level of protection ("status").
-#'     Units with 50 \% or more of their area contained in protected areas
-#'     are associated with a status of 2, otherwise they are associated with a
-#'     value of 0.}
+#'     three columns containing unique identifiers (`"id"`),
+#'     unimproved land values (`"cost"`), and their existing level of
+#'     protection (`"status"`). Units with 50% or more of their area
+#'     contained in protected areas are associated with a status of 2,
+#'     otherwise they are associated with a value of 0.
+#'     It also contains columns (`"locked_in"` and `"locked_out"`)
+#'     with `logical` values (i.e. `TRUE` or `FALSE` values)
+#'     for locking in and locking out planning units.}
 #'
 #'   \item{`tas_features`}{The distribution of 62 vegetation
-#'     classes in Tasmania, Australia. Each layer in the  stack
+#'     classes in Tasmania, Australia. Each layer in the stack
 #'     represents a different vegetation class. For a given layer,
 #'     cells indicate the presence (value of 1) or absence (value of 0)
 #'     of the vegetation class in an area.}
@@ -50,6 +53,10 @@
 #' @examples
 #' # load data
 #' data(tas_pu, tas_features)
+#'
+#' # preview data
+#' print(tas_pu)
+#' print(tas_features)
 #'
 #' # plot data
 #' plot(tas_pu)

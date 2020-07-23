@@ -178,6 +178,24 @@ Conservation Sciences, University of British Colombia. Available at
     <pre class="examples"><div class='input'><span class='co'># load data</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_pu</span>, <span class='no'>salt_features</span>)
 
+<span class='co'># preview data</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>salt_pu</span>)</div><div class='output co'>#&gt; class      : RasterLayer 
+#&gt; dimensions : 280, 200, 56000  (nrow, ncol, ncell)
+#&gt; resolution : 100, 100  (x, y)
+#&gt; extent     : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
+#&gt; crs        : +init=epsg:32610 +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+#&gt; source     : memory
+#&gt; names      : salt_pu 
+#&gt; values     : 0.02552, 10000  (min, max)
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>salt_features</span>)</div><div class='output co'>#&gt; class      : RasterStack 
+#&gt; dimensions : 280, 200, 56000, 5  (nrow, ncol, ncell, nlayers)
+#&gt; resolution : 100, 100  (x, y)
+#&gt; extent     : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
+#&gt; crs        : +init=epsg:32610 +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+#&gt; names      : salt_features.1, salt_features.2, salt_features.3, salt_features.4, salt_features.5 
+#&gt; min values :       0.3595050,       0.2979212,       0.1132785,       0.4013101,       0.3703639 
+#&gt; max values :       0.9312289,       0.6608167,       0.6434712,       0.8249719,       0.9032656 
+#&gt; </div><div class='input'>
 <span class='co'># plot data</span>
 <span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>salt_pu</span>)</div><div class='img'><img src='salt_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>salt_features</span>)</div><div class='img'><img src='salt_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>

@@ -150,14 +150,17 @@ dataset, refer to the <a href='https://cran.r-project.org/web/packages/prioritiz
 <dl'>
 
 <dt><code>tas_pu</code></dt><dd><p>Planning unit data. The attribute table has
-three columns containing unique identifiers ("id"), unimproved land
-values ("cost"), and their existing level of protection ("status").
-Units with 50 \<!-- % or more of their area contained in protected areas -->
-are associated with a status of 2, otherwise they are associated with a
-value of 0.</p></dd>
+three columns containing unique identifiers (<code>"id"</code>),
+unimproved land values (<code>"cost"</code>), and their existing level of
+protection (<code>"status"</code>). Units with 50% or more of their area
+contained in protected areas are associated with a status of 2,
+otherwise they are associated with a value of 0.
+It also contains columns (<code>"locked_in"</code> and <code>"locked_out"</code>)
+with <code>logical</code> values (i.e. <code>TRUE</code> or <code>FALSE</code> values)
+for locking in and locking out planning units.</p></dd>
 
 <dt><code>tas_features</code></dt><dd><p>The distribution of 62 vegetation
-classes in Tasmania, Australia. Each layer in the  stack
+classes in Tasmania, Australia. Each layer in the stack
 represents a different vegetation class. For a given layer,
 cells indicate the presence (value of 1) or absence (value of 0)
 of the vegetation class in an area.</p></dd>
@@ -176,6 +179,23 @@ Environment; Water Resources.</p>
     <pre class="examples"><div class='input'><span class='co'># load data</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>tas_pu</span>, <span class='no'>tas_features</span>)
 
+<span class='co'># preview data</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>tas_pu</span>)</div><div class='output co'>#&gt; class       : SpatialPolygonsDataFrame 
+#&gt; features    : 1130 
+#&gt; extent      : 298809.6, 613818.8, 5167775, 5502544  (xmin, xmax, ymin, ymax)
+#&gt; crs         : +init=epsg:32755 +proj=utm +zone=55 +south +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+#&gt; variables   : 5
+#&gt; names       :   id,              cost, status, locked_in, locked_out 
+#&gt; min values  :    1, 0.192488262910798,      0,         0,          0 
+#&gt; max values  : 1130,  61.9272727272727,      2,         1,          0 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>tas_features</span>)</div><div class='output co'>#&gt; class      : RasterStack 
+#&gt; dimensions : 391, 371, 145061, 62  (nrow, ncol, ncell, nlayers)
+#&gt; resolution : 967, 1020  (x, y)
+#&gt; extent     : 288966.7, 647723.7, 5142256, 5541076  (xmin, xmax, ymin, ymax)
+#&gt; crs        : +init=epsg:32755 +proj=utm +zone=55 +south +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+#&gt; names      : tas_features.1, tas_features.2, tas_features.3, tas_features.4, tas_features.5, tas_features.6, tas_features.7, tas_features.8, tas_features.9, tas_features.10, tas_features.11, tas_features.12, tas_features.13, tas_features.14, tas_features.15, ... 
+#&gt; min values :              0,              0,              0,              0,              0,              0,              0,              0,              0,               0,               0,               0,               0,               0,               0, ... 
+#&gt; max values :              1,              1,              1,              1,              1,              1,              1,              1,              1,               1,               1,               1,               1,               1,               1, ... 
+#&gt; </div><div class='input'>
 <span class='co'># plot data</span>
 <span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>tas_pu</span>)</div><div class='img'><img src='tas_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>tas_features</span>)</div><div class='img'><img src='tas_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
