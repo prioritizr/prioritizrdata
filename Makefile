@@ -5,6 +5,9 @@ clean:
 	rm -rf docs/*
 	rm -rf inst/doc/*
 
+data:
+	R --slave -e "source('inst/extdata/data.R')"
+
 docs: readme man site
 
 man:
@@ -14,6 +17,9 @@ readme:
 	R --slave -e "rmarkdown::render('README.Rmd')"
 
 site:
+	R --slave -e "pkgdown::build_site(run_dont_run = TRUE)"
+
+quicksite:
 	R --slave -e "pkgdown::build_site(run_dont_run = TRUE, lazy = TRUE)"
 
 test:
@@ -26,19 +32,15 @@ check:
 
 spellcheck:
 	echo "\n===== SPELL CHECK =====\n" > spell.log 2>&1
-	R --slave -e "devtools::spell_check(ignore = readLines('inst/extdata/dictionary.txt'))" >> spell.log 2>&1
+	R --slave -e "devtools::spell_check()" >> spell.log 2>&1
 
 wbcheck:
 	R --slave -e "devtools::build_win()"
-
-gpcheck:
-	echo "\n===== GOOD PRACTICES CHECK =====\n" > gp.log 2>&1
-	R --slave -e "goodpractice::gp(checks = setdiff(goodpractice::all_checks(), c('covr', 'cyclocomp', 'no_description_depends', 'no_import_package_as_a_whole')), quiet = FALSE)" >> gp.log 2>&1
 
 build:
 	R --slave -e "devtools::build()"
 
 install:
-	R --slave -e "devtools::install_local('../prioritizr')"
+	R --slave -e "devtools::install_local('../prioritizrdata', force = TRUE)"
 
 .PHONY: data docs readme site test check checkwb build install man

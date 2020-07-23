@@ -1,10 +1,17 @@
+# prioritizrdata 0.2.3.2
+
+- Fix PROJ7 issues with the Tasmania and Salt Spring Island dataset by
+  employing a different coordinate reference system (#5).
+- Rescale cost values for the Salt Spring Island planning units to avoid
+  numerical instability issues when using these data with exact solvers.
+
 # prioritizrdata 0.2.3.1
 
 - Assorted documentation improvements (e.g. fixing typos and broken URLs).
 - Fix "Non-file package-anchored link(s) in documentation object" warnings
   in R-devel checks.
 
-# prioritizrdata 0.2.3 (released)
+# prioritizrdata 0.2.3
 
 - Release candidate for CRAN.
 

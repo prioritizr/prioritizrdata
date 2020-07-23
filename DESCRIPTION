@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.2.3.1
+Version: 0.2.3.2
 Title: Conservation Planning Datasets
 Description: Conservation planning datasets for learning how to use the
     'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
@@ -31,18 +31,20 @@ Suggests:
     testthat,
     roxygen2,
     knitr,
-    rgeos
+    rgeos,
+    rgdal
 Depends:
-    R(>= 3.4.0),
+    R(>= 3.5.0),
     raster,
     sp
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Language: en-US
 URL: https://prioritizr.github.io/prioritizrdata,
     https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
-RoxygenNote: 7.1.0.9000
+RoxygenNote: 7.1.1
 Collate:
     'package.R'
     'salt_data.R'

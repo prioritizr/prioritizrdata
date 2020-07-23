@@ -3,7 +3,7 @@
 \docType{package}
 \name{prioritizrdata}
 \alias{prioritizrdata}
-\title{prioritizrdata: Conservation Planning Data Sets}
+\title{prioritizrdata: Conservation Planning Datasets}
 \description{
 The \pkg{prioritizrdata} package is a supplemental package that contains
 example datasets for conservation planning. It is intended to be used
@@ -18,11 +18,11 @@ This package contains the following datasets:
 
 \describe{
 
-\item{\link{tas_data}}{This data set was obtained from the
+\item{\link{tas_data}}{This dataset was obtained from the
 \href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
 and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources.
-This data set contains vector-based planning unit data and data for the
+This dataset contains vector-based planning unit data and data for the
 spatial distribution of 62 vegetation classes in Tasmania, Australia.
 Refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/tasmania.html}{Tasmania vignette in the \pkg{prioritizr} package} for a
 worked example with this dataset.}
