@@ -1,9 +1,14 @@
+# prioritizrdata 0.2.4
+
+- Release candidate for CRAN.
+
 # prioritizrdata 0.2.3.2
 
 - Fix PROJ7 issues with the Tasmania and Salt Spring Island dataset by
   employing a different coordinate reference system (#5).
 - Rescale cost values for the Salt Spring Island planning units to avoid
   numerical instability issues when using these data with exact solvers.
+- Update Tasmania feature data so that pixels have `NA` values in marine areas.
 
 # prioritizrdata 0.2.3.1
 
