@@ -15,13 +15,20 @@ tas_pu <- shapefile("inst/extdata/tas_pu.shp")
 ## project Tasmania data
 tas_pu <- spTransform(tas_pu, as(st_crs(32755), "CRS"))
 tas_features <- projectRaster(tas_features, method = "ngb",
-                              crs = tas_pu@proj4string)
+                              crs = tas_pu@proj4string, res = res(tas_features))
 
 ## force NA values in marine areas
 for (i in seq_len(nlayers(tas_features)))
   tas_features[[i]][is.na(tas_features[[i]])] <- 0
-tas_pu_raster <- rasterize(tas_pu, tas_features[[1]])
+tas_pu_raster <- tas_features[[1]]
+tas_pu_raster[] <- NA_real_
+idx <- raster::extract(tas_features[[1]], sf::st_as_sf(tas_pu), cell = TRUE)
+idx2 <- unique(unlist(lapply(idx, function(x) x[, "cell"])))
+tas_pu_raster[idx2] <- 1
 tas_features <- mask(tas_features, tas_pu_raster)
+
+## make sure that each feature has at least one presence
+tas_features[[61]][c(133746, 133747)] <- 1
 
 ## force logical data types for locked columns in tas_pu
 tas_pu$locked_in <- as.logical(tas_pu$locked_in)
@@ -31,11 +38,14 @@ tas_pu$locked_out <- as.logical(tas_pu$locked_out)
 salt_pu <- salt_pu * 1e-5
 salt_data <- stack(salt_pu, salt_features)
 salt_data <- projectRaster(salt_data, method = "bilinear",
-                           crs = sp::CRS("+init=epsg:32610"))
+                           crs = sp::CRS("+init=epsg:32610"),
+                           res = res(salt_pu))
 salt_pu <- salt_data[[1]]
 salt_features <- salt_data[[-1]]
 salt_features <- mask(salt_features, salt_pu)
 raster::compareRaster(salt_pu, salt_features[[1]], res = TRUE)
+
+
 
 # Exports
 ## fully load raster data
