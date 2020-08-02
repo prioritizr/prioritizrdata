@@ -3,7 +3,7 @@
 #' This data was obtained as part of an online *Marxan*-based planning
 #' tool created for the Coastal Douglas-fir Conservation Partnership
 #' (CDFCP; Schuster *et al.* 2017). For a worked example with this
-#' dataset, refer to the [Salt Spring vignette in the \pkg{prioritizr} package](https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html).
+#' dataset, refer to the [Salt Spring vignette in the \pkg{prioritizr} package](https://CRAN.R-project.org/package=prioritizr/vignettes/saltspring.html).
 #'
 #' @details
 #' The dataset contains the following items:

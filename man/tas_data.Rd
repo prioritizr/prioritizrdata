@@ -23,7 +23,7 @@ This dataset was obtained from the
 and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources
 (Klein \emph{et al.} 2007). For a worked example with this
-dataset, refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/tasmania.html}{Tasmania vignette in the \pkg{prioritizr} package}.
+dataset, refer to the \href{https://CRAN.R-project.org/package=prioritizr/vignettes/tasmania.html}{Tasmania vignette in the \pkg{prioritizr} package}.
 }
 \details{
 The dataset contains the following items:

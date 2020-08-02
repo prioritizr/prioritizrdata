@@ -21,7 +21,7 @@ data(salt_pu)
 This data was obtained as part of an online \emph{Marxan}-based planning
 tool created for the Coastal Douglas-fir Conservation Partnership
 (CDFCP; Schuster \emph{et al.} 2017). For a worked example with this
-dataset, refer to the \href{https://cran.r-project.org/web/packages/prioritizr/vignettes/saltspring.html}{Salt Spring vignette in the \pkg{prioritizr} package}.
+dataset, refer to the \href{https://CRAN.R-project.org/package=prioritizr/vignettes/saltspring.html}{Salt Spring vignette in the \pkg{prioritizr} package}.
 }
 \details{
 The dataset contains the following items:
