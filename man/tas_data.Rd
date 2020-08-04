@@ -19,7 +19,7 @@ data(tas_pu)
 }
 \description{
 This dataset was obtained from the
-\href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
+\href{https://marxansolutions.org/}{"Introduction to \emph{Marxan}" course}
 and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources
 (Klein \emph{et al.} 2007). For a worked example with this

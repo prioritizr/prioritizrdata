@@ -19,7 +19,7 @@ This package contains the following datasets:
 \describe{
 
 \item{\link{tas_data}}{This dataset was obtained from the
-\href{http://marxan.net/courses}{"Introduction to \emph{Marxan}" course}
+\href{https://marxansolutions.org/}{"Introduction to \emph{Marxan}" course}
 and was originally part of a larger spatial prioritization performed under
 contract to Australia's Department of Environment and Water Resources.
 This dataset contains vector-based planning unit data and data for the
@@ -28,7 +28,7 @@ Refer to the \href{https://CRAN.R-project.org/package=prioritizr/vignettes/tasma
 worked example with this dataset.}
 
 \item{\link{salt_data}}{This dataset is from an
-online \href{http://arcese.forestry.ubc.ca/marxan-tool}{\emph{Marxan}-based planning tool}
+online \href{https://arcese.forestry.ubc.ca/marxan-tool/}{\emph{Marxan}-based planning tool}
 created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It
 contains raster-based planning unit data and the data for the spatial
 distributions of five key ecological communities in the area. Refer to

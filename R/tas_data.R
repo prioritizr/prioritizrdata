@@ -1,7 +1,7 @@
 #' Tasmania data
 #'
 #' This dataset was obtained from the
-#' ["Introduction to *Marxan*" course](http://marxan.net/courses)
+#' ["Introduction to *Marxan*" course](https://marxansolutions.org/)
 #' and was originally part of a larger spatial prioritization performed under
 #' contract to Australia's Department of Environment and Water Resources
 #' (Klein *et al.* 2007). For a worked example with this

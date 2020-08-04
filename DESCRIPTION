@@ -41,7 +41,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Language: en-US
-URL: https://prioritizr.github.io/prioritizrdata,
+URL: https://prioritizr.github.io/prioritizrdata/,
     https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
 RoxygenNote: 7.1.1
