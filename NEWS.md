@@ -1,3 +1,8 @@
+# prioritizrdata 0.2.4.1
+
+- Implement GitHub Actions continuous integration (i.e. update tests
+  and README).
+
 # prioritizrdata 0.2.4
 
 - Release candidate for CRAN.

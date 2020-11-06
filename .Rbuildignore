@@ -18,3 +18,4 @@ spell.log
 README.Rmd
 WORDLIST
 ^extdata*$
+^\.github$

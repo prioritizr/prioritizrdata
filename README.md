@@ -3,7 +3,7 @@
 Conservation Planning Datasets
 ==============================
 
-[![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![Travis Build Status](https://img.shields.io/travis/prioritizr/prioritizrdata/master.svg?label=Linux%20%26%20Mac%20OSX)](https://travis-ci.org/prioritizr/prioritizrdata) [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/jeffreyhanson/prioritizrdata/master.svg?label=Windows)](https://ci.appveyor.com/project/jeffreyhanson/prioritizrdata) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
+[![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![R-CMD-check-Ubuntu](https://img.shields.io/github/workflow/status/prioritizr/oppr/Ubuntu/master.svg?label=Ubuntu)](https://github.com/prioritizr/oppr/actions) [![R-CMD-check-Windows](https://img.shields.io/github/workflow/status/prioritizr/oppr/Windows/master.svg?label=Windows)](https://github.com/prioritizr/oppr/actions) [![R-CMD-check-Mac-OSX](https://img.shields.io/github/workflow/status/prioritizr/oppr/Mac%20OSX/master.svg?label=Mac%20OSX)](https://github.com/prioritizr/oppr/actions) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains example datasets for conservation planning. It is intended to be used alongside the [*prioritizr R* package](https://prioritizr.net)---a package for building and solving systematic conservation prioritization problems using integer linear programming (ILP) techniques---and provides little functionality itself.
 
@@ -41,4 +41,4 @@ Please cite the *prioritizrdata R* package when using it in publications. To cit
 
 Alternatively, to cite the latest development version, please use:
 
-> Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2020). prioritizrdata: Conservation Planning Datasets. R package version 0.2.4. Available at <https://github.com/prioritizr/prioritizrdata>.
+> Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2020). prioritizrdata: Conservation Planning Datasets. R package version 0.2.4.1. Available at <https://github.com/prioritizr/prioritizrdata>.
