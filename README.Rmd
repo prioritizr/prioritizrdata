@@ -59,7 +59,7 @@ package_version_year <- function(x) {
 }
 
 live_package_version_year <- function(x) {
-  ## fetch data
+  # fetch data
   d <- versions::available.versions(x)[[1]]
   d <- d[which(d$version == max(d$version)), , drop = FALSE]
   c(as.character(d$version), as.character(format(as.POSIXct(d$date), "%Y")))
