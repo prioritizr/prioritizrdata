@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,18 +34,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">prioritizrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -54,7 +50,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/prioritizr/prioritizrdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -70,42 +66,44 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="conservation-planning-datasets" class="section level1">
+<div id="prioritizrdata-conservation-planning-datasets" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#conservation-planning-datasets" class="anchor"></a>Conservation Planning Datasets</h1></div>
+<a href="#prioritizrdata-conservation-planning-datasets" class="anchor" aria-hidden="true"></a>prioritizrdata: Conservation Planning Datasets</h1></div>
 
-<p>The <em>prioritizrdata R</em> package is a supplemental package that contains example datasets for conservation planning. It is intended to be used alongside the <a href="https://prioritizr.net"><em>prioritizr R</em> package</a>—a package for building and solving systematic conservation prioritization problems using integer linear programming (ILP) techniques—and provides little functionality itself.</p>
+<p>The <em>prioritizrdata R</em> package is a supplemental package that contains example datasets for conservation planning. It is intended to be used alongside the <a href="https://prioritizr.net" class="external-link"><em>prioritizr R</em> package</a>—a package for building and solving systematic conservation prioritization problems using integer linear programming (ILP) techniques—and provides little functionality itself.</p>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<a href="#overview" class="anchor" aria-hidden="true"></a>Overview</h2>
 <p>This package contains the following conservation planning datasets.</p>
 <ul>
 <li>
-<strong>Tasmania dataset</strong>: This dataset was included to show how prioritizations can be created using vector (shapefile) data. It was obtained from the <a href="https://marxansolutions.org/">“Introduction to Marxan” course</a> and was originally a subset of a larger spatial prioritization project performed under contract to Australia’s Department of Environment and Water Resources. It contains vector-based planning unit data and the distributions of 63 vegetation classes in Tasmania, Australia. Refer to the <a href="https://prioritizr.net/articles/tasmania.html">Tasmania vignette</a> in the <em>prioritizr R</em> package for a worked example with this dataset.</li>
+<strong>Tasmania dataset</strong>: This dataset was included to show how prioritizations can be created using vector (shapefile) data. It was obtained from the <a href="https://marxansolutions.org/" class="external-link">“Introduction to Marxan” course</a> and was originally a subset of a larger spatial prioritization project performed under contract to Australia’s Department of Environment and Water Resources. It contains vector-based planning unit data and the distributions of 63 vegetation classes in Tasmania, Australia. Refer to the <a href="https://prioritizr.net/articles/tasmania.html" class="external-link">Tasmania vignette</a> in the <em>prioritizr R</em> package for a worked example with this dataset.</li>
 <li>
-<strong>Salt Spring Island dataset</strong>: This dataset was included to provide an example of how prioritizations can be created using raster data. It was obtained as part of an online <a href="https://arcese.forestry.ubc.ca/marxan-tool/">Marxan-based planning tool</a> created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It contains a raster-based planning unit layer and data for five key ecological communities in Salt Spring Island. Refer to the <a href="https://prioritizr.net/articles/saltspring.html">Salt Spring Island vignette</a> in the <em>prioritizr R</em> package for a worked example with this dataset.</li>
+<strong>Salt Spring Island dataset</strong>: This dataset was included to provide an example of how prioritizations can be created using raster data. It was obtained as part of an online <a href="https://arcese.forestry.ubc.ca/marxan-tool/" class="external-link">Marxan-based planning tool</a> created for the Coastal Douglas-fir Conservation Partnership (CDFCP). It contains a raster-based planning unit layer and data for five key ecological communities in Salt Spring Island. Refer to the <a href="https://prioritizr.net/articles/saltspring.html" class="external-link">Salt Spring Island vignette</a> in the <em>prioritizr R</em> package for a worked example with this dataset.</li>
 </ul>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
 <p>The latest official version of the <em>prioritizrdata R</em> package can be installed using the following <em>R</em> code.</p>
-<div class="sourceCode"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"prioritizrdata"</span>, <span class="kw">repos</span> <span class="kw">=</span> <span class="st">"https://cran.rstudio.com/"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"prioritizrdata"</span>, repos <span class="op">=</span> <span class="st">"https://cran.rstudio.com/"</span><span class="op">)</span></code></pre></div>
 <p>Alternatively, the latest development version can be installed using the following code. Please note that while developmental versions may contain additional features not present in the official version, they may also contain coding errors.</p>
-<div class="sourceCode"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="no">devtools</span>))
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"prioritizr/prioritizrdata"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"prioritizr/prioritizrdata"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="citation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#citation" class="anchor"></a>Citation</h2>
+<a href="#citation" class="anchor" aria-hidden="true"></a>Citation</h2>
 <p>Please cite the <em>prioritizrdata R</em> package when using it in publications. To cite the latest official version, please use:</p>
 <blockquote>
-<p>Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2020). prioritizrdata: Conservation Planning Datasets. R package version 0.2.4. Available at <a href="https://CRAN.R-project.org/package=prioritizrdata" class="uri">https://CRAN.R-project.org/package=prioritizrdata</a>.</p>
+<p>Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2020). prioritizrdata: Conservation Planning Datasets. R package version 0.2.4. Available at <a href="https://CRAN.R-project.org/package=prioritizrdata" class="external-link uri">https://CRAN.R-project.org/package=prioritizrdata</a>.</p>
 </blockquote>
 <p>Alternatively, to cite the latest development version, please use:</p>
 <blockquote>
-<p>Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2020). prioritizrdata: Conservation Planning Datasets. R package version 0.2.4.1. Available at <a href="https://github.com/prioritizr/prioritizrdata" class="uri">https://github.com/prioritizr/prioritizrdata</a>.</p>
+<p>Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese P, Bennett J, Possingham HP (2021). prioritizrdata: Conservation Planning Datasets. R package version 0.2.4.2. Available at <a href="https://github.com/prioritizr/prioritizrdata" class="external-link uri">https://github.com/prioritizr/prioritizrdata</a>.</p>
 </blockquote>
 </div>
 </div>
@@ -113,7 +111,7 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=prioritizrdata">https://​cloud.r-project.org/​package=prioritizrdata</a>
 </li>
@@ -123,14 +121,17 @@
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
 </ul>
 </div>
+
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>
 <a href="https://jeffrey-hanson.com">Jeffrey O Hanson</a> <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4716-6134" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
@@ -149,26 +150,29 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg" alt="lifecycle"></a></li>
-<li><a href="https://github.com/prioritizr/prioritizrdata/actions"><img src="https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Ubuntu/master.svg?label=Ubuntu" alt="R-CMD-check-Ubuntu"></a></li>
-<li><a href="https://github.com/prioritizr/prioritizrdata/actions"><img src="https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Windows/master.svg?label=Windows" alt="R-CMD-check-Windows"></a></li>
-<li><a href="https://github.com/prioritizr/prioritizrdata/actions"><img src="https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Mac%20OSX/master.svg?label=Mac%20OSX" alt="R-CMD-check-Mac-OSX"></a></li>
-<li><a href="https://CRAN.R-project.org/package=prioritizrdata"><img src="http://www.r-pkg.org/badges/version/prioritizrdata" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#stable" class="external-link"><img src="https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg" alt="lifecycle"></a></li>
+<li><a href="https://github.com/prioritizr/prioritizrdata/actions" class="external-link"><img src="https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Ubuntu/master.svg?label=Ubuntu" alt="R-CMD-check-Ubuntu"></a></li>
+<li><a href="https://github.com/prioritizr/prioritizrdata/actions" class="external-link"><img src="https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Windows/master.svg?label=Windows" alt="R-CMD-check-Windows"></a></li>
+<li><a href="https://github.com/prioritizr/prioritizrdata/actions" class="external-link"><img src="https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Mac%20OSX/master.svg?label=Mac%20OSX" alt="R-CMD-check-Mac-OSX"></a></li>
+<li><a href="https://CRAN.R-project.org/package=prioritizrdata" class="external-link"><img src="http://www.r-pkg.org/badges/version/prioritizrdata" alt="CRAN_Status_Badge"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://jeffrey-hanson.com">Jeffrey O Hanson</a>, <a href="http://www.richard-schuster.com">Richard Schuster</a>, Nina Morrell, <a href="http://strimas.com">Matthew Strimas-Mackey</a>, Matthew E Watts, <a href="https://arcese.forestry.ubc.ca">Peter Arcese</a>, <a href="https://josephrbennett.wordpress.com">Joseph Bennett</a>, <a href="http://www.possinghamlab.org">Hugh P Possingham</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://jeffrey-hanson.com" class="external-link">Jeffrey O Hanson</a>, <a href="http://www.richard-schuster.com" class="external-link">Richard Schuster</a>, Nina Morrell, <a href="http://strimas.com" class="external-link">Matthew Strimas-Mackey</a>, Matthew E Watts, <a href="https://arcese.forestry.ubc.ca" class="external-link">Peter Arcese</a>, <a href="https://josephrbennett.wordpress.com" class="external-link">Joseph Bennett</a>, <a href="http://www.possinghamlab.org" class="external-link">Hugh P Possingham</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -176,6 +180,8 @@
 
   
 
+
+  
 
   </body>
 </html>

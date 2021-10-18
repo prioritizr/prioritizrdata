@@ -1,8 +1,8 @@
-pandoc: 1.19.2.1
-pkgdown: 1.5.1
-pkgdown_sha: ~
-articles: []
-last_built: 2020-11-06T21:53Z
+pandoc: '2.13'
+pkgdown: 1.6.1.9001
+pkgdown_sha: 9ce6af43b55cd21e9563526e12a12d1243657bf6
+articles: {}
+last_built: 2021-10-18T01:41Z
 urls:
   reference: http://prioritizr.github.io/prioritizrdata/reference
   article: http://prioritizr.github.io/prioritizrdata/articles

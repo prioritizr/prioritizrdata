@@ -50,6 +50,8 @@ dataset, refer to the Tasmania vignette in the prioritizr package." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -61,9 +63,15 @@ dataset, refer to the Tasmania vignette in the prioritizr package." />
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -77,19 +85,13 @@ dataset, refer to the Tasmania vignette in the prioritizr package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prioritizrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -99,7 +101,7 @@ dataset, refer to the Tasmania vignette in the prioritizr package." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/prioritizr/prioritizrdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -130,15 +132,15 @@ contract to Australia's Department of Environment and Water Resources
 dataset, refer to the <a href='https://CRAN.R-project.org/package=prioritizr/vignettes/tasmania.html'>Tasmania vignette in the <span class="pkg">prioritizr</span> package</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>tas_features</span>)
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>tas_features</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>tas_pu</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>tas_pu</span><span class='op'>)</span></code></pre></div>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     
-<dl'>
+<dl>
 <dt>tas_features</dt><dd><p><code>RasterStack</code> object</p></dd>
 <dt>tas_pu</dt><dd><p><code><a href='https://rdrr.io/pkg/sp/man/SpatialPolygons.html'>sp::SpatialPolygonsDataFrame()</a></code> object.</p></dd>
 
@@ -147,7 +149,7 @@ dataset, refer to the <a href='https://CRAN.R-project.org/package=prioritizr/vig
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The dataset contains the following items:</p>
-<dl'>
+<dl>
 
 <dt><code>tas_pu</code></dt><dd><p>Planning unit data. The attribute table has
 three columns containing unique identifiers (<code>"id"</code>),
@@ -176,29 +178,37 @@ Processes, and Large-Intact Areas.</em> Report to the Department of
 Environment; Water Resources.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># load data</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>tas_pu</span>, <span class='no'>tas_features</span>)
-
-<span class='co'># preview data</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>tas_pu</span>)</div><div class='output co'>#&gt; class       : SpatialPolygonsDataFrame 
-#&gt; features    : 1130 
-#&gt; extent      : 298809.6, 613818.8, 5167775, 5502544  (xmin, xmax, ymin, ymax)
-#&gt; crs         : +proj=utm +zone=55 +south +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
-#&gt; variables   : 5
-#&gt; names       :   id,              cost, status, locked_in, locked_out 
-#&gt; min values  :    1, 0.192488262910798,      0,         0,          0 
-#&gt; max values  : 1130,  61.9272727272727,      2,         1,          0 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>tas_features</span>)</div><div class='output co'>#&gt; class      : RasterStack 
-#&gt; dimensions : 398, 359, 142882, 62  (nrow, ncol, ncell, nlayers)
-#&gt; resolution : 1000, 1000  (x, y)
-#&gt; extent     : 288801.7, 647801.7, 5142976, 5540976  (xmin, xmax, ymin, ymax)
-#&gt; crs        : +proj=utm +zone=55 +south +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
-#&gt; names      : tas_features.1, tas_features.2, tas_features.3, tas_features.4, tas_features.5, tas_features.6, tas_features.7, tas_features.8, tas_features.9, tas_features.10, tas_features.11, tas_features.12, tas_features.13, tas_features.14, tas_features.15, ... 
-#&gt; min values :              0,              0,              0,              0,              0,              0,              0,              0,              0,               0,               0,               0,               0,               0,               0, ... 
-#&gt; max values :              1,              1,              1,              1,              1,              1,              1,              1,              1,               1,               1,               1,               1,               1,               1, ... 
-#&gt; </div><div class='input'>
-<span class='co'># plot data</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>tas_pu</span>)</div><div class='img'><img src='tas_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>tas_features</span>)</div><div class='img'><img src='tas_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># load data</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>tas_pu</span>, <span class='va'>tas_features</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># preview data</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>tas_pu</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> class       : SpatialPolygonsDataFrame </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> features    : 1130 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> extent      : 298809.6, 613818.8, 5167775, 5502544  (xmin, xmax, ymin, ymax)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> crs         : +proj=utm +zone=55 +south +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> variables   : 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names       :   id,              cost, status, locked_in, locked_out </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> min values  :    1, 0.192488262910798,      0,         0,          0 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> max values  : 1130,  61.9272727272727,      2,         1,          0 </span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>tas_features</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> class      : RasterStack </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> dimensions : 398, 359, 142882, 62  (nrow, ncol, ncell, nlayers)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> resolution : 1000, 1000  (x, y)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> extent     : 288801.7, 647801.7, 5142976, 5540976  (xmin, xmax, ymin, ymax)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> crs        : +proj=utm +zone=55 +south +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names      : tas_features.1, tas_features.2, tas_features.3, tas_features.4, tas_features.5, tas_features.6, tas_features.7, tas_features.8, tas_features.9, tas_features.10, tas_features.11, tas_features.12, tas_features.13, tas_features.14, tas_features.15, ... </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> min values :              0,              0,              0,              0,              0,              0,              0,              0,              0,               0,               0,               0,               0,               0,               0, ... </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> max values :              1,              1,              1,              1,              1,              1,              1,              1,              1,               1,               1,               1,               1,               1,               1, ... </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># plot data</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>tas_pu</span><span class='op'>)</span></span>
+<span class='r-plt'><img src='tas_data-1.png' alt='' width='700' height='433' /></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>tas_features</span><span class='op'>)</span></span>
+<span class='r-plt'><img src='tas_data-2.png' alt='' width='700' height='433' /></span>
+<span class='r-in'></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -210,11 +220,11 @@ Environment; Water Resources.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https://jeffrey-hanson.com'>Jeffrey O Hanson</a>, <a href='http://www.richard-schuster.com'>Richard Schuster</a>, Nina Morrell, <a href='http://strimas.com'>Matthew Strimas-Mackey</a>, Matthew E Watts, <a href='https://arcese.forestry.ubc.ca'>Peter Arcese</a>, <a href='https://josephrbennett.wordpress.com'>Joseph Bennett</a>, <a href='http://www.possinghamlab.org'>Hugh P Possingham</a>.</p>
+  <p><p>Developed by <a href="https://jeffrey-hanson.com" class="external-link">Jeffrey O Hanson</a>, <a href="http://www.richard-schuster.com" class="external-link">Richard Schuster</a>, Nina Morrell, <a href="http://strimas.com" class="external-link">Matthew Strimas-Mackey</a>, Matthew E Watts, <a href="https://arcese.forestry.ubc.ca" class="external-link">Peter Arcese</a>, <a href="https://josephrbennett.wordpress.com" class="external-link">Joseph Bennett</a>, <a href="http://www.possinghamlab.org" class="external-link">Hugh P Possingham</a>.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -222,6 +232,8 @@ Environment; Water Resources.</p>
 
   
 
+
+  
 
   </body>
 </html>

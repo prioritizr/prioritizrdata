@@ -48,6 +48,8 @@ dataset, refer to the Salt Spring vignette in the prioritizr package." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -59,9 +61,15 @@ dataset, refer to the Salt Spring vignette in the prioritizr package." />
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -75,19 +83,13 @@ dataset, refer to the Salt Spring vignette in the prioritizr package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prioritizrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -97,7 +99,7 @@ dataset, refer to the Salt Spring vignette in the prioritizr package." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/prioritizr/prioritizrdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -126,15 +128,15 @@ tool created for the Coastal Douglas-fir Conservation Partnership
 dataset, refer to the <a href='https://CRAN.R-project.org/package=prioritizr/vignettes/saltspring.html'>Salt Spring vignette in the <span class="pkg">prioritizr</span> package</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_features</span>)
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>salt_features</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_pu</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>salt_pu</span><span class='op'>)</span></code></pre></div>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     
-<dl'>
+<dl>
 <dt>salt_features</dt><dd><p><code>RasterStack</code> object.</p></dd>
 <dt>salt_pu</dt><dd><p><code>RasterLayer</code> object.</p></dd>
 
@@ -143,7 +145,7 @@ dataset, refer to the <a href='https://CRAN.R-project.org/package=prioritizr/vig
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The dataset contains the following items:</p>
-<dl'>
+<dl>
 
 <dt><code>salt_pu</code></dt><dd><p>Planning unit data. A single band
 <code>RasterLayer</code> object where each one hectare pixel
@@ -175,30 +177,38 @@ Conservation Sciences, University of British Colombia. Available at
 <a href='http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf'>http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf</a> (Date Accessed 2017/10/09).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># load data</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>salt_pu</span>, <span class='no'>salt_features</span>)
-
-<span class='co'># preview data</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>salt_pu</span>)</div><div class='output co'>#&gt; class      : RasterLayer 
-#&gt; dimensions : 280, 200, 56000  (nrow, ncol, ncell)
-#&gt; resolution : 100, 100  (x, y)
-#&gt; extent     : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
-#&gt; crs        : +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
-#&gt; source     : memory
-#&gt; names      : salt_pu 
-#&gt; values     : 0.02552, 10000  (min, max)
-#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>salt_features</span>)</div><div class='output co'>#&gt; class      : RasterStack 
-#&gt; dimensions : 280, 200, 56000, 5  (nrow, ncol, ncell, nlayers)
-#&gt; resolution : 100, 100  (x, y)
-#&gt; extent     : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
-#&gt; crs        : +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
-#&gt; names      : salt_features.1, salt_features.2, salt_features.3, salt_features.4, salt_features.5 
-#&gt; min values :       0.3595050,       0.2979212,       0.1132785,       0.4013101,       0.3703639 
-#&gt; max values :       0.9312289,       0.6608167,       0.6434712,       0.8249719,       0.9032656 
-#&gt; </div><div class='input'>
-<span class='co'># plot data</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>salt_pu</span>)</div><div class='img'><img src='salt_data-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>salt_features</span>)</div><div class='img'><img src='salt_data-2.png' alt='' width='700' height='433' /></div><div class='input'>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># load data</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>salt_pu</span>, <span class='va'>salt_features</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># preview data</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>salt_pu</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> class      : RasterLayer </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> dimensions : 280, 200, 56000  (nrow, ncol, ncell)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> resolution : 100, 100  (x, y)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> extent     : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> crs        : +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> source     : memory</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names      : salt_pu </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> values     : 0.02552, 10000  (min, max)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>salt_features</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> class      : RasterStack </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> dimensions : 280, 200, 56000, 5  (nrow, ncol, ncell, nlayers)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> resolution : 100, 100  (x, y)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> extent     : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> crs        : +proj=utm +zone=10 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> names      : salt_features.1, salt_features.2, salt_features.3, salt_features.4, salt_features.5 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> min values :       0.3595050,       0.2979212,       0.1132785,       0.4013101,       0.3703639 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> max values :       0.9312289,       0.6608167,       0.6434712,       0.8249719,       0.9032656 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># plot data</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>salt_pu</span><span class='op'>)</span></span>
+<span class='r-plt'><img src='salt_data-1.png' alt='' width='700' height='433' /></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>salt_features</span><span class='op'>)</span></span>
+<span class='r-plt'><img src='salt_data-2.png' alt='' width='700' height='433' /></span>
+<span class='r-in'></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -210,11 +220,11 @@ Conservation Sciences, University of British Colombia. Available at
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https://jeffrey-hanson.com'>Jeffrey O Hanson</a>, <a href='http://www.richard-schuster.com'>Richard Schuster</a>, Nina Morrell, <a href='http://strimas.com'>Matthew Strimas-Mackey</a>, Matthew E Watts, <a href='https://arcese.forestry.ubc.ca'>Peter Arcese</a>, <a href='https://josephrbennett.wordpress.com'>Joseph Bennett</a>, <a href='http://www.possinghamlab.org'>Hugh P Possingham</a>.</p>
+  <p><p>Developed by <a href="https://jeffrey-hanson.com" class="external-link">Jeffrey O Hanson</a>, <a href="http://www.richard-schuster.com" class="external-link">Richard Schuster</a>, Nina Morrell, <a href="http://strimas.com" class="external-link">Matthew Strimas-Mackey</a>, Matthew E Watts, <a href="https://arcese.forestry.ubc.ca" class="external-link">Peter Arcese</a>, <a href="https://josephrbennett.wordpress.com" class="external-link">Joseph Bennett</a>, <a href="http://www.possinghamlab.org" class="external-link">Hugh P Possingham</a>.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -222,6 +232,8 @@ Conservation Sciences, University of British Colombia. Available at
 
   
 
+
+  
 
   </body>
 </html>

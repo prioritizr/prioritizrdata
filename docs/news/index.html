@@ -44,6 +44,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -55,9 +57,15 @@
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -71,19 +79,13 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prioritizrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -93,7 +95,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/prioritizr/prioritizrdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -114,185 +116,133 @@
       <small>Source: <a href='https://github.com/prioritizr/prioritizrdata/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="prioritizrdata-0-2-4-1" class="section level1">
+    <div id="prioritizrdata-0242" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.4.2">
+<a href="#prioritizrdata-0242" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.4.2<small> Unreleased </small></h1>
+<ul><li>Fix tests that fail package checks given only strict dependencies (<a href='https://github.com/prioritizr/prioritizrdata/issues/8'>#8</a>).</li>
+<li>Update citation information in README.</li>
+<li>Remove <em>rgdal R</em> package from Suggests, because it is no longer needed.</li>
+<li>Remove <em>rgeos R</em> package from Suggests, due to pending deprecatation.</li>
+</ul></div>
+    <div id="prioritizrdata-0241" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.4.1">
-<a href="#prioritizrdata-0-2-4-1" class="anchor"></a>prioritizrdata 0.2.4.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Implement GitHub Actions continuous integration (i.e. update tests and README).</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-4" class="section level1">
+<a href="#prioritizrdata-0241" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.4.1<small> Unreleased </small></h1>
+<ul><li>Implement GitHub Actions continuous integration (i.e. update tests and README).</li>
+</ul></div>
+    <div id="prioritizrdata-024" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.4">
-<a href="#prioritizrdata-0-2-4" class="anchor"></a>prioritizrdata 0.2.4<small> 2020-08-05 </small>
-</h1>
-<ul>
-<li>Release candidate for CRAN.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-3-2" class="section level1">
+<a href="#prioritizrdata-024" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.4<small> 2020-08-05 </small></h1>
+<ul><li>Release candidate for CRAN.</li>
+</ul></div>
+    <div id="prioritizrdata-0232" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.3.2">
-<a href="#prioritizrdata-0-2-3-2" class="anchor"></a>prioritizrdata 0.2.3.2<small> Unreleased </small>
-</h1>
-<ul>
-<li>Fix PROJ7 issues with the Tasmania and Salt Spring Island dataset by employing a different coordinate reference system (<a href='https://github.com/prioritizr/prioritizrdata/issues/5'>#5</a>).</li>
+<a href="#prioritizrdata-0232" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.3.2<small> Unreleased </small></h1>
+<ul><li>Fix PROJ7 issues with the Tasmania and Salt Spring Island dataset by employing a different coordinate reference system (<a href='https://github.com/prioritizr/prioritizrdata/issues/5'>#5</a>).</li>
 <li>Rescale cost values for the Salt Spring Island planning units to avoid numerical instability issues when using these data with exact solvers.</li>
 <li>Update Tasmania feature data so that pixels have <code>NA</code> values in marine areas.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-3-1" class="section level1">
+</ul></div>
+    <div id="prioritizrdata-0231" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.3.1">
-<a href="#prioritizrdata-0-2-3-1" class="anchor"></a>prioritizrdata 0.2.3.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Assorted documentation improvements (e.g. fixing typos and broken URLs).</li>
+<a href="#prioritizrdata-0231" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.3.1<small> Unreleased </small></h1>
+<ul><li>Assorted documentation improvements (e.g. fixing typos and broken URLs).</li>
 <li>Fix “Non-file package-anchored link(s) in documentation object” warnings in R-devel checks.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-3" class="section level1">
+</ul></div>
+    <div id="prioritizrdata-023" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.3">
-<a href="#prioritizrdata-0-2-3" class="anchor"></a>prioritizrdata 0.2.3<small> Unreleased </small>
-</h1>
-<ul>
-<li>Release candidate for CRAN.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-2-1" class="section level1">
+<a href="#prioritizrdata-023" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.3<small> Unreleased </small></h1>
+<ul><li>Release candidate for CRAN.</li>
+</ul></div>
+    <div id="prioritizrdata-0221" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.2.1">
-<a href="#prioritizrdata-0-2-2-1" class="anchor"></a>prioritizrdata 0.2.2.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Fix spelling of coauthor first name.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-2-released" class="section level1">
+<a href="#prioritizrdata-0221" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.2.1<small> Unreleased </small></h1>
+<ul><li>Fix spelling of coauthor first name.</li>
+</ul></div>
+    <div id="prioritizrdata-022-released" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.2">
-<a href="#prioritizrdata-0-2-2-released" class="anchor"></a>prioritizrdata 0.2.2 (released)<small> 2018-05-22 </small>
-</h1>
-<ul>
-<li>Release candidate for CRAN.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-7" class="section level1">
+<a href="#prioritizrdata-022-released" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.2 (released)<small> 2018-05-22 </small></h1>
+<ul><li>Release candidate for CRAN.</li>
+</ul></div>
+    <div id="prioritizrdata-0217" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.7">
-<a href="#prioritizrdata-0-2-1-7" class="anchor"></a>prioritizrdata 0.2.1.7<small> Unreleased </small>
-</h1>
-<ul>
-<li>Remove unneeded Imports.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-6" class="section level1">
+<a href="#prioritizrdata-0217" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.7<small> Unreleased </small></h1>
+<ul><li>Remove unneeded Imports.</li>
+</ul></div>
+    <div id="prioritizrdata-0216" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.6">
-<a href="#prioritizrdata-0-2-1-6" class="anchor"></a>prioritizrdata 0.2.1.6<small> Unreleased </small>
-</h1>
-<ul>
-<li>Update package Description field in DESCRIPTION.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-5" class="section level1">
+<a href="#prioritizrdata-0216" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.6<small> Unreleased </small></h1>
+<ul><li>Update package Description field in DESCRIPTION.</li>
+</ul></div>
+    <div id="prioritizrdata-0215" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.5">
-<a href="#prioritizrdata-0-2-1-5" class="anchor"></a>prioritizrdata 0.2.1.5<small> Unreleased </small>
-</h1>
-<ul>
-<li>Remove VignetteBuilder from DESCRIPTION since all the vignettes have been moved to <em>prioritizr</em>.</li>
-<li>Update link to <a href="http://www.bcassessment.ca" class="uri">http://www.bcassessment.ca</a>.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-4" class="section level1">
+<a href="#prioritizrdata-0215" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.5<small> Unreleased </small></h1>
+<ul><li>Remove VignetteBuilder from DESCRIPTION since all the vignettes have been moved to <em>prioritizr</em>.</li>
+<li>Update link to <a href="http://www.bcassessment.ca" class="external-link uri">http://www.bcassessment.ca</a>.</li>
+</ul></div>
+    <div id="prioritizrdata-0214" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.4">
-<a href="#prioritizrdata-0-2-1-4" class="anchor"></a>prioritizrdata 0.2.1.4<small> Unreleased </small>
-</h1>
-<ul>
-<li>Update <em>prioritizr</em> urls with <a href="https://prioritizr.net" class="uri">https://prioritizr.net</a>.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-3" class="section level1">
+<a href="#prioritizrdata-0214" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.4<small> Unreleased </small></h1>
+<ul><li>Update <em>prioritizr</em> urls with <a href="https://prioritizr.net" class="external-link uri">https://prioritizr.net</a>.</li>
+</ul></div>
+    <div id="prioritizrdata-0213" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.3">
-<a href="#prioritizrdata-0-2-1-3" class="anchor"></a>prioritizrdata 0.2.1.3<small> Unreleased </small>
-</h1>
-<ul>
-<li>The <em>prioritizr</em> package has been removed from Suggests.</li>
+<a href="#prioritizrdata-0213" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.3<small> Unreleased </small></h1>
+<ul><li>The <em>prioritizr</em> package has been removed from Suggests.</li>
 <li>The vignettes have been moved to the <em>prioritizr</em> package.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-2" class="section level1">
+</ul></div>
+    <div id="prioritizrdata-0212" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.2">
-<a href="#prioritizrdata-0-2-1-2" class="anchor"></a>prioritizrdata 0.2.1.2<small> Unreleased </small>
-</h1>
-<ul>
-<li>Assorted documentation improvements.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-1" class="section level1">
+<a href="#prioritizrdata-0212" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.2<small> Unreleased </small></h1>
+<ul><li>Assorted documentation improvements.</li>
+</ul></div>
+    <div id="prioritizrdata-0211" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1.1">
-<a href="#prioritizrdata-0-2-1-1" class="anchor"></a>prioritizrdata 0.2.1.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Depends on R version 3.4.0 (avoids “patchlevel 0” NOTE/WARNING in checks).</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-1-released" class="section level1">
+<a href="#prioritizrdata-0211" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1.1<small> Unreleased </small></h1>
+<ul><li>Depends on R version 3.4.0 (avoids “patchlevel 0” NOTE/WARNING in checks).</li>
+</ul></div>
+    <div id="prioritizrdata-021-released" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.1">
-<a href="#prioritizrdata-0-2-1-released" class="anchor"></a>prioritizrdata 0.2.1 (released)<small> 2017-11-12 </small>
-</h1>
-<ul>
-<li>Release candidate for CRAN.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-0-3" class="section level1">
+<a href="#prioritizrdata-021-released" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.1 (released)<small> 2017-11-12 </small></h1>
+<ul><li>Release candidate for CRAN.</li>
+</ul></div>
+    <div id="prioritizrdata-0203" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0.3">
-<a href="#prioritizrdata-0-2-0-3" class="anchor"></a>prioritizrdata 0.2.0.3<small> Unreleased </small>
-</h1>
-<ul>
-<li>Fix broken links.</li>
+<a href="#prioritizrdata-0203" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.0.3<small> Unreleased </small></h1>
+<ul><li>Fix broken links.</li>
 <li>Tutorials now compatible with <em>prioritizr</em> version 3.0.1.</li>
 <li>Remove Remotes since <em>prioritizr</em> is now on CRAN.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-0-2" class="section level1">
+</ul></div>
+    <div id="prioritizrdata-0202" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0.2">
-<a href="#prioritizrdata-0-2-0-2" class="anchor"></a>prioritizrdata 0.2.0.2<small> Unreleased </small>
-</h1>
-<ul>
-<li>Fix spelling in documentation.</li>
+<a href="#prioritizrdata-0202" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.0.2<small> Unreleased </small></h1>
+<ul><li>Fix spelling in documentation.</li>
 <li>Update broken links.</li>
 <li>Lint R files.</li>
 <li>Make vignettes compatible with new version of <em>prioritizr</em>.</li>
 <li>Add <em>prioritizr</em> to Remotes in DESCRIPTION.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-0-1" class="section level1">
+</ul></div>
+    <div id="prioritizrdata-0201" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0.1">
-<a href="#prioritizrdata-0-2-0-1" class="anchor"></a>prioritizrdata 0.2.0.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Fix links in README and vignettes.</li>
+<a href="#prioritizrdata-0201" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.0.1<small> Unreleased </small></h1>
+<ul><li>Fix links in README and vignettes.</li>
 <li>Remove log files accidentally committed.</li>
 <li>Fix image size in salt vignette.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-2-0-0" class="section level1">
+</ul></div>
+    <div id="prioritizrdata-0200" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0.0">
-<a href="#prioritizrdata-0-2-0-0" class="anchor"></a>prioritizrdata 0.2.0.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Created package website.</li>
+<a href="#prioritizrdata-0200" class="anchor" aria-hidden="true"></a>prioritizrdata 0.2.0.0<small> Unreleased </small></h1>
+<ul><li>Created package website.</li>
 <li>Add <em>viridis</em>, <em>rasterVis</em>, and _prioritizr_packages to Suggests because they are used in the vignettes.</li>
 <li>Remove unused <em>assertthat</em> package from Imports.</li>
-<li>Disable evaluation of code chunk with <code>library()</code> calls in <em>Saltspring.Rmd</em> so that the vignette can be compiled when <code>lpsymphony</code>, <code>Rsymphony</code> or <code>gurobi</code> are not installed.</li>
+<li>Disable evaluation of code chunk with <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> calls in <em>Saltspring.Rmd</em> so that the vignette can be compiled when <code>lpsymphony</code>, <code>Rsymphony</code> or <code>gurobi</code> are not installed.</li>
 <li>Package authors now consistent with <em>prioritizr</em> package.</li>
-<li>Simplify vignette workflow. Vignettes can now be compiled by using <code><a href="https://devtools.r-lib.org//reference/build_vignettes.html">devtools::build_vignettes()</a></code>. Earlier versions needed the vignettes to be compiled using the <em>Makefile</em> to copy files around to avoid tangled R code causing failures during R CMD CHECK. Although no longer needed, the vignettes can still be compiled using the shell command <code>make vigns</code> if desired.</li>
-<li>The <em>README.Rmd</em> now lives in the top-level directory following standard practices. It should now be complied using <code><a href="https://rdrr.io/pkg/rmarkdown/man/render.html">rmarkdown::render("README.Rmd")</a></code> or using the shell command <code>make readme</code>. Note that the figures for <code>README.md</code> can be found in the directory <code>man/figures</code>.</li>
-</ul>
-</div>
-    <div id="prioritizrdata-0-1-1-0" class="section level1">
+<li>Simplify vignette workflow. Vignettes can now be compiled by using <code><a href="https://devtools.r-lib.org//reference/build_vignettes.html" class="external-link">devtools::build_vignettes()</a></code>. Earlier versions needed the vignettes to be compiled using the <em>Makefile</em> to copy files around to avoid tangled R code causing failures during R CMD CHECK. Although no longer needed, the vignettes can still be compiled using the shell command <code>make vigns</code> if desired.</li>
+<li>The <em>README.Rmd</em> now lives in the top-level directory following standard practices. It should now be complied using <code>rmarkdown::render("README.Rmd")</code> or using the shell command <code>make readme</code>. Note that the figures for <code>README.md</code> can be found in the directory <code>man/figures</code>.</li>
+</ul></div>
+    <div id="prioritizrdata-0110" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.1.0">
-<a href="#prioritizrdata-0-1-1-0" class="anchor"></a>prioritizrdata 0.1.1.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Initial package version.</li>
-</ul>
-</div>
+<a href="#prioritizrdata-0110" class="anchor" aria-hidden="true"></a>prioritizrdata 0.1.1.0<small> Unreleased </small></h1>
+<ul><li>Initial package version.</li>
+</ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -306,11 +256,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https://jeffrey-hanson.com'>Jeffrey O Hanson</a>, <a href='http://www.richard-schuster.com'>Richard Schuster</a>, Nina Morrell, <a href='http://strimas.com'>Matthew Strimas-Mackey</a>, Matthew E Watts, <a href='https://arcese.forestry.ubc.ca'>Peter Arcese</a>, <a href='https://josephrbennett.wordpress.com'>Joseph Bennett</a>, <a href='http://www.possinghamlab.org'>Hugh P Possingham</a>.</p>
+  <p><p>Developed by <a href="https://jeffrey-hanson.com" class="external-link">Jeffrey O Hanson</a>, <a href="http://www.richard-schuster.com" class="external-link">Richard Schuster</a>, Nina Morrell, <a href="http://strimas.com" class="external-link">Matthew Strimas-Mackey</a>, Matthew E Watts, <a href="https://arcese.forestry.ubc.ca" class="external-link">Peter Arcese</a>, <a href="https://josephrbennett.wordpress.com" class="external-link">Joseph Bennett</a>, <a href="http://www.possinghamlab.org" class="external-link">Hugh P Possingham</a>.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -318,6 +268,8 @@
 
   
 
+
+  
 
   </body>
 </html>
