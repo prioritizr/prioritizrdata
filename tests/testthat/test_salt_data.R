@@ -3,11 +3,15 @@ context("salt data")
 test_that("salt_pu", {
   salt_pu <- get_salt_pu()
   expect_is(salt_pu, "SpatRaster")
+  expect_gt(terra::global(salt_pu, "min", na.rm = TRUE)[[1]], 0)
 })
 
 test_that("salt_features", {
   salt_features <- get_salt_features()
   expect_is(salt_features, "SpatRaster")
+  expect_true(
+    all(terra::global(salt_features, "min", na.rm = TRUE)[[1]] >= 0)
+  )
 })
 
 test_that("standardized missing values", {

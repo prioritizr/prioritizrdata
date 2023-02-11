@@ -30,6 +30,7 @@ Authors@R:
 Imports:
   terra (>= 1.6-53),
   sf (>= 0.8-0),
+  tibble (>= 2.0.0)
 Suggests:
     testthat,
     roxygen2,

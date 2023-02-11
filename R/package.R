@@ -26,3 +26,7 @@
 #'
 #' @docType package
 NULL
+
+# avoid false positive NOTES
+#' @importFrom tibble tibble
+NULL

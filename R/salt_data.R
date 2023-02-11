@@ -87,6 +87,6 @@ get_salt_features <- function() {
   x <- terra::rast(
     system.file("extdata", "salt_features.tif", package = "prioritizrdata")
   )
-  names(x) <- c("old orest", "savanna", "wetland", "shrub", "inverse human")
+  names(x) <- c("old forest", "savanna", "wetland", "shrub", "inverse human")
   x
 }
