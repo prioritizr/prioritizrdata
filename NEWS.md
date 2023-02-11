@@ -1,3 +1,16 @@
+# prioritizrdata 0.3.0.0
+
+- Update the package to use the _sf_ and _terra R_ packages.
+- The Salt Spring Island and Tasmania datasets have been updated so
+  that they can be imported using the new `get_salt_pu()`,
+  `get_salt_features()`, `get_tas_pu()`, and
+  `get_tas_features()` functions.
+- The Salt Spring Island dataset now has layer names for the features.
+- The Tasmania dataset has updated feature data using NVIS. It also
+  contains layer names for the features.
+- New Washington dataset as been added. It can be imported using the
+  `get_wa_pu()`, `get_wa_features()`, and `get_wa_locked_in()` functions.
+
 # prioritizrdata 0.2.4.2
 
 - Fix tests that fail package checks given only strict dependencies (#8).

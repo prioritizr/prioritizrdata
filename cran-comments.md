@@ -1,18 +1,6 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-## Notes
-
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Richard Schuster <richard.schuster@glel.carleton.ca>'
-
-New maintainer:
-  Richard Schuster <richard.schuster@glel.carleton.ca>
-Old maintainer(s):
-  Richard Schuster <mail@richard-schuster.com>
-
-    **I changed my email address**
+0 errors | 0 warnings | 0 note
 
 ## Test environments
 
@@ -25,4 +13,5 @@ Old maintainer(s):
 
 ## Downstream dependencies
 
-There are no existing packages that depend on this package.
+This package has a single dependency (i.e., the _prioritizr_ package).
+The dependency passes all checks successfully with the new version.

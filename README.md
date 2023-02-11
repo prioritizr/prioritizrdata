@@ -4,41 +4,25 @@
 # prioritizrdata: Conservation Planning Datasets
 
 [![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![R-CMD-check-Ubuntu](https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Ubuntu/master.svg?label=Ubuntu)](https://github.com/prioritizr/prioritizrdata/actions)
-[![R-CMD-check-Windows](https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Windows/master.svg?label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
-[![R-CMD-check-Mac-OSX](https://img.shields.io/github/workflow/status/prioritizr/prioritizrdata/Mac%20OSX/master.svg?label=Mac%20OSX)](https://github.com/prioritizr/prioritizrdata/actions)
+[![R-CMD-check-Ubuntu](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-ubuntu.yaml?branch=master&label=Ubuntu)](https://github.com/prioritizr/prioritizrdata/actions)
+[![R-CMD-check-Windows](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-windows.yaml?branch=master&label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
+[![R-CMD-check-macOS](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-macos.yaml?branch=master&label=macOS)](https://github.com/prioritizr/prioritizrdata/actions)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains
 example datasets for conservation planning. It is intended to be used
-alongside the [*prioritizr R* package](https://prioritizr.net)—a package
-for building and solving systematic conservation prioritization problems
-using integer linear programming (ILP) techniques—and provides little
-functionality itself.
+alongside the [*prioritizr R* package](https://prioritizr.net).
 
 ## Overview
 
-This package contains the following conservation planning datasets.
+This package contains the following datasets.
 
--   **Tasmania dataset**: This dataset was included to show how
-    prioritizations can be created using vector (shapefile) data. It was
-    obtained from the [“Introduction to Marxan”
-    course](https://marxansolutions.org/) and was originally a subset of
-    a larger spatial prioritization project performed under contract to
-    Australia’s Department of Environment and Water Resources. It
-    contains vector-based planning unit data and the distributions of 63
-    vegetation classes in Tasmania, Australia. Refer to the [Tasmania
-    vignette](https://prioritizr.net/articles/tasmania.html) in the
-    *prioritizr R* package for a worked example with this dataset.
--   **Salt Spring Island dataset**: This dataset was included to provide
-    an example of how prioritizations can be created using raster data.
-    It was obtained as part of an online [Marxan-based planning
-    tool](https://arcese.forestry.ubc.ca/marxan-tool/) created for the
-    Coastal Douglas-fir Conservation Partnership (CDFCP). It contains a
-    raster-based planning unit layer and data for five key ecological
-    communities in Salt Spring Island. Refer to the [Salt Spring Island
-    vignette](https://prioritizr.net/articles/saltspring.html) in the
-    *prioritizr R* package for a worked example with this dataset.
+-   **Tasmania dataset**: Conservation planning dataset for Tasmania,
+    Australia.
+-   **Salt Spring Island dataset**: Conservation planning dataset for
+    Tasmania, Australia.
+-   **Washington dataset**: Conservation planning dataset for
+    Washington, The United States of America.
 
 ## Installation
 
@@ -73,6 +57,6 @@ publications. To cite the latest official version, please use:
 Alternatively, to cite the latest development version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
-> P, Bennett J, Possingham HP (2021). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.2.4.2. Available at
+> P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
+> Planning Datasets. R package version 0.3.0.0. Available at
 > <https://github.com/prioritizr/prioritizrdata>.

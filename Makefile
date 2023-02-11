@@ -43,4 +43,7 @@ build:
 install:
 	R --slave -e "devtools::install_local('../prioritizrdata', force = TRUE)"
 
+urlcheck:
+	R --slave -e "devtools::document();urlchecker::url_check()"
+
 .PHONY: data docs readme site test check checkwb build install man

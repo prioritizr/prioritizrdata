@@ -29,3 +29,4 @@ reference:
     contents:
       - tas_data
       - salt_data
+      - wa_data

@@ -3,60 +3,70 @@
 \docType{data}
 \name{tas_data}
 \alias{tas_data}
+\alias{get_tas_features}
+\alias{get_tas_pu}
 \alias{tas_features}
 \alias{tas_pu}
 \title{Tasmania data}
 \format{
 \describe{
-\item{tas_features}{\code{\linkS4class{RasterStack}} object}
-\item{tas_pu}{\code{\link[sp:SpatialPolygons]{sp::SpatialPolygonsDataFrame()}} object.}
+\item{tas_pu}{\code{\link[sf:sf]{sf::st_sf()}} object.}
+\item{tas_features}{\code{\link[terra:rast]{terra::rast()}} object}
 }
 }
 \usage{
-data(tas_features)
+get_tas_pu()
 
-data(tas_pu)
+get_tas_features()
 }
 \description{
-This dataset was obtained from the
-\href{https://marxansolutions.org/}{"Introduction to \emph{Marxan}" course}
-and was originally part of a larger spatial prioritization performed under
-contract to Australia's Department of Environment and Water Resources
-(Klein \emph{et al.} 2007). For a worked example with this
-dataset, refer to the \href{https://CRAN.R-project.org/package=prioritizr/vignettes/tasmania.html}{Tasmania vignette in the \pkg{prioritizr} package}.
+Conservation planning dataset for Tasmania, Australia.
 }
 \details{
-The dataset contains the following items:
+The following functions are provided to import data:
 
 \describe{
 
-\item{\code{tas_pu}}{Planning unit data. The attribute table has
-three columns containing unique identifiers (\code{"id"}),
-unimproved land values (\code{"cost"}), and their existing level of
-protection (\code{"status"}). Units with 50\% or more of their area
-contained in protected areas are associated with a status of 2,
-otherwise they are associated with a value of 0.
+\item{\code{get_tas_pu}}{Import planning unit data.
+The planing units are a \code{\link[sf:sf]{sf::st_sf()}} simple features object.
+Each row corresponds to a different planning unit, and columns
+contain information about the planning units.
+It has columns that contain: (\code{"id"}) unique identifiers and
+(\code{"cost"}) unimproved land values for the planning units.
 It also contains columns (\code{"locked_in"} and \code{"locked_out"})
 with \code{logical} values (i.e. \code{TRUE} or \code{FALSE} values)
-for locking in and locking out planning units.}
+for locking in and locking out planning units.
+These data obtained from the
+\href{https://marxansolutions.org/}{"Introduction to \emph{Marxan}" course}
+and were originally generated as part of a larger spatial prioritization
+Resources (Klein \emph{et al.} 2007).}
 
-\item{\code{tas_features}}{The distribution of 62 vegetation
-classes in Tasmania, Australia. Each layer in the stack
-represents a different vegetation class. For a given layer,
-cells indicate the presence (value of 1) or absence (value of 0)
-of the vegetation class in an area.}
+\item{\code{get_tas_features}}{Import biodiversity feature data.
+The feature data are a multi-layer \code{\link[terra:rast]{terra::rast()}} object.
+classes. Each layer corresponds to a
+different vegetation class and contains binary cell values that indicate
+the presence or absence of the vegetation class.
+These data were obtained from the Australian Government's National
+Vegetation Information System (Australian Government Department of Climate
+Change, Energy, the Environment and Water 2020).}
+
 }
 }
 \examples{
+# load packages
+library(terra)
+library(sf)
+
 # load data
-data(tas_pu, tas_features)
+tas_pu <- get_tas_pu()
+tas_features <- get_tas_features()
 
-# preview data
+# preview planning units
 print(tas_pu)
-print(tas_features)
-
-# plot data
 plot(tas_pu)
+
+# plot features
+print(tas_features)
 plot(tas_features)
 
 }
@@ -66,5 +76,9 @@ Prioritization Approaches for the Conservation of Biodiversity in
 Australia: Considering Conservation Costs, Ecological & Evolutionary
 Processes, and Large-Intact Areas.} Report to the Department of
 Environment; Water Resources.
+
+Australian Government Department of Climate Change, Energy, the Environment
+and Water (2020). National Vegetation Information System. Version 6.0.
+Available at \url{http://environment.gov.au/fed/catalog/search/resource/details.page?uuid=\%7B3F8AD12F-8300-45EC-A41A-469519A94039\%7D}.
 }
 \keyword{datasets}
