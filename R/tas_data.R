@@ -80,9 +80,20 @@ NULL
 #' @rdname tas_data
 #' @export
 get_tas_pu <- function() {
-  sf::read_sf(
-    system.file("extdata", "tas_pu.gpkg", package = "prioritizrdata")
+  # find zip file
+  f <- system.file("extdata", "tas_pu.gpkg.zip", package = "prioritizrdata")
+  # unzip zip file to temporary directory
+  td <- tempfile()
+  dir.create(td, showWarnings = FALSE)
+  utils::unzip(f, exdir = td)
+  # import data
+  o <- sf::read_sf(
+    dir(td, "^.*\\.gpkg$", recursive = TRUE, full.names = TRUE)[[1]]
   )
+  # clean up temporary directory
+  unlink(td, force = TRUE, recursive = TRUE)
+  # return result
+  o
 }
 
 #' @rdname tas_data

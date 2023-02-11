@@ -28,6 +28,7 @@ Authors@R:
         email='hugh.possingham@tnc.org', role = c('aut'),
         comment = c(ORCID = '0000-0001-7755-996X')))
 Imports:
+  utils,
   terra (>= 1.6-53),
   sf (>= 0.8-0),
   tibble (>= 2.0.0)
