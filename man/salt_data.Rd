@@ -4,19 +4,23 @@
 \alias{salt_data}
 \alias{get_salt_pu}
 \alias{get_salt_features}
+\alias{get_salt_con}
 \alias{salt_features}
 \alias{salt_pu}
 \title{Salt Spring Island data}
 \format{
 \describe{
-\item{salt_features}{\code{\link[terra:rast]{terra::rast()}} object.}
 \item{salt_pu}{\code{\link[terra:rast]{terra::rast()}} object.}
+\item{salt_features}{\code{\link[terra:rast]{terra::rast()}} object.}
+\item{salt_con}{\code{\link[terra:rast]{terra::rast()}} object.}
 }
 }
 \usage{
 get_salt_pu()
 
 get_salt_features()
+
+get_salt_con()
 }
 \description{
 Conservation planning dataset for Salt Spring Island, Canada.
@@ -38,14 +42,22 @@ Cell values denote the monetary cost of acquiring different areas
 \item{\code{get_salt_features()}}{Import biodiversity feature data.
 The feature data are a multi-layer
 \code{\link[terra:rast]{terra::rast()}} object object.
-It contains the spatial distribution of five key ecological communities
-found on Salt Spring island.
+It contains the spatial distribution of four key ecological communities.
 Each layer represents a different community type.
-These classes are (i) old forest, (ii) savanna, (iii) wetland, (iv) shrub,
-and (v) inverse probability of occurrence of human
-commensal species. For each layer, values indicate the
+These classes are (i) old forest, (ii) savanna, (iii) wetland,
+and (iv) shrub. For each layer, values indicate the
 composite probability of encountering the suite of bird species most
 commonly associated with that community type.}
+
+\item{\code{get_salt_con()}}{Import connectivity data.
+The connectivity data are a single-layer
+\code{\link[terra:rast]{terra::rast()}} object.
+It contains the inverse probability of occurrence of human
+commensal species.
+Based on the assumption that human modified areas
+impede connectivity for native fauna, cells with lower values
+have higher connectivity.}
+
 }
 }
 \examples{
@@ -64,6 +76,11 @@ plot(salt_pu)
 # preview features
 print(salt_features)
 plot(salt_features)
+
+# preview connectivity data
+salt_con <- get_salt_con()
+print(salt_con)
+plot(salt_con)
 
 }
 \references{

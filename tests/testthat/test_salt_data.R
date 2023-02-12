@@ -14,6 +14,14 @@ test_that("salt_features", {
   )
 })
 
+test_that("salt_con", {
+  salt_con <- get_salt_con()
+  expect_is(salt_con, "SpatRaster")
+  expect_true(
+    all(terra::global(salt_con, "min", na.rm = TRUE)[[1]] >= 0)
+  )
+})
+
 test_that("standardized missing values", {
   salt_pu <- get_salt_pu()
   salt_features <- get_salt_features()
@@ -23,7 +31,11 @@ test_that("standardized missing values", {
 test_that("rasters are comparable", {
   salt_pu <- get_salt_pu()
   salt_features <- get_salt_features()
+  salt_con <- get_salt_con()
   expect_true(
     terra::compareGeom(salt_pu, salt_features, stopOnError = FALSE)
+  )
+  expect_true(
+    terra::compareGeom(salt_pu, salt_con, stopOnError = FALSE)
   )
 })

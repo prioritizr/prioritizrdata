@@ -19,22 +19,31 @@
 #' \item{`get_salt_features()`}{Import biodiversity feature data.
 #'   The feature data are a multi-layer
 #'   [terra::rast()] object object.
-#'   It contains the spatial distribution of five key ecological communities
-#'   found on Salt Spring island.
+#'   It contains the spatial distribution of four key ecological communities.
 #'   Each layer represents a different community type.
-#'   These classes are (i) old forest, (ii) savanna, (iii) wetland, (iv) shrub,
-#'   and (v) inverse probability of occurrence of human
-#'   commensal species. For each layer, values indicate the
+#'   These classes are (i) old forest, (ii) savanna, (iii) wetland,
+#'   and (iv) shrub. For each layer, values indicate the
 #'   composite probability of encountering the suite of bird species most
 #'   commonly associated with that community type.}
+#'
+#' \item{`get_salt_con()`}{Import connectivity data.
+#'   The connectivity data are a single-layer
+#'   [terra::rast()] object.
+#'   It contains the inverse probability of occurrence of human
+#'   commensal species.
+#'   Based on the assumption that human modified areas
+#'   impede connectivity for native fauna, cells with lower values
+#'   have higher connectivity.}
+#'
 #' }
 #'
-#' @aliases get_salt_pu get_salt_features
+#' @aliases get_salt_pu get_salt_features get_salt_con
 #' @aliases salt_features salt_pu
 #'
 #' @format \describe{
-#'   \item{salt_features}{[terra::rast()] object.}
 #'   \item{salt_pu}{[terra::rast()] object.}
+#'   \item{salt_features}{[terra::rast()] object.}
+#'   \item{salt_con}{[terra::rast()] object.}
 #' }
 #'
 #'
@@ -68,6 +77,11 @@
 #' print(salt_features)
 #' plot(salt_features)
 #'
+#' # preview connectivity data
+#' salt_con <- get_salt_con()
+#' print(salt_con)
+#' plot(salt_con)
+#'
 #' @name salt_data
 NULL
 
@@ -87,6 +101,16 @@ get_salt_features <- function() {
   x <- terra::rast(
     system.file("extdata", "salt_features.tif", package = "prioritizrdata")
   )
-  names(x) <- c("old forest", "savanna", "wetland", "shrub", "inverse human")
+  names(x) <- c("old forest", "savanna", "wetland", "shrub")
+  x
+}
+
+#' @rdname salt_data
+#' @export
+get_salt_con <- function() {
+  x <- terra::rast(
+    system.file("extdata", "salt_con.tif", package = "prioritizrdata")
+  )
+  names(x) <- "inverse human"
   x
 }
