@@ -61,16 +61,21 @@ tool created for the Coastal Douglas-fir Conservation Partnership
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_salt_pu</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">get_salt_features</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">get_salt_features</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">get_salt_con</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="format">
     <h2>Format</h2>
     
-<dl><dt>salt_features</dt>
+<dl><dt>salt_pu</dt>
 <dd><p><code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">terra::rast()</a></code> object.</p></dd>
 
-<dt>salt_pu</dt>
+<dt>salt_features</dt>
+<dd><p><code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">terra::rast()</a></code> object.</p></dd>
+
+<dt>salt_con</dt>
 <dd><p><code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">terra::rast()</a></code> object.</p></dd>
 
 
@@ -90,14 +95,24 @@ Cell values denote the monetary cost of acquiring different areas
 <dd><p>Import biodiversity feature data.
 The feature data are a multi-layer
 <code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">terra::rast()</a></code> object object.
-It contains the spatial distribution of five key ecological communities
-found on Salt Spring island.
+It contains the spatial distribution of four key ecological communities.
 Each layer represents a different community type.
-These classes are (i) old forest, (ii) savanna, (iii) wetland, (iv) shrub,
-and (v) inverse probability of occurrence of human
-commensal species. For each layer, values indicate the
+These classes are (i) old forest, (ii) savanna, (iii) wetland,
+and (iv) shrub. For each layer, values indicate the
 composite probability of encountering the suite of bird species most
 commonly associated with that community type.</p></dd>
+
+
+<dt><code>get_salt_con()</code></dt>
+<dd><p>Import connectivity data.
+The connectivity data are a single-layer
+<code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">terra::rast()</a></code> object.
+It contains the inverse probability of occurrence of human
+commensal species.
+Based on the assumption that human modified areas
+impede connectivity for native fauna, cells with higher values
+have higher connectivity.</p></dd>
+
 
 
 </dl></div>
@@ -142,16 +157,31 @@ Conservation Sciences, University of British Colombia. Available at
 <span class="r-in"><span><span class="co"># preview features</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">salt_features</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 280, 200, 5  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 280, 200, 4  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 100, 100  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_features.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       : old forest,   savanna,   wetland,     shrub, inverse human </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  0.3595050, 0.2979212, 0.1132785, 0.4013101,     0.3703639 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :  0.9312289, 0.6608167, 0.6434712, 0.8249719,     0.9032656 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       : old forest,   savanna,   wetland,     shrub </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  0.3595050, 0.2979212, 0.1132785, 0.4013101 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :  0.9312289, 0.6608167, 0.6434712, 0.8249719 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">salt_features</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="salt_data-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># preview connectivity data</span></span></span>
+<span class="r-in"><span><span class="va">salt_con</span> <span class="op">&lt;-</span> <span class="fu">get_salt_con</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">salt_con</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 280, 200, 1  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 100, 100  (x, y)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_con.tif </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        : inverse human </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :     0.3703639 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :     0.9032656 </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">salt_con</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="salt_data-3.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

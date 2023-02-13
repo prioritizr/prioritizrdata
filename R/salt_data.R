@@ -32,7 +32,7 @@
 #'   It contains the inverse probability of occurrence of human
 #'   commensal species.
 #'   Based on the assumption that human modified areas
-#'   impede connectivity for native fauna, cells with lower values
+#'   impede connectivity for native fauna, cells with higher values
 #'   have higher connectivity.}
 #'
 #' }
