@@ -41,7 +41,7 @@ build:
 	R --slave -e "devtools::build()"
 
 install:
-	R --slave -e "devtools::install_local('../prioritizrdata', force = TRUE)"
+	R --slave -e "devtools::install_local(force = TRUE)"
 
 urlcheck:
 	R --slave -e "devtools::document();urlchecker::url_check()"
