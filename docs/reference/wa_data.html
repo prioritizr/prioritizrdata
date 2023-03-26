@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prioritizrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.0</span>
       </span>
     </div>
 
@@ -111,7 +111,7 @@ Commission for Environmental Cooperation (2020)</p></dd>
 <dd><p>Import biodiversity feature data.
 The feature data are a multi-layer
 <code><a href="https://rdrr.io/pkg/terra/man/rast.html" class="external-link">terra::rast()</a></code> object object.
-It contains the spatial distribution of 247 bird species.
+It contains the spatial distribution of 258 bird species.
 To account for migratory patterns, data are provided for the
 breeding and non-breeding distributions of species
 (indicated by <code>"breeding"</code> and <code>"non-breedig"</code> in the layer names).
@@ -163,8 +163,8 @@ Survey data release, <a href="https://doi.org/10.5066/P9Q9LQ4B" class="external-
 <span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_pu.tif </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> name        :         cost </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :    0.2988945 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   : 1845.9683838 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :    0.2986647 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   : 1804.1838379 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_pu</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="wa_data-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="co"># preview locked in</span></span></span>
@@ -198,12 +198,14 @@ Survey data release, <a href="https://doi.org/10.5066/P9Q9LQ4B" class="external-
 <span class="r-in"><span><span class="co"># preview features</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_features</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 109, 147, 400  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dimensions  : 109, 147, 396  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 4000, 4000  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_features.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       : Ameri~ding), Ameri~ding), Ameri~ding), Ameri~ding), Ameri~ding), Ameri~full), ... </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       : Recur~ding), Botau~ding), Botau~ding), Corvu~ding), Corvu~ding), Cincl~full), ... </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :       0.000,       0.000,       0.000,       0.000,       0.000,        0.00, ... </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :       0.514,       0.812,       3.129,       0.115,       0.296,        0.06, ... </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/terra/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_features</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="wa_data-4.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>

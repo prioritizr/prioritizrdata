@@ -50,13 +50,13 @@ Please cite the *prioritizrdata R* package when using it in
 publications. To cite the latest official version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
-> P, Bennett J, Possingham HP (2020). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.2.4. Available at
+> P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
+> Planning Datasets. R package version 0.3.0. Available at
 > <https://CRAN.R-project.org/package=prioritizrdata>.
 
 Alternatively, to cite the latest development version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
 > P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.0.0. Available at
+> Planning Datasets. R package version 0.3.0. Available at
 > <https://github.com/prioritizr/prioritizrdata>.

@@ -1,4 +1,4 @@
-# prioritizrdata 0.3.0.0
+# prioritizrdata 0.3.0
 
 - Update the package to use the _sf_ and _terra R_ packages.
 - The Salt Spring Island and Tasmania datasets have been updated so

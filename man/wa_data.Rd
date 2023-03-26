@@ -57,7 +57,7 @@ Commission for Environmental Cooperation (2020)}
 \item{\code{get_wa_features()}}{Import biodiversity feature data.
 The feature data are a multi-layer
 \code{\link[terra:rast]{terra::rast()}} object object.
-It contains the spatial distribution of 247 bird species.
+It contains the spatial distribution of 258 bird species.
 To account for migratory patterns, data are provided for the
 breeding and non-breeding distributions of species
 (indicated by \code{"breeding"} and \code{"non-breedig"} in the layer names).
