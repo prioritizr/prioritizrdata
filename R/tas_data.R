@@ -1,44 +1,47 @@
 #' Tasmania data
 #'
-#' This dataset was obtained from the
-#' ["Introduction to *Marxan*" course](https://marxansolutions.org/)
-#' and was originally part of a larger spatial prioritization performed under
-#' contract to Australia's Department of Environment and Water Resources
-#' (Klein *et al.* 2007). For a worked example with this
-#' dataset, refer to the [Tasmania vignette in the \pkg{prioritizr} package](https://CRAN.R-project.org/package=prioritizr/vignettes/tasmania.html).
+#' Conservation planning dataset for Tasmania, Australia.
 #'
-#' @details The dataset contains the following items:
+#' @details
+#' The following functions are provided to import data:
 #'
 #' \describe{
 #'
-#'   \item{`tas_pu`}{Planning unit data. The attribute table has
-#'     three columns containing unique identifiers (`"id"`),
-#'     unimproved land values (`"cost"`), and their existing level of
-#'     protection (`"status"`). Units with 50% or more of their area
-#'     contained in protected areas are associated with a status of 2,
-#'     otherwise they are associated with a value of 0.
-#'     It also contains columns (`"locked_in"` and `"locked_out"`)
-#'     with `logical` values (i.e. `TRUE` or `FALSE` values)
-#'     for locking in and locking out planning units.}
+#' \item{`get_tas_pu`}{Import planning unit data.
+#'   The planing units are a [sf::st_sf()] simple features object.
+#'   Each row corresponds to a different planning unit, and columns
+#'   contain information about the planning units.
+#'   It has columns that contain: (`"id"`) unique identifiers and
+#'   (`"cost"`) unimproved land values for the planning units.
+#'   It also contains columns (`"locked_in"` and `"locked_out"`)
+#'   with `logical` values (i.e. `TRUE` or `FALSE` values)
+#'   for locking in and locking out planning units.
+#'   These data obtained from the
+#'   ["Introduction to *Marxan*" course](https://marxansolutions.org/)
+#'   and were originally generated as part of a larger spatial prioritization
+#    performed under ontract to Australia's Department of Environment and Water
+#'   Resources (Klein *et al.* 2007).}
 #'
-#'   \item{`tas_features`}{The distribution of 62 vegetation
-#'     classes in Tasmania, Australia. Each layer in the stack
-#'     represents a different vegetation class. For a given layer,
-#'     cells indicate the presence (value of 1) or absence (value of 0)
-#'     of the vegetation class in an area.}
+#' \item{`get_tas_features`}{Import biodiversity feature data.
+#'   The feature data are a multi-layer [terra::rast()] object.
+# '  It denotes the spatial distribution of 33 vegetation
+#'   classes. Each layer corresponds to a
+#'   different vegetation class and contains binary cell values that indicate
+#'   the presence or absence of the vegetation class.
+#'   These data were obtained from the Australian Government's National
+#'   Vegetation Information System (Australian Government Department of Climate
+#'   Change, Energy, the Environment and Water 2020).}
+#'
 #' }
 #'
 #' @docType data
 #'
+#' @aliases get_tas_features get_tas_pu
 #' @aliases tas_features tas_pu
 #'
-#' @usage data(tas_features)
-#'
-#' @usage data(tas_pu)
-#'
 #' @format \describe{
-#'   \item{tas_features}{[`RasterStack-class`] object}
-#'   \item{tas_pu}{[sp::SpatialPolygonsDataFrame()] object.}
+#'   \item{tas_pu}{[sf::st_sf()] object.}
+#'   \item{tas_features}{[terra::rast()] object}
 #' }
 #'
 #' @keywords datasets
@@ -50,17 +53,89 @@
 #' Processes, and Large-Intact Areas.* Report to the Department of
 #' Environment; Water Resources.
 #'
+#' Australian Government Department of Climate Change, Energy, the Environment
+#' and Water (2020). National Vegetation Information System. Version 6.0.
+#' Available at <http://environment.gov.au/fed/catalog/search/resource/details.page?uuid=%7B3F8AD12F-8300-45EC-A41A-469519A94039%7D>.
+#'
 #' @examples
+#' # load packages
+#' library(terra)
+#' library(sf)
+#'
 #' # load data
-#' data(tas_pu, tas_features)
+#' tas_pu <- get_tas_pu()
+#' tas_features <- get_tas_features()
 #'
-#' # preview data
+#' # preview planning units
 #' print(tas_pu)
-#' print(tas_features)
-#'
-#' # plot data
 #' plot(tas_pu)
+#'
+#' # plot features
+#' print(tas_features)
 #' plot(tas_features)
 #'
 #' @name tas_data
 NULL
+
+#' @rdname tas_data
+#' @export
+get_tas_pu <- function() {
+  # find zip file
+  f <- system.file("extdata", "tas_pu.gpkg.zip", package = "prioritizrdata")
+  # unzip zip file to temporary directory
+  td <- tempfile()
+  dir.create(td, showWarnings = FALSE)
+  utils::unzip(f, exdir = td)
+  # import data
+  o <- sf::read_sf(
+    dir(td, "^.*\\.gpkg$", recursive = TRUE, full.names = TRUE)[[1]]
+  )
+  # clean up temporary directory
+  unlink(td, force = TRUE, recursive = TRUE)
+  # return result
+  o
+}
+
+#' @rdname tas_data
+#' @export
+get_tas_features <- function() {
+  x <- terra::rast(
+    system.file("extdata", "tas_features.tif", package = "prioritizrdata")
+  )
+  names(x) <- c(
+    "Banksia woodlands",
+    "Boulders/rock with algae, lichen or scattered plants, or alpine fjaeldmarks",
+    "Callitris forests and woodlands",
+    "Cool temperate rainforest",
+    "Eucalyptus (+/- tall) open forest with a dense broad-leaved and/or tree-fern understorey (wet sclerophyll)",
+    "Eucalyptus open forests with a shrubby understorey",
+    "Eucalyptus open woodlands with shrubby understorey",
+    "Eucalyptus tall open forest with a fine-leaved shrubby understorey",
+    "Eucalyptus tall open forests and open forests with ferns, herbs, sedges, rushes or wet tussock grasses",
+    "Eucalyptus woodlands with a shrubby understorey",
+    "Eucalyptus woodlands with a tussock grass understorey",
+    "Eucalyptus woodlands with ferns, herbs, sedges, rushes or wet tussock grassland",
+    "Freshwater, dams, lakes, lagoons or aquatic plants",
+    "Heathlands",
+    "Leptospermum forests and woodlands",
+    "Low closed forest or tall closed shrublands (including Acacia, Melaleuca and Banksia)",
+    "Mallee with a tussock grass understorey",
+    "Melaleuca open forests and woodlands",
+    "Melaleuca shrublands and open shrublands",
+    "Mixed chenopod, samphire +/- forbs",
+    "Naturally bare, sand, rock, claypan, mudflat",
+    "Other Acacia tall open shrublands and shrublands",
+    "Other forests and woodlands",
+    "Other open woodlands",
+    "Other shrublands",
+    "Other tussock grasslands",
+    "Regrowth or modified forests and woodlands",
+    "Saline or brackish sedgelands or grasslands",
+    "Salt lakes and lagoons",
+    "Sedgelands, rushs or reeds",
+    "Temperate tussock grasslands",
+    "Unclassified native vegetation",
+    "Wet tussock grassland with herbs, sedges or rushes, herblands or ferns"
+  )
+  x
+}

@@ -1,44 +1,51 @@
 #' Salt Spring Island data
 #'
-#' This data was obtained as part of an online *Marxan*-based planning
+#' Conservation planning dataset for Salt Spring Island, Canada.
+#' It was obtained as part of an online *Marxan*-based planning
 #' tool created for the Coastal Douglas-fir Conservation Partnership
-#' (CDFCP; Schuster *et al.* 2017). For a worked example with this
-#' dataset, refer to the [Salt Spring vignette in the \pkg{prioritizr} package](https://CRAN.R-project.org/package=prioritizr/vignettes/saltspring.html).
+#' (CDFCP; Schuster *et al.* 2017).
 #'
 #' @details
-#' The dataset contains the following items:
+#' The following functions are provided to import data:
 #'
 #' \describe{
 #'
-#'   \item{`salt_pu`}{Planning unit data. A single band
-#'     [`RasterLayer-class`] object where each one hectare pixel
-#'     describes the monetary cost of acquiring the area
-#'     (i.e. a pixel value of 1 = $100,000 CAD; BC Land Assessment
-#'     2015).}
+#' \item{`get_salt_pu()`}{Import planning unit data.
+#'   The planning units are  a single layer [terra::rast()] object.
+#'   Cell values denote the monetary cost of acquiring different areas
+#'   (e.g., a value of 1 = $100,000 CAD; BC Land Assessment
+#'   2015).}
 #'
-#'   \item{`salt_features`}{Biodiversity feature data. A multi-band
-#'     [`RasterStack-class`] object object containing the the probability of
-#'     occurrence for five key ecological communities found on Salt
-#'     Spring island. Each layer represents a different community type.
-#'     These classes are old forest (1), savanna (2), wetland (3), shrub (4),
-#'     and a layer representing the inverse probability of occurrence of human
-#'     commensal species (5). For a given layer, the values indicate the
-#'     composite probability of encountering the suite of bird species most
-#'     commonly associated with that community type.}
+#' \item{`get_salt_features()`}{Import biodiversity feature data.
+#'   The feature data are a multi-layer
+#'   [terra::rast()] object object.
+#'   It contains the spatial distribution of four key ecological communities.
+#'   Each layer represents a different community type.
+#'   These classes are (i) old forest, (ii) savanna, (iii) wetland,
+#'   and (iv) shrub. For each layer, values indicate the
+#'   composite probability of encountering the suite of bird species most
+#'   commonly associated with that community type.}
+#'
+#' \item{`get_salt_con()`}{Import connectivity data.
+#'   The connectivity data are a single-layer
+#'   [terra::rast()] object.
+#'   It contains the inverse probability of occurrence of human
+#'   commensal species.
+#'   Based on the assumption that human modified areas
+#'   impede connectivity for native fauna, cells with higher values
+#'   have higher connectivity.}
+#'
 #' }
 #'
-#' @docType data
-#'
+#' @aliases get_salt_pu get_salt_features get_salt_con
 #' @aliases salt_features salt_pu
 #'
-#' @usage data(salt_features)
-#'
-#' @usage data(salt_pu)
-#'
 #' @format \describe{
-#'   \item{salt_features}{[`RasterStack-class`] object.}
-#'   \item{salt_pu}{[`RasterLayer-class`] object.}
+#'   \item{salt_pu}{[terra::rast()] object.}
+#'   \item{salt_features}{[terra::rast()] object.}
+#'   \item{salt_con}{[terra::rast()] object.}
 #' }
+#'
 #'
 #' @keywords datasets
 #'
@@ -54,16 +61,56 @@
 #' <http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf> (Date Accessed 2017/10/09).
 #'
 #' @examples
-#' # load data
-#' data(salt_pu, salt_features)
+#' # load packages
+#' library(terra)
+#' library(sf)
 #'
-#' # preview data
+#' # import data
+#' salt_pu <- get_salt_pu()
+#' salt_features <- get_salt_features()
+#'
+#' # preview planning units
 #' print(salt_pu)
-#' print(salt_features)
-#'
-#' # plot data
 #' plot(salt_pu)
+#'
+#' # preview features
+#' print(salt_features)
 #' plot(salt_features)
+#'
+#' # preview connectivity data
+#' salt_con <- get_salt_con()
+#' print(salt_con)
+#' plot(salt_con)
 #'
 #' @name salt_data
 NULL
+
+#' @rdname salt_data
+#' @export
+get_salt_pu <- function() {
+  x <- terra::rast(
+    system.file("extdata", "salt_pu.tif", package = "prioritizrdata")
+  )
+  names(x) <- "cost"
+  x
+}
+
+#' @rdname salt_data
+#' @export
+get_salt_features <- function() {
+  x <- terra::rast(
+    system.file("extdata", "salt_features.tif", package = "prioritizrdata")
+  )
+  names(x) <- c("old forest", "savanna", "wetland", "shrub")
+  x
+}
+
+#' @rdname salt_data
+#' @export
+get_salt_con <- function() {
+  x <- terra::rast(
+    system.file("extdata", "salt_con.tif", package = "prioritizrdata")
+  )
+  names(x) <- "inverse human"
+  x
+}

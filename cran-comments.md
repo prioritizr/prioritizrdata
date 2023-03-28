@@ -1,28 +1,24 @@
+Dear CRAN volunteers,
+
+Thank you for reviewing this submission. This submission updates the package for compatibility with the new version of the prioritizr R package. It also provides an additional case study dataset, and removes dependencies for _rgeos_ and _rgdal_ in anticipation of their retirement.
+
+Cheers,
+
+Richard Schuster
+
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-## Notes
-
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Richard Schuster <richard.schuster@glel.carleton.ca>'
-
-New maintainer:
-  Richard Schuster <richard.schuster@glel.carleton.ca>
-Old maintainer(s):
-  Richard Schuster <mail@richard-schuster.com>
-
-    **I changed my email address**
+0 errors | 0 warnings | 0 note
 
 ## Test environments
 
-* [Ubuntu 16.04, R-release (travis-ci)](https://travis-ci.org/prioritizr/prioritizr/builds)
-* [Ubuntu 16.04, R-devel (travis-ci)](https://travis-ci.org/prioritizr/prioritizr/builds)
-* [Mac OSX 10.13.6, R-release (travis-ci](https://travis-ci.org/prioritizr/prioritizr/builds)
-* [Windows Server 2012 R2 (x64), R-release (appveyor)](https://ci.appveyor.com/project/jeffreyhanson/prioritizr)
-* Windows Server 2008 (x64), R-release (win-builder)
+* [Ubuntu 20.04, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AUbuntu)
+* [Ubuntu 20.04, R-devel](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AUbuntu)
+* [Mac OSX 10.15, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3A%22Mac+OSX%22)
+* [Windows Server 2019, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AWindows)
 * Windows Server 2008 (x64), R-devel (win-builder)
 
 ## Downstream dependencies
 
-There are no existing packages that depend on this package.
+This package has a single dependency (i.e., the _prioritizr_ package).
+The dependency passes all checks successfully with the new version.

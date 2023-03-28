@@ -12,7 +12,7 @@ on:
       - main
       - master
 
-name: Windows
+name: macOS
 
 jobs:
   R-CMD-check:
@@ -24,7 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: windows-latest, r: 'release'}
+          - {os: macOS-latest, r: 'release'}
 
     env:
       _R_REMOTES_NO_ERRORS_FROM_WARNINGS_: true
@@ -35,13 +35,6 @@ jobs:
       CI: true
 
     steps:
-      # configure git to prevent it from automatically converting line-endings
-      # this is important to avoid WARNINGS during CRAN checks
-      # that are false-positives, see:
-      # https://msmith.de/2020/03/12/r-cmd-check-github-actions.html
-      - name: Configure git
-        run: git config --global core.autocrlf false
-
       - uses: actions/checkout@v2
 
       - uses: r-lib/actions/setup-pandoc@v2
@@ -51,13 +44,19 @@ jobs:
           r-version: ${{ matrix.config.r }}
           use-public-rspm: true
 
+      - name: Install system dependencies
+        run: |
+          brew install gmp
+          brew install mpfr
+          brew install automake
+          brew install gdal
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           cache-version: 4
           extra-packages: |
             any::rcmdcheck
-            any::XML
-            prepr=?ignore
+            cran/XML
           needs: |
             check
 
