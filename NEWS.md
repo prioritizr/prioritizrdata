@@ -16,7 +16,7 @@
 - Fix tests that fail package checks given only strict dependencies (#8).
 - Update citation information in README.
 - Remove _rgdal R_ package from Suggests, because it is no longer needed.
-- Remove _rgeos R_ package from Suggests, due to pending deprecatation.
+- Remove _rgeos R_ package from Suggests, due to pending retirement.
 
 # prioritizrdata 0.2.4.1
 
