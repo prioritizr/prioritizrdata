@@ -1,3 +1,8 @@
+# prioritizrdata 0.3.1
+
+- Release candidate for CRAN.
+- Fix documentation to pass CRAN package checks.
+
 # prioritizrdata 0.3.0
 
 - Update the package to use the _sf_ and _terra R_ packages.

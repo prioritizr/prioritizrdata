@@ -3,7 +3,7 @@
 
 # prioritizrdata: Conservation Planning Datasets
 
-[![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check-Ubuntu](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-ubuntu.yaml?branch=master&label=Ubuntu)](https://github.com/prioritizr/prioritizrdata/actions)
 [![R-CMD-check-Windows](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-windows.yaml?branch=master&label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
 [![R-CMD-check-macOS](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-macos.yaml?branch=master&label=macOS)](https://github.com/prioritizr/prioritizrdata/actions)
@@ -51,12 +51,12 @@ publications. To cite the latest official version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
 > P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.0. Available at
+> Planning Datasets. R package version 0.3.1. Available at
 > <https://CRAN.R-project.org/package=prioritizrdata>.
 
 Alternatively, to cite the latest development version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
 > P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.0. Available at
+> Planning Datasets. R package version 0.3.1. Available at
 > <https://github.com/prioritizr/prioritizrdata>.

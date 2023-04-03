@@ -2,7 +2,7 @@ pandoc: '2.13'
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-03-28T23:10Z
+last_built: 2023-04-03T23:52Z
 urls:
   reference: http://prioritizr.github.io/prioritizrdata/reference
   article: http://prioritizr.github.io/prioritizrdata/articles

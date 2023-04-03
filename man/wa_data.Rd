@@ -97,7 +97,7 @@ plot(wa_features)
 \references{
 Commission for Environmental Cooperation. (2020). \emph{2015 Land Cover
 of North America at 30 Meters}. North American Land Change Monitoring
-System, 2nd Edition, \url{http://cec.org/tools-and-resources/map-files/land-cover-30m-2015-landsat-and-rapideye\\\%20(accessed\\\%20January\\\%202021)}.
+System, 2nd Edition, \url{http://www.cec.org/north-american-environmental-atlas/land-cover-30m-2015-landsat-and-rapideye/}.
 
 Fink D, Auer T, Johnston A, Ruiz-Gutierrez V, Hochachka WM and
 Kelling S (2020) Modeling avian full annual cycle distribution and
