@@ -65,7 +65,7 @@
 #'
 #' Nolte C (2020a) _Data for: High-resolution land value maps
 #' reveal underestimation of conservation costs in the United States_.
-#' Dryad, Dataset, <https://doi.org/10.5061/dryad.np5hqbzq9>.
+#' Dryad, Dataset, \doi{10.5061/dryad.np5hqbzq9}.
 #'
 #' Nolte C (2020b) High-resolution land value maps reveal
 #' underestimation of conservation costs in the United States.
@@ -73,7 +73,7 @@
 #'
 #' U.S. Geological Survey (USGS) Gap Analysis Project (GAP) (2022)
 #' Protected Areas Database of the United States (PAD-US) 3.0: U.S. Geological
-#' Survey data release, <https://doi.org/10.5066/P9Q9LQ4B>.
+#' Survey data release, \doi{10.5066/P9Q9LQ4B}.
 #'
 #' @examples
 #' # load packages

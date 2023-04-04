@@ -106,7 +106,7 @@ population trends with citizen science data.
 
 Nolte C (2020a) \emph{Data for: High-resolution land value maps
 reveal underestimation of conservation costs in the United States}.
-Dryad, Dataset, \url{https://doi.org/10.5061/dryad.np5hqbzq9}.
+Dryad, Dataset, \doi{10.5061/dryad.np5hqbzq9}.
 
 Nolte C (2020b) High-resolution land value maps reveal
 underestimation of conservation costs in the United States.
@@ -114,6 +114,6 @@ underestimation of conservation costs in the United States.
 
 U.S. Geological Survey (USGS) Gap Analysis Project (GAP) (2022)
 Protected Areas Database of the United States (PAD-US) 3.0: U.S. Geological
-Survey data release, \url{https://doi.org/10.5066/P9Q9LQ4B}.
+Survey data release, \doi{10.5066/P9Q9LQ4B}.
 }
 \keyword{datasets}
