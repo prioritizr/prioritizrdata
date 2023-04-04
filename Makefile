@@ -37,6 +37,10 @@ spellcheck:
 wbcheck:
 	R --slave -e "devtools::build_win()"
 
+jhwbcheck:
+	R --slave -e "devtools::check_win_devel(email = 'jeffrey.hanson@uqconnect.edu.au')"
+	cp -R doc inst/
+
 build:
 	R --slave -e "devtools::build()"
 
