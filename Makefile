@@ -35,11 +35,10 @@ spellcheck:
 	R --slave -e "devtools::spell_check()" >> spell.log 2>&1
 
 wbcheck:
-	R --slave -e "devtools::build_win()"
+	R --slave -e "devtools::check_win_devel()"
 
 jhwbcheck:
 	R --slave -e "devtools::check_win_devel(email = 'jeffrey.hanson@uqconnect.edu.au')"
-	cp -R doc inst/
 
 build:
 	R --slave -e "devtools::build()"
