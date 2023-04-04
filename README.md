@@ -7,6 +7,7 @@
 [![R-CMD-check-Ubuntu](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-ubuntu.yaml?branch=master&label=Ubuntu)](https://github.com/prioritizr/prioritizrdata/actions)
 [![R-CMD-check-Windows](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-windows.yaml?branch=master&label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
 [![R-CMD-check-macOS](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-macos.yaml?branch=master&label=macOS)](https://github.com/prioritizr/prioritizrdata/actions)
+[![Documentation](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/documentation.yaml?branch=master&label=Documentation)](https://github.com/prioritizr/prioritizrdata/actions)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains
