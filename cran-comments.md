@@ -1,6 +1,6 @@
 Dear CRAN volunteers,
 
-Thank you for reviewing this submission. This submission updates the package for compatibility with the new version of the prioritizr R package. It also provides an additional case study dataset, and removes dependencies for _rgeos_ and _rgdal_ in anticipation of their retirement.
+Thank you for reviewing this submission. This submission updates the package for compatibility with the new version of the prioritizr R package. It also provides an additional case study dataset, and removes dependencies for _rgeos_ and _rgdal_ in anticipation of their retirement. It addresses the documentation issues raised in our previous CRAN submission.
 
 Cheers,
 
@@ -8,7 +8,15 @@ Richard Schuster
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 note
+0 errors | 0 warnings | 1 note
+
+* Found the following (possibly) invalid URLs:
+  URL: https://www.bcassessment.ca
+    From: man/salt_data.Rd
+    Status: 500
+    Message: Internal Server Error
+
+  **I have manually checked this URL and confirm that it is valid.**
 
 ## Test environments
 

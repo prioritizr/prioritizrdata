@@ -97,7 +97,7 @@ plot(wa_features)
 \references{
 Commission for Environmental Cooperation. (2020). \emph{2015 Land Cover
 of North America at 30 Meters}. North American Land Change Monitoring
-System, 2nd Edition, \url{http://cec.org/tools-and-resources/map-files/land-cover-30m-2015-landsat-and-rapideye\\\%20(accessed\\\%20January\\\%202021)}.
+System, 2nd Edition, \url{http://www.cec.org/north-american-environmental-atlas/land-cover-30m-2015-landsat-and-rapideye/}.
 
 Fink D, Auer T, Johnston A, Ruiz-Gutierrez V, Hochachka WM and
 Kelling S (2020) Modeling avian full annual cycle distribution and
@@ -106,7 +106,7 @@ population trends with citizen science data.
 
 Nolte C (2020a) \emph{Data for: High-resolution land value maps
 reveal underestimation of conservation costs in the United States}.
-Dryad, Dataset, \url{https://doi.org/10.5061/dryad.np5hqbzq9}.
+Dryad, Dataset, \doi{10.5061/dryad.np5hqbzq9}.
 
 Nolte C (2020b) High-resolution land value maps reveal
 underestimation of conservation costs in the United States.
@@ -114,6 +114,6 @@ underestimation of conservation costs in the United States.
 
 U.S. Geological Survey (USGS) Gap Analysis Project (GAP) (2022)
 Protected Areas Database of the United States (PAD-US) 3.0: U.S. Geological
-Survey data release, \url{https://doi.org/10.5066/P9Q9LQ4B}.
+Survey data release, \doi{10.5066/P9Q9LQ4B}.
 }
 \keyword{datasets}

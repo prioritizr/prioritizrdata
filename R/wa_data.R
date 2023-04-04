@@ -56,7 +56,7 @@
 #' @references
 #' Commission for Environmental Cooperation. (2020). _2015 Land Cover
 #' of North America at 30 Meters_. North American Land Change Monitoring
-#' System, 2nd Edition, <http://cec.org/tools-and-resources/map-files/land-cover-30m-2015-landsat-and-rapideye\%20(accessed\%20January\%202021)>.
+#' System, 2nd Edition, <http://www.cec.org/north-american-environmental-atlas/land-cover-30m-2015-landsat-and-rapideye/>.
 #'
 #' Fink D, Auer T, Johnston A, Ruiz-Gutierrez V, Hochachka WM and
 #' Kelling S (2020) Modeling avian full annual cycle distribution and
@@ -65,7 +65,7 @@
 #'
 #' Nolte C (2020a) _Data for: High-resolution land value maps
 #' reveal underestimation of conservation costs in the United States_.
-#' Dryad, Dataset, <https://doi.org/10.5061/dryad.np5hqbzq9>.
+#' Dryad, Dataset, \doi{10.5061/dryad.np5hqbzq9}.
 #'
 #' Nolte C (2020b) High-resolution land value maps reveal
 #' underestimation of conservation costs in the United States.
@@ -73,7 +73,7 @@
 #'
 #' U.S. Geological Survey (USGS) Gap Analysis Project (GAP) (2022)
 #' Protected Areas Database of the United States (PAD-US) 3.0: U.S. Geological
-#' Survey data release, <https://doi.org/10.5066/P9Q9LQ4B>.
+#' Survey data release, \doi{10.5066/P9Q9LQ4B}.
 #'
 #' @examples
 #' # load packages

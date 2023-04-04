@@ -85,13 +85,13 @@ plot(salt_con)
 }
 \references{
 BC Assessment (2015) Property Information Services. Available at
-\url{https://www.bcassessment.ca} (Date Accessed 2016/06/13).
+\url{https://www.bcassessment.ca/} (Date Accessed 2016/06/13).
 
 Morrell N, Schuster R, Crombie M, and Arcese P (2017) \emph{A Prioritization
 Tool for the Conservation of Coastal Douglas-fir Forest and Savannah
 Habitats of the Georgia Basin.} The Nature Trust of British Colombia, Coastal
 Douglas Fir Conservation Partnership, and the Department of Forest and
 Conservation Sciences, University of British Colombia. Available at
-\url{http://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf} (Date Accessed 2017/10/09).
+\url{https://peter-arcese-lab.sites.olt.ubc.ca/files/2016/09/CDFCP_tutorial_2017_05.pdf} (Date Accessed 2017/10/09).
 }
 \keyword{datasets}
