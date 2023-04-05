@@ -15,6 +15,7 @@ authors:
     href: http://www.possinghamlab.org
 
 template:
+  bootstrap: 5
   params:
     bootswatch: flatly
 

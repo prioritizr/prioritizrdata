@@ -1,6 +1,11 @@
-# prioritizrdata 0.3.1
+# prioritizrdata 0.3.2
 
 - Release candidate for CRAN.
+- Update dependency versions.
+- Fix README badges.
+
+# prioritizrdata 0.3.1
+
 - Fix documentation to pass CRAN package checks.
 
 # prioritizrdata 0.3.0

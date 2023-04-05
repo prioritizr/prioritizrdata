@@ -4,10 +4,12 @@
 # prioritizrdata: Conservation Planning Datasets
 
 [![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check-Ubuntu](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-ubuntu.yaml?branch=master&label=Ubuntu)](https://github.com/prioritizr/prioritizrdata/actions)
-[![R-CMD-check-Windows](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-windows.yaml?branch=master&label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
-[![R-CMD-check-macOS](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-macos.yaml?branch=master&label=macOS)](https://github.com/prioritizr/prioritizrdata/actions)
-[![Documentation](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/documentation.yaml?branch=master&label=Documentation)](https://github.com/prioritizr/prioritizrdata/actions)
+[![R-CMD-check-Ubuntu](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-ubuntu.yaml?branch=main&label=Ubuntu)](https://github.com/prioritizr/prioritizrdata/actions)
+[![R-CMD-check-Windows](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-windows.yaml?branch=main&label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
+[![R-CMD-check-macOS](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-macos.yaml?branch=main&label=macOS)](https://github.com/prioritizr/prioritizrdata/actions)
+[![Documentation](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/documentation.yaml?branch=main&label=Documentation)](https://github.com/prioritizr/prioritizrdata/actions)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/prioritizr/prioritizrdata?label=Coverage)](https://app.codecov.io/gh/prioritizr/prioritizrdata/branch/main)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains
@@ -52,12 +54,12 @@ publications. To cite the latest official version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
 > P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.1. Available at
+> Planning Datasets. R package version 0.3.2. Available at
 > <https://CRAN.R-project.org/package=prioritizrdata>.
 
 Alternatively, to cite the latest development version, please use:
 
 > Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
 > P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.1. Available at
+> Planning Datasets. R package version 0.3.2. Available at
 > <https://github.com/prioritizr/prioritizrdata>.

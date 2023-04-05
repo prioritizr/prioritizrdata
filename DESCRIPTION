@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.3.1
+Version: 0.3.2
 Title: Conservation Planning Datasets
 Description: Conservation planning datasets for learning how to use the
     'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
@@ -30,14 +30,14 @@ Authors@R:
 Imports:
   utils,
   terra (>= 1.6-53),
-  sf (>= 0.8-0),
+  sf (>= 1.0-12),
   tibble (>= 2.0.0)
 Suggests:
     testthat,
     roxygen2,
     knitr
 Depends:
-    R (>= 3.5.0)
+    R (>= 4.1.0)
 License: GPL-3
 Encoding: UTF-8
 Language: en-US
