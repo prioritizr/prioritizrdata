@@ -8,6 +8,8 @@
 [![R-CMD-check-Windows](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-windows.yaml?branch=main&label=Windows)](https://github.com/prioritizr/prioritizrdata/actions)
 [![R-CMD-check-macOS](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/R-CMD-check-macos.yaml?branch=main&label=macOS)](https://github.com/prioritizr/prioritizrdata/actions)
 [![Documentation](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/documentation.yaml?branch=main&label=Documentation)](https://github.com/prioritizr/prioritizrdata/actions)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/prioritizr/prioritizrdata?label=Coverage)](https://app.codecov.io/gh/prioritizr/prioritizrdata/branch/main)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains
