@@ -23,8 +23,8 @@
 #' }
 #'
 #' @name prioritizrdata
-#'
 #' @docType package
+#' @aliases prioritizrdata-package
 NULL
 
 # avoid false positive NOTES

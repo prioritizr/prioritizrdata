@@ -80,7 +80,7 @@ NULL
 #' @rdname tas_data
 #' @export
 get_tas_pu <- function() {
-  # find zip file
+  # find zip file with data
   f <- system.file("extdata", "tas_pu.gpkg.zip", package = "prioritizrdata")
   # unzip zip file to temporary directory
   td <- tempfile()

@@ -67,9 +67,12 @@ package_version_year <- function(x) {
 
 live_package_version_year <- function(x) {
   # fetch data
-  d <- versions::available.versions(x)[[1]]
-  d <- d[which(d$version == max(d$version)), , drop = FALSE]
-  c(as.character(d$version), as.character(format(as.POSIXct(d$date), "%Y")))
+  d <- paste0("http://cran.r-project.org/web/packages/", x, "/DESCRIPTION")
+  d <- read.dcf(url(d))
+  c(
+    as.character(d[, "Version"]),
+    as.character(format(as.POSIXct(d[, "Date/Publication"]), "%Y"))
+  )
 }
 
 archive_package_version_year <- function(x) {
@@ -91,6 +94,7 @@ archive_package_version_year <- function(x) {
   c(rel_version, rel_year)
 }
 
+# get version numbers and years
 dev_version_year <- c(
   as.character(packageDescription("prioritizrdata")$Version),
   format(Sys.time(), "%Y")
