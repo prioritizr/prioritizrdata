@@ -24,7 +24,7 @@
 #'
 #' @name prioritizrdata
 #' @docType package
-#' @aliases prioritizr-package
+#' @aliases prioritizrdata-package
 NULL
 
 # avoid false positive NOTES
