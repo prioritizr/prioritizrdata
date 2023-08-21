@@ -3,6 +3,7 @@
 \docType{package}
 \name{prioritizrdata}
 \alias{prioritizrdata}
+\alias{prioritizr-package}
 \title{prioritizrdata: Conservation Planning Datasets}
 \description{
 The \pkg{prioritizrdata} package is a supplemental package that contains
