@@ -149,7 +149,7 @@ taxonomic family. This object has the following columns:</p><dl><dt>feature</dt>
 <dt>family</dt>
 <dd><p>Taxonomic family name of the feature.</p></dd>
 
-<dt>family</dt>
+<dt>order</dt>
 <dd><p>Taxonomic order of the feature.</p></dd>
 
 <dt>extinction_prob</dt>
@@ -206,11 +206,12 @@ Survey data release, <a href="https://doi.org/10.5066/P9Q9LQ4B" class="external-
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># load packages</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> terra 1.9.11</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># import data</span></span></span>
 <span class="r-in"><span><span class="va">wa_pu</span> <span class="op">&lt;-</span> <span class="fu">get_wa_pu</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_features</span> <span class="op">&lt;-</span> <span class="fu">get_wa_features</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">wa_weights</span> <span class="op">&lt;-</span> <span class="fu">get_wa_attr</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">wa_attr</span> <span class="op">&lt;-</span> <span class="fu">get_wa_attr</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_locked_in</span> <span class="op">&lt;-</span> <span class="fu">get_wa_locked_in</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_locked_out</span> <span class="op">&lt;-</span> <span class="fu">get_wa_locked_out</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_carbon</span> <span class="op">&lt;-</span> <span class="fu">get_wa_carbon</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -272,7 +273,20 @@ Survey data release, <a href="https://doi.org/10.5066/P9Q9LQ4B" class="external-
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># preview attributes of features</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_attr</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'wa_attr' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 396 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    feature                  binomial family order extinction_prob interest_score</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Recurvirostra americana… Recurvi… Recur… Char…          0.000<span style="text-decoration: underline;">9</span>              0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Botaurus lentiginosus (… Botauru… Ardei… Pele…          0.000<span style="text-decoration: underline;">9</span>              1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Botaurus lentiginosus (… Botauru… Ardei… Pele…          0.000<span style="text-decoration: underline;">9</span>              1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Corvus brachyrhynchos (… Corvus … Corvi… Pass…          0.000<span style="text-decoration: underline;">9</span>              0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Corvus brachyrhynchos (… Corvus … Corvi… Pass…          0.000<span style="text-decoration: underline;">9</span>              0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Cinclus mexicanus (full) Cinclus… Cincl… Pass…          0.000<span style="text-decoration: underline;">9</span>              0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Spinus tristis (breedin… Spinus … Fring… Pass…          0.000<span style="text-decoration: underline;">9</span>              0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Spinus tristis (nonbree… Spinus … Fring… Pass…          0.000<span style="text-decoration: underline;">9</span>              0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Falco sparverius (breed… Falco s… Falco… Falc…          0.000<span style="text-decoration: underline;">9</span>           <span style="text-decoration: underline;">5</span>281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Falco sparverius (nonbr… Falco s… Falco… Falc…          0.000<span style="text-decoration: underline;">9</span>           <span style="text-decoration: underline;">5</span>281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 386 more rows</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

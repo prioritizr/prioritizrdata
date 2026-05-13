@@ -101,7 +101,7 @@ taxonomic family. This object has the following columns:
 \item{feature}{Name of the feature (i.e., \verb{per get_wa_features()}).}
 \item{binomial}{Taxonomic species and genus name of the feature.}
 \item{family}{Taxonomic family name of the feature.}
-\item{family}{Taxonomic order of the feature.}
+\item{order}{Taxonomic order of the feature.}
 \item{extinction_prob}{Probability of extinction.}
 \item{interest_score}{Public interest score.}
 }}
@@ -114,7 +114,7 @@ library(terra)
 # import data
 wa_pu <- get_wa_pu()
 wa_features <- get_wa_features()
-wa_weights <- get_wa_attr()
+wa_attr <- get_wa_attr()
 wa_locked_in <- get_wa_locked_in()
 wa_locked_out <- get_wa_locked_out()
 wa_carbon <- get_wa_carbon()

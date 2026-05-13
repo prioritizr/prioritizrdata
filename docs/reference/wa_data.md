@@ -128,7 +128,7 @@ The following functions are provided to import data:
 
   :   Taxonomic family name of the feature.
 
-  family
+  order
 
   :   Taxonomic order of the feature.
 
@@ -192,11 +192,12 @@ Geological Survey data release,
 ``` r
 # load packages
 library(terra)
+#> terra 1.9.11
 
 # import data
 wa_pu <- get_wa_pu()
 wa_features <- get_wa_features()
-wa_weights <- get_wa_attr()
+wa_attr <- get_wa_attr()
 wa_locked_in <- get_wa_locked_in()
 wa_locked_out <- get_wa_locked_out()
 wa_carbon <- get_wa_carbon()
@@ -258,5 +259,18 @@ plot(wa_features)
 
 # preview attributes of features
 print(wa_attr)
-#> Error: object 'wa_attr' not found
+#> # A tibble: 396 × 6
+#>    feature                  binomial family order extinction_prob interest_score
+#>    <chr>                    <chr>    <chr>  <chr>           <dbl>          <dbl>
+#>  1 Recurvirostra americana… Recurvi… Recur… Char…          0.0009              0
+#>  2 Botaurus lentiginosus (… Botauru… Ardei… Pele…          0.0009              1
+#>  3 Botaurus lentiginosus (… Botauru… Ardei… Pele…          0.0009              1
+#>  4 Corvus brachyrhynchos (… Corvus … Corvi… Pass…          0.0009              0
+#>  5 Corvus brachyrhynchos (… Corvus … Corvi… Pass…          0.0009              0
+#>  6 Cinclus mexicanus (full) Cinclus… Cincl… Pass…          0.0009              0
+#>  7 Spinus tristis (breedin… Spinus … Fring… Pass…          0.0009              0
+#>  8 Spinus tristis (nonbree… Spinus … Fring… Pass…          0.0009              0
+#>  9 Falco sparverius (breed… Falco s… Falco… Falc…          0.0009           5281
+#> 10 Falco sparverius (nonbr… Falco s… Falco… Falc…          0.0009           5281
+#> # ℹ 386 more rows
 ```
