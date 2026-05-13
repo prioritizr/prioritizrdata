@@ -141,7 +141,7 @@ print(wa_attr)
 \references{
 Commission for Environmental Cooperation. (2020). \emph{2015 Land Cover
 of North America at 30 Meters}. North American Land Change Monitoring
-System, 2nd Edition, \url{http://www.cec.org/north-american-environmental-atlas/land-cover-30m-2015-landsat-and-rapideye/}.
+System, 2nd Edition, \url{https://www.cec.org:443/north-american-environmental-atlas/land-cover-30m-2015-landsat-and-rapideye/}.
 
 Davis M, Faurby S, and Svenning J-C (2018) Mammal diversity will take
 millions of years to recover from the current biodiversity crisis.
