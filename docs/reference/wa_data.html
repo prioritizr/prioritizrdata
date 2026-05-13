@@ -45,7 +45,7 @@
 <span></span>
 <span><span class="fu">get_wa_locked_out</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">get_wa_features</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">get_wa_species</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">get_wa_attr</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -67,7 +67,7 @@
 <dt>get_wa_carbon</dt>
 <dd><p><code><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">terra::rast()</a></code> object.</p></dd>
 
-<dt>get_wa_features</dt>
+<dt>get_wa_species</dt>
 <dd><p><code><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">terra::rast()</a></code> object.</p></dd>
 
 <dt>get_wa_attr</dt>
@@ -113,8 +113,8 @@ These data were originally obtained from the
 Noon <em>et al.</em> (2021, 2022)</p></dd>
 
 
-<dt><code>get_wa_features()</code></dt>
-<dd><p>Import biodiversity feature data.
+<dt><code>get_wa_species()</code></dt>
+<dd><p>Import species distribution data.
 The feature data are a multi-layer
 <code><a href="https://rspatial.github.io/terra/reference/rast.html" class="external-link">terra::rast()</a></code> object.
 It contains the spatial distribution of 258 bird species.
@@ -125,14 +125,16 @@ If a species is lacking such information,
 then the species is denoted with its full distribution
 (as indicated <code>"full"</code> in the layer names).
 These data were originally obtained from the eBird Status and Trends
-dataset (Fink <em>et al.</em> 2020).</p></dd>
+dataset (Fink <em>et al.</em> 2020). To ensure backwards compatibility
+with previous versions of the package, <code><a href="prioritizrdata-deprecated.html">get_wa_features()</a></code> can
+also be used to access these data.</p></dd>
 
 
 <dt><code>get_wa_attr()</code></dt>
-<dd><p>Import attribute data about the biodiversity features.
+<dd><p>Import attribute data about the species.
 The feature attribute data are a data frame (<code><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble::tibble()</a></code>) object.
 It contains taxonomic information for each feature
-(i.e., layer in <code>get_wa_features()</code>) as well as estimates of
+(i.e., layer in <code>get_wa_species()</code>) as well as estimates of
 public interest (derived from Mittermeier <em>et al.</em> 2021) and
 extinction risk (based on the methodology of Davis <em>et al.</em> 2018 and
 and threat status classification data from IUCN 2025).
@@ -141,7 +143,7 @@ did not contain public interest scores for all features,
 scores were interpolated for features missing scores based on average
 public interest score of features that belong to the same
 taxonomic family. This object has the following columns:</p><dl><dt>feature</dt>
-<dd><p>Name of the feature (i.e., <code>per get_wa_features()</code>).</p></dd>
+<dd><p>Name of the feature (i.e., <code>per get_wa_species()</code>).</p></dd>
 
 <dt>binomial</dt>
 <dd><p>Taxonomic species and genus name of the feature.</p></dd>
@@ -206,11 +208,10 @@ Survey data release, <a href="https://doi.org/10.5066/P9Q9LQ4B" class="external-
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># load packages</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> terra 1.9.11</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># import data</span></span></span>
 <span class="r-in"><span><span class="va">wa_pu</span> <span class="op">&lt;-</span> <span class="fu">get_wa_pu</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">wa_features</span> <span class="op">&lt;-</span> <span class="fu">get_wa_features</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">wa_species</span> <span class="op">&lt;-</span> <span class="fu">get_wa_species</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_attr</span> <span class="op">&lt;-</span> <span class="fu">get_wa_attr</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_locked_in</span> <span class="op">&lt;-</span> <span class="fu">get_wa_locked_in</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">wa_locked_out</span> <span class="op">&lt;-</span> <span class="fu">get_wa_locked_out</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -218,60 +219,60 @@ Survey data release, <a href="https://doi.org/10.5066/P9Q9LQ4B" class="external-
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># preview planning units</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_pu</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 109, 147, 1  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 4000, 4000  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_pu.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name        :         cost </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :    0.2986647 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   : 1804.1838379 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_pu.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        :        cost</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :    0.298665</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   : 1804.183838</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_pu</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="wa_data-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="co"># preview locked in</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_locked_in</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 109, 147, 1  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 4000, 4000  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_locked_in.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name        : protected areas </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :               0 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :               1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_locked_in.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        : protected areas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :               1</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_locked_in</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="wa_data-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># preview locked out</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_locked_out</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 109, 147, 1  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 4000, 4000  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_locked_out.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name        : urban areas </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :           0 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :           1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_locked_out.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        : urban areas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :           0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :           1</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_locked_out</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="wa_data-3.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># preview features</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_features</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-in"><span><span class="co"># preview species</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_species</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 109, 147, 396  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 4000, 4000  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_features.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       : Recur~ding), Botau~ding), Botau~ding), Corvu~ding), Corvu~ding), Cincl~full), ... </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :       0.000,       0.000,       0.000,       0.000,       0.000,        0.00, ... </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :       0.514,       0.812,       3.129,       0.115,       0.296,        0.06, ... </span>
-<span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_features</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : wa_features.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       : Recur~ding), Botau~ding), Botau~ding), Corvu~ding), Corvu~ding), Cincl~full), ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :           0,           0,           0,           0,           0,           0, ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :       0.514,       0.812,       3.129,       0.115,       0.296,        0.06, ...</span>
+<span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">wa_species</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="wa_data-4.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># preview attributes of features</span></span></span>
+<span class="r-in"><span><span class="co"># preview attributes of species</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">wa_attr</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 396 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    feature                  binomial family order extinction_prob interest_score</span>

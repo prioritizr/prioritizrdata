@@ -48,7 +48,7 @@ CRAN release: 2023-04-06
   contains layer names for the features.
 - New Washington dataset as been added. It can be imported using the
   [`get_wa_pu()`](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md),
-  [`get_wa_features()`](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md),
+  [`get_wa_features()`](http://prioritizr.github.io/prioritizrdata/reference/prioritizrdata-deprecated.md),
   and
   [`get_wa_locked_in()`](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md)
   functions.

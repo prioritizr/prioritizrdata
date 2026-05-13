@@ -18,11 +18,11 @@ test_that("wa_locked_out", {
   expect_gt(terra::global(wa_locked_out, "max", na.rm = TRUE)[[1]], 0)
 })
 
-test_that("wa_features", {
-  wa_features <- get_wa_features()
-  expect_is(wa_features, "SpatRaster")
+test_that("wa_species", {
+  wa_species <- get_wa_species()
+  expect_is(wa_species, "SpatRaster")
   expect_true(
-    all(terra::global(wa_features, "min", na.rm = TRUE)[[1]] >= 0)
+    all(terra::global(wa_species, "min", na.rm = TRUE)[[1]] >= 0)
   )
 })
 
@@ -45,7 +45,7 @@ test_that("wa_attr", {
       "extinction_prob", "interest_score"
     )
   )
-  expect_equal(wa_attr$feature, names(get_wa_features()))
+  expect_equal(wa_attr$feature, names(get_wa_species()))
   expect_equal(nrow(wa_attr), nrow(na.omit(wa_attr)))
 })
 
@@ -75,11 +75,11 @@ test_that("standardized missing values", {
   wa_pu <- get_wa_pu()
   wa_locked_in <- get_wa_locked_in()
   wa_locked_out <- get_wa_locked_out()
-  wa_features <- get_wa_features()
+  wa_species <- get_wa_species()
   wa_carbon <- get_wa_carbon()
   expect_equal(nonNA_cells(wa_pu), nonNA_cells(wa_locked_in))
   expect_equal(nonNA_cells(wa_pu), nonNA_cells(wa_locked_out))
-  expect_equal(nonNA_cells(wa_pu), nonNA_cells(sum(wa_features)))
+  expect_equal(nonNA_cells(wa_pu), nonNA_cells(sum(wa_species)))
   expect_equal(nonNA_cells(wa_pu), nonNA_cells(wa_carbon))
 })
 
@@ -87,7 +87,7 @@ test_that("rasters are comparable", {
   wa_pu <- get_wa_pu()
   wa_locked_in <- get_wa_locked_in()
   wa_locked_out <- get_wa_locked_out()
-  wa_features <- get_wa_features()
+  wa_species <- get_wa_species()
   wa_carbon <- get_wa_carbon()
   expect_true(
     terra::compareGeom(wa_pu, wa_locked_out, stopOnError = FALSE)
@@ -96,7 +96,7 @@ test_that("rasters are comparable", {
     terra::compareGeom(wa_pu, wa_locked_in, stopOnError = FALSE)
   )
   expect_true(
-    terra::compareGeom(wa_pu, wa_features, stopOnError = FALSE)
+    terra::compareGeom(wa_pu, wa_species, stopOnError = FALSE)
   )
   expect_true(
     terra::compareGeom(wa_pu, wa_carbon, stopOnError = FALSE)

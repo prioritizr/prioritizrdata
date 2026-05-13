@@ -12,7 +12,7 @@ get_wa_locked_in()
 
 get_wa_locked_out()
 
-get_wa_features()
+get_wa_species()
 
 get_wa_attr()
 
@@ -41,7 +41,7 @@ get_wa_carbon()
   [`terra::rast()`](https://rspatial.github.io/terra/reference/rast.html)
   object.
 
-- get_wa_features:
+- get_wa_species:
 
   [`terra::rast()`](https://rspatial.github.io/terra/reference/rast.html)
   object.
@@ -88,9 +88,9 @@ The following functions are provided to import data:
   typical land-use conversion. These data were originally obtained from
   the Noon *et al.* (2021, 2022)
 
-- `get_wa_features()`:
+- `get_wa_species()`:
 
-  Import biodiversity feature data. The feature data are a multi-layer
+  Import species distribution data. The feature data are a multi-layer
   [`terra::rast()`](https://rspatial.github.io/terra/reference/rast.html)
   object. It contains the spatial distribution of 258 bird species. To
   account for migratory patterns, data are provided for the breeding and
@@ -99,15 +99,18 @@ The following functions are provided to import data:
   information, then the species is denoted with its full distribution
   (as indicated `"full"` in the layer names). These data were originally
   obtained from the eBird Status and Trends dataset (Fink *et al.*
-  2020).
+  2020). To ensure backwards compatibility with previous versions of the
+  package,
+  [`get_wa_features()`](http://prioritizr.github.io/prioritizrdata/reference/prioritizrdata-deprecated.md)
+  can also be used to access these data.
 
 - `get_wa_attr()`:
 
-  Import attribute data about the biodiversity features. The feature
-  attribute data are a data frame
+  Import attribute data about the species. The feature attribute data
+  are a data frame
   ([`tibble::tibble()`](https://tibble.tidyverse.org/reference/tibble.html))
   object. It contains taxonomic information for each feature (i.e.,
-  layer in `get_wa_features()`) as well as estimates of public interest
+  layer in `get_wa_species()`) as well as estimates of public interest
   (derived from Mittermeier *et al.* 2021) and extinction risk (based on
   the methodology of Davis *et al.* 2018 and and threat status
   classification data from IUCN 2025). Since Mittermeier *et al.* (2021)
@@ -118,7 +121,7 @@ The following functions are provided to import data:
 
   feature
 
-  :   Name of the feature (i.e., `per get_wa_features()`).
+  :   Name of the feature (i.e., `per get_wa_species()`).
 
   binomial
 
@@ -192,11 +195,10 @@ Geological Survey data release,
 ``` r
 # load packages
 library(terra)
-#> terra 1.9.11
 
 # import data
 wa_pu <- get_wa_pu()
-wa_features <- get_wa_features()
+wa_species <- get_wa_species()
 wa_attr <- get_wa_attr()
 wa_locked_in <- get_wa_locked_in()
 wa_locked_out <- get_wa_locked_out()
@@ -204,60 +206,60 @@ wa_carbon <- get_wa_carbon()
 
 # preview planning units
 print(wa_pu)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 109, 147, 1  (nrow, ncol, nlyr)
 #> resolution  : 4000, 4000  (x, y)
 #> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)
-#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs 
-#> source      : wa_pu.tif 
-#> name        :         cost 
-#> min value   :    0.2986647 
-#> max value   : 1804.1838379 
+#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs
+#> source      : wa_pu.tif
+#> name        :        cost
+#> min value   :    0.298665
+#> max value   : 1804.183838
 plot(wa_pu)
 
 # preview locked in
 print(wa_locked_in)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 109, 147, 1  (nrow, ncol, nlyr)
 #> resolution  : 4000, 4000  (x, y)
 #> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)
-#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs 
-#> source      : wa_locked_in.tif 
-#> name        : protected areas 
-#> min value   :               0 
-#> max value   :               1 
+#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs
+#> source      : wa_locked_in.tif
+#> name        : protected areas
+#> min value   :               0
+#> max value   :               1
 plot(wa_locked_in)
 
 
 # preview locked out
 print(wa_locked_out)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 109, 147, 1  (nrow, ncol, nlyr)
 #> resolution  : 4000, 4000  (x, y)
 #> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)
-#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs 
-#> source      : wa_locked_out.tif 
-#> name        : urban areas 
-#> min value   :           0 
-#> max value   :           1 
+#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs
+#> source      : wa_locked_out.tif
+#> name        : urban areas
+#> min value   :           0
+#> max value   :           1
 plot(wa_locked_out)
 
 
-# preview features
-print(wa_features)
-#> class       : SpatRaster 
+# preview species
+print(wa_species)
+#> class       : SpatRaster
 #> size        : 109, 147, 396  (nrow, ncol, nlyr)
 #> resolution  : 4000, 4000  (x, y)
 #> extent      : -1816382, -1228382, 247483.5, 683483.5  (xmin, xmax, ymin, ymax)
-#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs 
-#> source      : wa_features.tif 
-#> names       : Recur~ding), Botau~ding), Botau~ding), Corvu~ding), Corvu~ding), Cincl~full), ... 
-#> min values  :       0.000,       0.000,       0.000,       0.000,       0.000,        0.00, ... 
-#> max values  :       0.514,       0.812,       3.129,       0.115,       0.296,        0.06, ... 
-plot(wa_features)
+#> coord. ref. : +proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +ellps=sphere +units=m +no_defs
+#> source      : wa_features.tif
+#> names       : Recur~ding), Botau~ding), Botau~ding), Corvu~ding), Corvu~ding), Cincl~full), ...
+#> min values  :           0,           0,           0,           0,           0,           0, ...
+#> max values  :       0.514,       0.812,       3.129,       0.115,       0.296,        0.06, ...
+plot(wa_species)
 
 
-# preview attributes of features
+# preview attributes of species
 print(wa_attr)
 #> # A tibble: 396 × 6
 #>    feature                  binomial family order extinction_prob interest_score

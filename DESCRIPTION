@@ -53,4 +53,5 @@ Collate:
     'salt_data.R'
     'tas_data.R'
     'wa_data.R'
+    'deprecated.R'
 Roxygen: list(markdown = TRUE)

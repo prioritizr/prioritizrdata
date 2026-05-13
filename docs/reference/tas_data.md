@@ -70,9 +70,7 @@ Version 6.0. Available at
 ``` r
 # load packages
 library(terra)
-#> terra 1.9.11
 library(sf)
-#> Linking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE
 
 # load data
 tas_pu <- get_tas_pu()
@@ -104,15 +102,15 @@ plot(tas_pu)
 
 # plot features
 print(tas_features)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 398, 359, 33  (nrow, ncol, nlyr)
 #> resolution  : 1000, 1000  (x, y)
 #> extent      : 288801.7, 647801.7, 5142976, 5540976  (xmin, xmax, ymin, ymax)
-#> coord. ref. : WGS 84 / UTM zone 55S (EPSG:32755) 
-#> source      : tas_features.tif 
-#> names       : Banks~lands, Bould~marks, Calli~lands, Cool ~orest, Eucal~hyll), Eucal~torey, ... 
-#> min values  :           0,           0,           0,           0,           0,           0, ... 
-#> max values  :           1,           1,           1,           1,           1,           1, ... 
+#> coord. ref. : WGS 84 / UTM zone 55S (EPSG:32755)
+#> source      : tas_features.tif
+#> names       : Banks~lands, Bould~marks, Calli~lands, Cool ~orest, Eucal~hyll), Eucal~torey, ...
+#> min values  :           0,           0,           0,           0,           0,           0, ...
+#> max values  :           1,           1,           1,           1,           1,           1, ...
 plot(tas_features)
 
 ```

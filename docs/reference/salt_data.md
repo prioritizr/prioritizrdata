@@ -82,7 +82,7 @@ Available at
 ``` r
 # load packages
 library(terra)
-#> terra 1.9.11
+#> terra 1.9.27
 library(sf)
 #> Linking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE
 
@@ -92,44 +92,44 @@ salt_features <- get_salt_features()
 
 # preview planning units
 print(salt_pu)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 280, 200, 1  (nrow, ncol, nlyr)
 #> resolution  : 100, 100  (x, y)
 #> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
-#> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) 
-#> source      : salt_pu.tif 
-#> name        :      cost 
-#> min value   : 2.552e-02 
-#> max value   : 1.000e+04 
+#> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610)
+#> source      : salt_pu.tif
+#> name        :    cost
+#> min value   : 0.02552
+#> max value   :   10000
 plot(salt_pu)
 
 
 # preview features
 print(salt_features)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 280, 200, 4  (nrow, ncol, nlyr)
 #> resolution  : 100, 100  (x, y)
 #> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
-#> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) 
-#> source      : salt_features.tif 
-#> names       : old forest,   savanna,   wetland,     shrub 
-#> min values  :  0.3595050, 0.2979212, 0.1132785, 0.4013101 
-#> max values  :  0.9312289, 0.6608167, 0.6434712, 0.8249719 
+#> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610)
+#> source      : salt_features.tif
+#> names       : old forest,  savanna,  wetland,    shrub
+#> min values  :   0.359505, 0.297921, 0.113279,  0.40131
+#> max values  :   0.931229, 0.660817, 0.643471, 0.824972
 plot(salt_features)
 
 
 # preview connectivity data
 salt_con <- get_salt_con()
 print(salt_con)
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 280, 200, 1  (nrow, ncol, nlyr)
 #> resolution  : 100, 100  (x, y)
 #> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)
-#> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) 
-#> source      : salt_con.tif 
-#> name        : inverse human 
-#> min value   :     0.3703639 
-#> max value   :     0.9032656 
+#> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610)
+#> source      : salt_con.tif
+#> name        : inverse human
+#> min value   :      0.370364
+#> max value   :      0.903266
 plot(salt_con)
 
 ```

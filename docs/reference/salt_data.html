@@ -121,7 +121,7 @@ Conservation Sciences, University of British Colombia. Available at
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># load packages</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> terra 1.9.11</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> terra 1.9.27</span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Linking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE</span>
 <span class="r-in"><span></span></span>
@@ -131,44 +131,44 @@ Conservation Sciences, University of British Colombia. Available at
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># preview planning units</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">salt_pu</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 280, 200, 1  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 100, 100  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_pu.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name        :      cost </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   : 2.552e-02 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   : 1.000e+04 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_pu.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        :    cost</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   : 0.02552</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :   10000</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">salt_pu</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="salt_data-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># preview features</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">salt_features</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 280, 200, 4  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 100, 100  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_features.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> names       : old forest,   savanna,   wetland,     shrub </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :  0.3595050, 0.2979212, 0.1132785, 0.4013101 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :  0.9312289, 0.6608167, 0.6434712, 0.8249719 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_features.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       : old forest,  savanna,  wetland,    shrub</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min values  :   0.359505, 0.297921, 0.113279,  0.40131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max values  :   0.931229, 0.660817, 0.643471, 0.824972</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">salt_features</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="salt_data-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># preview connectivity data</span></span></span>
 <span class="r-in"><span><span class="va">salt_con</span> <span class="op">&lt;-</span> <span class="fu">get_salt_con</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">salt_con</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> size        : 280, 200, 1  (nrow, ncol, nlyr)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 100, 100  (x, y)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 454589.9, 474589.9, 5394614, 5422614  (xmin, xmax, ymin, ymax)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_con.tif </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> name        : inverse human </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :     0.3703639 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :     0.9032656 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : WGS 84 / UTM zone 10N (EPSG:32610)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : salt_con.tif</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        : inverse human</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> min value   :      0.370364</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> max value   :      0.903266</span>
 <span class="r-in"><span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">salt_con</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="salt_data-3.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>

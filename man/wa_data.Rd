@@ -5,7 +5,7 @@
 \alias{get_wa_pu}
 \alias{get_wa_locked_in}
 \alias{get_wa_locked_out}
-\alias{get_wa_features}
+\alias{get_wa_species}
 \alias{get_wa_attr}
 \alias{get_wa_carbon}
 \alias{wa_pu}
@@ -20,7 +20,7 @@
 \item{get_wa_locked_in}{\code{\link[terra:rast]{terra::rast()}} object.}
 \item{get_wa_locked_out}{\code{\link[terra:rast]{terra::rast()}} object.}
 \item{get_wa_carbon}{\code{\link[terra:rast]{terra::rast()}} object.}
-\item{get_wa_features}{\code{\link[terra:rast]{terra::rast()}} object.}
+\item{get_wa_species}{\code{\link[terra:rast]{terra::rast()}} object.}
 \item{get_wa_attr}{\code{\link[tibble:tibble]{tibble::tibble()}} object.}
 }
 }
@@ -31,7 +31,7 @@ get_wa_locked_in()
 
 get_wa_locked_out()
 
-get_wa_features()
+get_wa_species()
 
 get_wa_attr()
 
@@ -72,7 +72,7 @@ typical land-use conversion.
 These data were originally obtained from the
 Noon \emph{et al.} (2021, 2022)}
 
-\item{\code{get_wa_features()}}{Import biodiversity feature data.
+\item{\code{get_wa_species()}}{Import species distribution data.
 The feature data are a multi-layer
 \code{\link[terra:rast]{terra::rast()}} object.
 It contains the spatial distribution of 258 bird species.
@@ -83,12 +83,14 @@ If a species is lacking such information,
 then the species is denoted with its full distribution
 (as indicated \code{"full"} in the layer names).
 These data were originally obtained from the eBird Status and Trends
-dataset (Fink \emph{et al.} 2020).}
+dataset (Fink \emph{et al.} 2020). To ensure backwards compatibility
+with previous versions of the package, \code{\link[=get_wa_features]{get_wa_features()}} can
+also be used to access these data.}
 
-\item{\code{get_wa_attr()}}{Import attribute data about the biodiversity features.
+\item{\code{get_wa_attr()}}{Import attribute data about the species.
 The feature attribute data are a data frame (\code{\link[tibble:tibble]{tibble::tibble()}}) object.
 It contains taxonomic information for each feature
-(i.e., layer in \code{get_wa_features()}) as well as estimates of
+(i.e., layer in \code{get_wa_species()}) as well as estimates of
 public interest (derived from Mittermeier \emph{et al.} 2021) and
 extinction risk (based on the methodology of Davis \emph{et al.} 2018 and
 and threat status classification data from IUCN 2025).
@@ -98,7 +100,7 @@ scores were interpolated for features missing scores based on average
 public interest score of features that belong to the same
 taxonomic family. This object has the following columns:
 \describe{
-\item{feature}{Name of the feature (i.e., \verb{per get_wa_features()}).}
+\item{feature}{Name of the feature (i.e., \verb{per get_wa_species()}).}
 \item{binomial}{Taxonomic species and genus name of the feature.}
 \item{family}{Taxonomic family name of the feature.}
 \item{order}{Taxonomic order of the feature.}
@@ -113,7 +115,7 @@ library(terra)
 
 # import data
 wa_pu <- get_wa_pu()
-wa_features <- get_wa_features()
+wa_species <- get_wa_species()
 wa_attr <- get_wa_attr()
 wa_locked_in <- get_wa_locked_in()
 wa_locked_out <- get_wa_locked_out()
@@ -130,11 +132,11 @@ plot(wa_locked_in)
 print(wa_locked_out)
 plot(wa_locked_out)
 
-# preview features
-print(wa_features)
-plot(wa_features)
+# preview species
+print(wa_species)
+plot(wa_species)
 
-# preview attributes of features
+# preview attributes of species
 print(wa_attr)
 
 }

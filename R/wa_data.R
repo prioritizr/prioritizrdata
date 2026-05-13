@@ -34,7 +34,7 @@
 #'   These data were originally obtained from the
 #'   Noon _et al._ (2021, 2022)}
 #'
-#' \item{`get_wa_features()`}{Import biodiversity feature data.
+#' \item{`get_wa_species()`}{Import species distribution data.
 #'   The feature data are a multi-layer
 #'   [terra::rast()] object.
 #'   It contains the spatial distribution of 258 bird species.
@@ -45,12 +45,14 @@
 #'   then the species is denoted with its full distribution
 #'   (as indicated `"full"` in the layer names).
 #'   These data were originally obtained from the eBird Status and Trends
-#'   dataset (Fink _et al._ 2020).}
+#'   dataset (Fink _et al._ 2020). To ensure backwards compatibility
+#'   with previous versions of the package, [`get_wa_features()`] can
+#'   also be used to access these data.}
 #'
-#' \item{`get_wa_attr()`}{Import attribute data about the biodiversity features.
+#' \item{`get_wa_attr()`}{Import attribute data about the species.
 #'   The feature attribute data are a data frame ([tibble::tibble()]) object.
 #'   It contains taxonomic information for each feature
-#'   (i.e., layer in `get_wa_features()`) as well as estimates of
+#'   (i.e., layer in `get_wa_species()`) as well as estimates of
 #'   public interest (derived from Mittermeier _et al._ 2021) and
 #'   extinction risk (based on the methodology of Davis _et al._ 2018 and
 #'   and threat status classification data from IUCN 2025).
@@ -60,7 +62,7 @@
 #'   public interest score of features that belong to the same
 #'   taxonomic family. This object has the following columns:
 #'   \describe{
-#'   \item{feature}{Name of the feature (i.e., `per get_wa_features()`).}
+#'   \item{feature}{Name of the feature (i.e., `per get_wa_species()`).}
 #'   \item{binomial}{Taxonomic species and genus name of the feature.}
 #'   \item{family}{Taxonomic family name of the feature.}
 #'   \item{order}{Taxonomic order of the feature.}
@@ -69,9 +71,9 @@
 #'   }}
 #' }
 #'
-#' @aliases get_wa_pu get_wa_locked_in get_wa_locked_out get_wa_features
+#' @aliases get_wa_pu get_wa_locked_in get_wa_locked_out get_wa_species
 #' @aliases get_wa_attr get_wa_carbon
-#' @aliases wa_pu wa_locked_in wa_locked_out get_wa_features
+#' @aliases wa_pu wa_locked_in wa_locked_out get_wa_species
 #' @aliases wa_weights wa_carbon
 #'
 #' @format \describe{
@@ -79,7 +81,7 @@
 #'   \item{get_wa_locked_in}{[terra::rast()] object.}
 #'   \item{get_wa_locked_out}{[terra::rast()] object.}
 #'   \item{get_wa_carbon}{[terra::rast()] object.}
-#'   \item{get_wa_features}{[terra::rast()] object.}
+#'   \item{get_wa_species}{[terra::rast()] object.}
 #'   \item{get_wa_attr}{[tibble::tibble()] object.}
 #' }
 #'
@@ -135,7 +137,7 @@
 #'
 #' # import data
 #' wa_pu <- get_wa_pu()
-#' wa_features <- get_wa_features()
+#' wa_species <- get_wa_species()
 #' wa_attr <- get_wa_attr()
 #' wa_locked_in <- get_wa_locked_in()
 #' wa_locked_out <- get_wa_locked_out()
@@ -153,11 +155,11 @@
 #' print(wa_locked_out)
 #' plot(wa_locked_out)
 #'
-#' # preview features
-#' print(wa_features)
-#' plot(wa_features)
+#' # preview species
+#' print(wa_species)
+#' plot(wa_species)
 #'
-#' # preview attributes of features
+#' # preview attributes of species
 #' print(wa_attr)
 #'
 #' @name wa_data
@@ -195,7 +197,7 @@ get_wa_locked_out <- function() {
 
 #' @rdname wa_data
 #' @export
-get_wa_features <- function() {
+get_wa_species <- function() {
   x <- terra::rast(
     system.file("extdata", "wa_features.tif", package = "prioritizrdata")
   )
