@@ -85,7 +85,7 @@ then the species is denoted with its full distribution
 These data were originally obtained from the eBird Status and Trends
 dataset (Fink \emph{et al.} 2020).}
 
-\item{\code{get_wa_attr()}}{Import data about the biodiversity features.
+\item{\code{get_wa_attr()}}{Import attribute data about the biodiversity features.
 The feature attribute data are a data frame (\code{\link[tibble:tibble]{tibble::tibble()}}) object.
 It contains taxonomic information for each feature
 (i.e., layer in \code{get_wa_features()}) as well as estimates of

@@ -103,8 +103,8 @@ The following functions are provided to import data:
 
 - `get_wa_attr()`:
 
-  Import data about the biodiversity features. The feature attribute
-  data are a data frame
+  Import attribute data about the biodiversity features. The feature
+  attribute data are a data frame
   ([`tibble::tibble()`](https://tibble.tidyverse.org/reference/tibble.html))
   object. It contains taxonomic information for each feature (i.e.,
   layer in `get_wa_features()`) as well as estimates of public interest

@@ -47,7 +47,7 @@
 #'   These data were originally obtained from the eBird Status and Trends
 #'   dataset (Fink _et al._ 2020).}
 #'
-#' \item{`get_wa_attr()`}{Import data about the biodiversity features.
+#' \item{`get_wa_attr()`}{Import attribute data about the biodiversity features.
 #'   The feature attribute data are a data frame ([tibble::tibble()]) object.
 #'   It contains taxonomic information for each feature
 #'   (i.e., layer in `get_wa_features()`) as well as estimates of
