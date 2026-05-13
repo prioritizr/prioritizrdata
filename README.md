@@ -10,7 +10,7 @@
 [![Documentation](https://img.shields.io/github/actions/workflow/status/prioritizr/prioritizrdata/documentation.yaml?branch=main&label=Documentation)](https://github.com/prioritizr/prioritizrdata/actions)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/prioritizr/prioritizrdata?label=Coverage)](https://app.codecov.io/gh/prioritizr/prioritizrdata/branch/main)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/prioritizrdata)](https://CRAN.R-project.org/package=prioritizrdata)
 
 The *prioritizrdata R* package is a supplemental package that contains
 example datasets for conservation planning. It is intended to be used
@@ -20,12 +20,12 @@ alongside the [*prioritizr R* package](https://prioritizr.net).
 
 This package contains the following datasets.
 
--   **Tasmania dataset**: Conservation planning dataset for Tasmania,
-    Australia.
--   **Salt Spring Island dataset**: Conservation planning dataset for
-    Tasmania, Australia.
--   **Washington dataset**: Conservation planning dataset for
-    Washington, The United States of America.
+- **Tasmania dataset**: Conservation planning dataset for Tasmania,
+  Australia.
+- **Salt Spring Island dataset**: Conservation planning dataset for
+  Tasmania, Australia.
+- **Washington dataset**: Conservation planning dataset for Washington,
+  The United States of America.
 
 ## Installation
 
@@ -52,14 +52,14 @@ devtools::install_github("prioritizr/prioritizrdata")
 Please cite the *prioritizrdata R* package when using it in
 publications. To cite the latest official version, please use:
 
-> Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
-> P, Bennett J, Possingham HP (2023). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.2. Available at
+> Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Buenafe KCV, Watts
+> ME, Arcese P, Bennett J, Possingham HP (2026). prioritizrdata:
+> Conservation Planning Datasets. R package version 0.3.3. Available at
 > <https://CRAN.R-project.org/package=prioritizrdata>.
 
 Alternatively, to cite the latest development version, please use:
 
-> Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Watts ME, Arcese
-> P, Bennett J, Possingham HP (2024). prioritizrdata: Conservation
-> Planning Datasets. R package version 0.3.2.2. Available at
+> Hanson JO, Schuster R, Morrell N, Strimas-Mackey M, Buenafe KCV, Watts
+> ME, Arcese P, Bennett J, Possingham HP (2026). prioritizrdata:
+> Conservation Planning Datasets. R package version 0.3.3. Available at
 > <https://github.com/prioritizr/prioritizrdata>.

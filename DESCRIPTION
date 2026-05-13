@@ -1,6 +1,6 @@
 Package: prioritizrdata
 Type: Package
-Version: 0.3.2.2
+Version: 0.3.3
 Title: Conservation Planning Datasets
 Description: Conservation planning datasets for learning how to use the
     'prioritizr' package <https://CRAN.R-project.org/package=prioritizr>.
@@ -16,6 +16,9 @@ Authors@R:
       person(c('Matthew'), 'Strimas-Mackey',
         email='mstrimas@gmail.com', role = c('aut'),
         comment = c(ORCID = '0000-0001-8929-7776')),
+      person(c('Kristin Camille', 'V'), 'Buenafe',
+        email='k.buenafe@uq.edu.au', role = c('aut'),
+        comment = c(ORCID = '0000-0002-1643-5557')),
       person(c('Matthew', 'E'), 'Watts',
         email='m.watts@uq.edu.au', role = c('aut')),
       person(c('Peter'), 'Arcese',
@@ -44,7 +47,7 @@ Language: en-US
 URL: https://prioritizr.github.io/prioritizrdata/,
     https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 Collate:
     'package.R'
     'salt_data.R'

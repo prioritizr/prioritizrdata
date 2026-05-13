@@ -1,6 +1,6 @@
 Dear CRAN volunteers,
 
-Thank you for reviewing this submission. This submission updates the package for compatibility with the new version of the prioritizr R package. It also provides an additional case study dataset, and removes dependencies for _rgeos_ and _rgdal_ in anticipation of their retirement. It addresses the documentation issues raised in our previous CRAN submission.
+Thank you for reviewing this submission. This submission contains minor documentation updates and fixes issues related to manual aliasing.
 
 Cheers,
 
