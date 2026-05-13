@@ -24,7 +24,7 @@ Conservation planning dataset for Salt Spring Island, Canada.
 }
 
 \item{\link{wa_data}}{
-Conservation planning dataset for Washington, The United States of America.
+Conservation planning dataset for Washington, United States.
 }
 
 }

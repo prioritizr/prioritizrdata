@@ -26,7 +26,7 @@
 #'   These data were originally obtained from the
 #'   Commission for Environmental Cooperation (2020)}
 #'
-#' \item{`get_wa_carbon()`}{Import vulernable carbon data.
+#' \item{`get_wa_carbon()`}{Import vulnerable carbon data.
 #'   The carbon data a single layer [terra::rast()] object.
 #'   Cell values denote continuous values representing the amount
 #'   of carbon sequestered that is vulnerable to be released through
@@ -54,7 +54,7 @@
 #'   public interest (derived from Mittermeier _et al._ 2021) and
 #'   extinction risk (based on the methodology of Davis _et al._ 2018 and
 #'   and threat status classification data from IUCN 2025).
-#'   Since Mittmermeier _et al._ (2021)
+#'   Since Mittermeier _et al._ (2021)
 #'   did not contain public interest scores for all features,
 #'   scores were interpolated for features missing scores based on average
 #'   public interest score of features that belong to the same

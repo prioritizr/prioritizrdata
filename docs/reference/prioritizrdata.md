@@ -18,8 +18,7 @@ This package contains the following datasets:
 
 - [wa_data](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md):
 
-  Conservation planning dataset for Washington, The United States of
-  America.
+  Conservation planning dataset for Washington, United States.
 
 ## See also
 

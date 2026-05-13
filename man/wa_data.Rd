@@ -64,7 +64,7 @@ is predominantly covered by urban areas.
 These data were originally obtained from the
 Commission for Environmental Cooperation (2020)}
 
-\item{\code{get_wa_carbon()}}{Import vulernable carbon data.
+\item{\code{get_wa_carbon()}}{Import vulnerable carbon data.
 The carbon data a single layer \code{\link[terra:rast]{terra::rast()}} object.
 Cell values denote continuous values representing the amount
 of carbon sequestered that is vulnerable to be released through
@@ -92,7 +92,7 @@ It contains taxonomic information for each feature
 public interest (derived from Mittermeier \emph{et al.} 2021) and
 extinction risk (based on the methodology of Davis \emph{et al.} 2018 and
 and threat status classification data from IUCN 2025).
-Since Mittmermeier \emph{et al.} (2021)
+Since Mittermeier \emph{et al.} (2021)
 did not contain public interest scores for all features,
 scores were interpolated for features missing scores based on average
 public interest score of features that belong to the same

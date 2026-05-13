@@ -81,7 +81,7 @@ The following functions are provided to import data:
 
 - `get_wa_carbon()`:
 
-  Import vulernable carbon data. The carbon data a single layer
+  Import vulnerable carbon data. The carbon data a single layer
   [`terra::rast()`](https://rspatial.github.io/terra/reference/rast.html)
   object. Cell values denote continuous values representing the amount
   of carbon sequestered that is vulnerable to be released through
@@ -110,11 +110,11 @@ The following functions are provided to import data:
   layer in `get_wa_features()`) as well as estimates of public interest
   (derived from Mittermeier *et al.* 2021) and extinction risk (based on
   the methodology of Davis *et al.* 2018 and and threat status
-  classification data from IUCN 2025). Since Mittmermeier *et
-  al.* (2021) did not contain public interest scores for all features,
-  scores were interpolated for features missing scores based on average
-  public interest score of features that belong to the same taxonomic
-  family. This object has the following columns:
+  classification data from IUCN 2025). Since Mittermeier *et al.* (2021)
+  did not contain public interest scores for all features, scores were
+  interpolated for features missing scores based on average public
+  interest score of features that belong to the same taxonomic family.
+  This object has the following columns:
 
   feature
 
