@@ -22,7 +22,7 @@ This package contains the following datasets.
 - **Salt Spring Island dataset**: Conservation planning dataset for
   Tasmania, Australia.
 - **Washington dataset**: Conservation planning dataset for Washington,
-  The United States of America.
+  United States.
 
 ## Installation
 
