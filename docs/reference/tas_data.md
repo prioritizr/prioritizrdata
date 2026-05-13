@@ -63,14 +63,16 @@ Environment; Water Resources.
 Australian Government Department of Climate Change, Energy, the
 Environment and Water (2020). National Vegetation Information System.
 Version 6.0. Available at
-<http://environment.gov.au/fed/catalog/search/resource/details.page?uuid=%7B3F8AD12F-8300-45EC-A41A-469519A94039%7D>.
+<https://digital.atlas.gov.au/maps/national-vegetation-information-system-nvis-version-6-0-extant-vegetation>.
 
 ## Examples
 
 ``` r
 # load packages
 library(terra)
+#> terra 1.9.11
 library(sf)
+#> Linking to GEOS 3.12.2, GDAL 3.9.3, PROJ 9.4.1; sf_use_s2() is TRUE
 
 # load data
 tas_pu <- get_tas_pu()

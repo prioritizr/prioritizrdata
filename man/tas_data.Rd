@@ -79,6 +79,6 @@ Environment; Water Resources.
 
 Australian Government Department of Climate Change, Energy, the Environment
 and Water (2020). National Vegetation Information System. Version 6.0.
-Available at \url{http://environment.gov.au/fed/catalog/search/resource/details.page?uuid=\%7B3F8AD12F-8300-45EC-A41A-469519A94039\%7D}.
+Available at \url{https://digital.atlas.gov.au/maps/national-vegetation-information-system-nvis-version-6-0-extant-vegetation}.
 }
 \keyword{datasets}
