@@ -49,4 +49,8 @@ install:
 urlcheck:
 	R --slave -e "devtools::document();urlchecker::url_check()"
 
-.PHONY: data docs readme site test check checkwb build install man
+examples:
+	R --slave -e "devtools::run_examples(run_donttest = TRUE, run_dontrun = TRUE);warnings()" > examples.log 2>&1
+	rm -f Rplots.pdf
+
+.PHONY: data docs readme site test check checkwb build install man examples
