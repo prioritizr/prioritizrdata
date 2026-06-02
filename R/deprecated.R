@@ -29,13 +29,17 @@ NULL
 #' @rdname prioritizrdata-deprecated
 #' @export
 get_wa_features <- function() {
-  warning(
-    paste(
-      "`get_wa_features()` has been deprecated,",
-      "use `get_wa_species()` instead."
-    ),
-    call. = FALSE,
-    immediate. = TRUE
-  )
+  if (interactive()) {
+    # nocov start
+    warning(
+      paste(
+        "`get_wa_features()` has been deprecated,",
+        "use `get_wa_species()` instead."
+      ),
+      call. = FALSE,
+      immediate. = TRUE
+    )
+    # nocov end
+  }
   get_wa_species()
 }
