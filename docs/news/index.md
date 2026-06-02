@@ -8,7 +8,15 @@
   scores and extinction probabilities. These new data can be accessed
   with the new
   [`get_wa_carbon()`](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md)
-  and `get_wa_weights()` functions.
+  and
+  [`get_wa_attr()`](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md)
+  functions.
+- The
+  [`get_wa_features()`](http://prioritizr.github.io/prioritizrdata/reference/prioritizrdata-deprecated.md)
+  function has been renamed to
+  [`get_wa_species()`](http://prioritizr.github.io/prioritizrdata/reference/wa_data.md).
+  This change is designed to help improve consistency with the new
+  functions for the Washington dataset.
 
 ## prioritizrdata 0.3.2.2
 

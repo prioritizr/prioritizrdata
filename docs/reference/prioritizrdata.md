@@ -37,6 +37,9 @@ Useful links:
 
 Authors:
 
+- Richard Schuster <richard.schuster@glel.carleton.ca>
+  ([ORCID](https://orcid.org/0000-0003-3191-7869))
+
 - Jeffrey O Hanson <jeffrey.hanson@uqconnect.edu.au>
   ([ORCID](https://orcid.org/0000-0002-4716-6134))
 
@@ -45,7 +48,7 @@ Authors:
 - Matthew Strimas-Mackey <mstrimas@gmail.com>
   ([ORCID](https://orcid.org/0000-0001-8929-7776))
 
-- Kristin Camille V Buenafe <k.buenafe@uq.edu.au>
+- Kristine Camille V Buenafe <k.buenafe@uq.edu.au>
   ([ORCID](https://orcid.org/0000-0002-1643-5557))
 
 - Matthew E Watts <m.watts@uq.edu.au>

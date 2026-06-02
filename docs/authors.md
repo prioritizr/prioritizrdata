@@ -13,7 +13,7 @@
 - **[Matthew Strimas-Mackey](http://strimas.com)**. Author.
   [](https://orcid.org/0000-0001-8929-7776)
 
-- **[Kristin Camille V Buenafe](https://snbuenafe.github.io)**. Author.
+- **[Kristine Camille V Buenafe](https://snbuenafe.github.io)**. Author.
   [](https://orcid.org/0000-0002-1643-5557)
 
 - **Matthew E Watts**. Author.
@@ -39,7 +39,7 @@ Conservation Planning Datasets*. R package version 0.3.3,
 
     @Manual{,
       title = {prioritizrdata: Conservation Planning Datasets},
-      author = {Jeffrey O Hanson and Richard Schuster and Nina Morrell and Matthew Strimas-Mackey and Kristin Camille V Buenafe and Matthew E Watts and Peter Arcese and Joseph R Bennett and Hugh P Possingham},
+      author = {Jeffrey O Hanson and Richard Schuster and Nina Morrell and Matthew Strimas-Mackey and Kristine Camille V Buenafe and Matthew E Watts and Peter Arcese and Joseph R Bennett and Hugh P Possingham},
       year = {2026},
       note = {R package version 0.3.3},
       url = {https://prioritizr.github.io/prioritizrdata/},
