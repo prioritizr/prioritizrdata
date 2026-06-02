@@ -217,6 +217,7 @@ print(wa_pu)
 #> max value   : 1804.183838
 plot(wa_pu)
 
+
 # preview locked in
 print(wa_locked_in)
 #> class       : SpatRaster

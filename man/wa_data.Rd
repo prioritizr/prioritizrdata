@@ -124,6 +124,7 @@ wa_carbon <- get_wa_carbon()
 # preview planning units
 print(wa_pu)
 plot(wa_pu)
+
 # preview locked in
 print(wa_locked_in)
 plot(wa_locked_in)
