@@ -16,7 +16,7 @@ Authors@R:
       person(c('Matthew'), 'Strimas-Mackey',
         email='mstrimas@gmail.com', role = c('aut'),
         comment = c(ORCID = '0000-0001-8929-7776')),
-      person(c('Kristin Camille', 'V'), 'Buenafe',
+      person(c('Kristine Camille', 'V'), 'Buenafe',
         email='k.buenafe@uq.edu.au', role = c('aut'),
         comment = c(ORCID = '0000-0002-1643-5557')),
       person(c('Matthew', 'E'), 'Watts',
@@ -47,7 +47,6 @@ Language: en-US
 URL: https://prioritizr.github.io/prioritizrdata/,
     https://github.com/prioritizr/prioritizrdata
 BugReports: https://github.com/prioritizr/prioritizrdata/issues
-RoxygenNote: 7.3.3
 Collate:
     'package.R'
     'salt_data.R'
@@ -55,3 +54,4 @@ Collate:
     'wa_data.R'
     'deprecated.R'
 Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0
