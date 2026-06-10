@@ -24,7 +24,7 @@ Conservation planning dataset for Salt Spring Island, Canada.
 }
 
 \item{\link{wa_data}}{
-Conservation planning dataset for Washington, The United States of America.
+Conservation planning dataset for Washington, United States.
 }
 
 }
@@ -43,9 +43,11 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Richard Schuster \email{richard.schuster@glel.carleton.ca} (\href{https://orcid.org/0000-0003-3191-7869}{ORCID})
   \item Jeffrey O Hanson \email{jeffrey.hanson@uqconnect.edu.au} (\href{https://orcid.org/0000-0002-4716-6134}{ORCID})
   \item Nina Morrell \email{nina.morrell@ubc.ca}
   \item Matthew Strimas-Mackey \email{mstrimas@gmail.com} (\href{https://orcid.org/0000-0001-8929-7776}{ORCID})
+  \item Kristine Camille V Buenafe \email{k.buenafe@uq.edu.au} (\href{https://orcid.org/0000-0002-1643-5557}{ORCID})
   \item Matthew E Watts \email{m.watts@uq.edu.au}
   \item Peter Arcese \email{peter.arcese@ubc.ca} (\href{https://orcid.org/0000-0002-8097-482X}{ORCID})
   \item Joseph R Bennett \email{joseph.bennett@carleton.ca} (\href{https://orcid.org/0000-0002-3901-9513}{ORCID})

@@ -1,6 +1,6 @@
 Dear CRAN volunteers,
 
-Thank you for reviewing this submission. This submission updates the package for compatibility with the new version of the prioritizr R package. It also provides an additional case study dataset, and removes dependencies for _rgeos_ and _rgdal_ in anticipation of their retirement. It addresses the documentation issues raised in our previous CRAN submission.
+Thank you for reviewing this submission. In particular, this submission is an update to the prioritizrdata package that is already on CRAN. It provides additional datasets and improved documentation.
 
 Cheers,
 
@@ -20,13 +20,12 @@ Richard Schuster
 
 ## Test environments
 
-* [Ubuntu 20.04, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AUbuntu)
-* [Ubuntu 20.04, R-devel](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AUbuntu)
-* [Mac OSX 10.15, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3A%22Mac+OSX%22)
-* [Windows Server 2019, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AWindows)
-* Windows Server 2008 (x64), R-devel (win-builder)
+* [Ubuntu 24.04, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AUbuntu)
+* [Ubuntu 24.04, R-devel](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AUbuntu)
+* [Mac OSX 15.7.4, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3A%22Mac+OSX%22)
+* [Windows Server 2025, R-release](https://github.com/prioritizr/prioritizrdata/actions?query=workflow%3AWindows)
+* Windows Server 2022 (x64), R-devel (win-builder)
 
 ## Downstream dependencies
 
-This package has a single dependency (i.e., the _prioritizr_ package).
-The dependency passes all checks successfully with the new version.
+This package has a single (optional) reverse dependency (i.e., the _prioritizr_ package). This reverse dependency passes all checks successfully with the new version.

@@ -1,3 +1,14 @@
+# prioritizrdata 0.3.3
+
+- Update Washington dataset with additional data for multi-objective
+  optimization. In particular, it now contains data for vulnerable carbon
+  and as well as feature weights derived from public interest scores and
+  extinction probabilities. These new data can be accessed with the new
+  `get_wa_carbon()` and `get_wa_attr()` functions.
+- The `get_wa_features()` function has been renamed to `get_wa_species()`.
+  This change is designed to help improve consistency with the new
+  functions for the Washington dataset.
+
 # prioritizrdata 0.3.2.2
 
 - Update package manual entry.

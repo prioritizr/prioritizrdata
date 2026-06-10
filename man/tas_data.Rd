@@ -10,7 +10,7 @@
 \title{Tasmania data}
 \format{
 \describe{
-\item{tas_pu}{\code{\link[sf:sf]{sf::st_sf()}} object.}
+\item{tas_pu}{\code{\link[sf:st_sf]{sf::st_sf()}} object.}
 \item{tas_features}{\code{\link[terra:rast]{terra::rast()}} object}
 }
 }
@@ -28,7 +28,7 @@ The following functions are provided to import data:
 \describe{
 
 \item{\code{get_tas_pu}}{Import planning unit data.
-The planing units are a \code{\link[sf:sf]{sf::st_sf()}} simple features object.
+The planing units are a \code{\link[sf:st_sf]{sf::st_sf()}} simple features object.
 Each row corresponds to a different planning unit, and columns
 contain information about the planning units.
 It has columns that contain: (\code{"id"}) unique identifiers and
@@ -79,6 +79,6 @@ Environment; Water Resources.
 
 Australian Government Department of Climate Change, Energy, the Environment
 and Water (2020). National Vegetation Information System. Version 6.0.
-Available at \url{http://environment.gov.au/fed/catalog/search/resource/details.page?uuid=\%7B3F8AD12F-8300-45EC-A41A-469519A94039\%7D}.
+Available at \url{https://digital.atlas.gov.au/maps/national-vegetation-information-system-nvis-version-6-0-extant-vegetation}.
 }
 \keyword{datasets}

@@ -17,7 +17,7 @@
 #' }
 #'
 #' \item{[wa_data]}{
-#'   Conservation planning dataset for Washington, The United States of America.
+#'   Conservation planning dataset for Washington, United States.
 #' }
 #'
 #' }

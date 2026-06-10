@@ -13,6 +13,7 @@ test.log
 check.log
 spell.log
 gp.log
+examples.log
 
 # system files
 .directory
